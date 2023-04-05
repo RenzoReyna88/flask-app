@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <body class="color" style="background-color: rgb(255, 255, 255);">     
+    <body class="color" style="background-color: rgb(201, 224, 232);">     
         
          <div class="container-intro">
           <h1 class="text-center" style="font-style: italic;">Bienvenido al primer estudio económico en Sarmiento</h1>
@@ -22,7 +22,7 @@
               <div class="col-md-1"></div>
               <div class="col-md-10"> 
                 <p style="font-size: helvetica;"><strong>ATENCIÓN:</strong> Este estudio puede generar datos e información muy importantes para la comunidad, por favor, se responsable a la hora de contestar las preguntas que se te realizarán.
-                  Los resultados de la encuesta serán publicado dentro de 60 dias o dependiendo del nivel de participación en el estudio.<strong> Y recordá, que este estudio es anónimo.</strong></p>
+                  Los resultados de la encuesta serán publicado dentro de 60 dias o dependiendo del nivel de participación en el estudio.</p>
           
                 <p style="font-size: helvetica;">Sin más que decir.. Adelante</p>
               </div>
@@ -36,40 +36,41 @@
           <div class="row">
            <div class="col-md-1"></div>
 
-           <div class="col-md-10">
-            {% if unregistered_user %}
-            <p>Debe registrarse para completar la encuesta.</p>
-            <a href="{{ url_for('login') }}">Registrarse</a>
-            {% else %}
+           <div class="col-md-10" style="background-color: white;">
             <form action= "{{ url_for('guardar_encuesta') }}" method= "POST">
+
                 <p class="fw-bold">1-¿Cuantos años tienes?</p>
                 <div class="form-edad mb-2">
-                  <input class="form-check-input" type="radio" name="edad" value="menos de 18 años" />
-                  <label class="form-check-label" for="edad">
+                  <input class="form-check-input" type="radio" name="edad" value="menos de 18 años"/>
+                  <label class="form-check-label" for="menos de 18 años">
                     menos de 18 años
                   </label>
                 </div>
+
                 <div class="form-edad mb-2">
                 
-                  <input class="form-check-input" type="radio" name="edad" value="entre 18 y 24 años" />
+                  <input class="form-check-input" type="radio" name="edad" value="entre 18 y 24 años"/>
                   <label class="form-check-label" for="edad">
                     entre 18 y 24 años
                   </label>
                 </div>
+
                 <div class="form-edad mb-2">
                 
-                  <input class="form-check-input" type="radio" name="edad" value="entre 24 y35 años" />
-                  <label class="form-check-label" for="edad">
+                  <input class="form-check-input" type="radio" name="edad" value="entre 24 y35 años"/>
+                  <label class="form-check-label"  for="edad">
                     entre 24 y 35 años
-                  </label>
+                  </label> 
                 </div>
+
                 <div class="form-edad mb-2">
-                
-                  <input class="form-check-input" type="radio" name="edad" value="entre 35 y 45 años" />
+                  
+                  <input class="form-check-input" type="radio" name="edad" value="entre 35 y 45 años"/>
                   <label class="form-check-label" for="edad">
                     entre 35 y 45 Años
                   </label>
                 </div>
+
                 <div class="form-edad mb-2">
                   <input class="form-check-input" type="radio" name="edad" value="más de 45 años"/>
                   <label class="form-check-label" for="edad">
@@ -135,7 +136,7 @@
                   </label>
                 </div>
                 <div class="form-inst mb-2">
-                  <input class="form-check-input" type="radio" name="inst" value="muy malo" />
+                  <input class="form-check-input" type="radio" name="inst" value="muy malo"/>
                   <label class="form-check-label" for="inst">
                     muy malo
                   </label>
@@ -425,19 +426,19 @@
           
                 <p class="fw-bold">13-¿Crees que el municipio debería informar más sobre el estado económico del pueblo?</p>
                 <div class="form-muni mb-2">
-                  <input class="form-check-input" type="radio" name="muni" value=""/>
+                  <input class="form-check-input" type="radio" name="muni" value="muni"/>
                   <label class="form-check-label" for="muni">
                     creo que es muy necesario
                   </label>
                 </div>
                 <div class="form-muni mb-2">
-                  <input class="form-check-input" type="radio" name="muni" value=""/>
+                  <input class="form-check-input" type="radio" name="muni" value="muni"/>
                   <label class="form-check-label" for="muni">
                     creo que es necesario
                   </label>
                 </div>
                 <div class="form-muni mb-2">
-                  <input class="form-check-input" type="radio" name="muni" value=""/>
+                  <input class="form-check-input" type="radio" name="muni" value="muni"/>
                   <label class="form-check-label" for="muni">
                     no lo creo necesario
                   </label>
@@ -449,7 +450,7 @@
                   </label>
                 </div>
                 <div class="form-muni mb-2">
-                  <input class="form-check-input" type="radio" name="muni" value=""/>
+                  <input class="form-check-input" type="radio" name="muni" value="muni"/>
                   <label class="form-check-label" for="muni">
                     no se para que me sería util
                   </label>
@@ -487,7 +488,7 @@
                   </label>
                 </div>
               
-                <p class="fw-bold">15-¿Si estuvieras en un cargo publico que te permita mejorar las condicones económicas del pueblo que harías?</p>
+                <p class="fw-bold">15-¿Si estuvieras en un cargo publico que te permitierá mejorar los recursos y condiciones del pueblo, que harías?</p>
                 <div class="form-opinion mb-2">
                   <input class="form-check-input" type="radio" name="opinion" value="ayudaría a mejorar el sistema educativo"/>
                   <label class="form-check-label" for="opinion">
@@ -528,7 +529,6 @@
                   <button type="submit" class="btn btn-primary">Enviar respuestas</button>
                 </div>
             </form>
-          {% endif %}  
            </div>
      
            <div class="col-md-1"></div>

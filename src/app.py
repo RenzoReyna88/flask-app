@@ -73,14 +73,14 @@ def login_user():
             if _user:
                 patron = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
                 if re.match(patron, _user):
-                    token = create_access_token(identity=_user)     
+                    access_token = create_access_token(identity=_user)    
                     cursor= conexion.cursor()
                     user= _user
                     sql_dato="insert into usuarios_encuestados(email) values('{0}')".format(user)
                     cursor.execute(sql_dato)
                     conexion.commit()
                     cursor.close()
-                    print(token)                    
+                    print(access_token)                    
                     return redirect('/estudio')
                     
                                                                                                                                     
@@ -108,11 +108,15 @@ def inicio_estudio():
 def fin_estudio():
     return render_template('question/fin_estudio.html')
 
-
+@app.route('/confirmar_registro')
+def confirmar_token():
+    return render_template('auth/confirmar_token.html')
+  
 
 
 @app.route('/guardar_encuesta', methods=['GET','POST'])
 def guardar_encuesta():
+        if request.method == 'POST':
             edad= request.form['edad']
             profesion= request.form['profesion']
             ins= request.form['inst']
@@ -128,17 +132,10 @@ def guardar_encuesta():
             muni= request.form['muni']
             educar= request.form['educar']
             opinion= request.form['opinion']
-
-            cursor= conexion.cursor()
-            add_respuesta = ("INSERT INTO respuestas_encuesta"
-                                "(resp_1, resp_2, resp_3, resp_4, resp_5, resp_6, resp_7, resp_8, resp_9, resp_10, resp_11, resp_12, resp_13, resp_14, resp_15) "
-                                "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)")
-            valores=(edad, profesion, ins, sarmiento, trabajo, comercios, salario, ahorro, coop, dispensario, cim, municipalidad, muni, educar, opinion)
-
-            cursor.execute(add_respuesta, valores)
-            conexion.commit()
-            cursor.close()
             return redirect('/fin_estudio')
+          
+        else:
+            return render_template('question/estudio.html')
     
 
 
