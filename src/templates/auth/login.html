@@ -1,0 +1,88 @@
+{% extends 'auth/base.html' %}
+
+{% block title %} Ingresar {% endblock %}
+
+{% block body %}      
+  <div class="container">  
+    <nav class="navbar navbar-expand-md shadow fixed-top" style="background-color: rgb(182, 195, 255);">  
+      <div class="container-fluid">  
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>  
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">              
+          <ul class="navbar-nav mt-lg-1">                
+            <li class="nav-item">
+              <a class="nav-link" style="color: rgb(255, 255, 255); font-family:Arial" href="/"><< Inicio</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" style="color: rgb(255, 255, 255); font-family:Arial" href="/auth/login">Ingreso estudio</a>
+            </li> 
+            
+            <li class="nav-item">
+              <a class="nav-link" style="color: rgb(255, 255, 255); font-family:Arial" href="/perfil">Perfil administrador</a>
+            </li> 
+
+          </ul>                               
+        </div> 
+      </div>                               
+    </nav>
+<br/> 
+
+<div class="container-login py-5">
+  <header class="text-center py-4" style="color: rgb(87, 87, 87); font-family: sans-serif;" ><h2 >Ingrese su correo electrónico para realizar el estudio económico</h2></header>
+  <div class="row">
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6">            
+      {% with messages = get_flashed_messages() %}
+
+      {% if messages %}    
+      {% for message in messages %}    
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>        
+              {{ message }}
+        </div>    
+      {% endfor %}
+      {% endif %}
+
+      {% endwith %} 
+    <div class="mb-3">
+      <div class="card shadow-sm">                  
+        <div class="card-header">
+          Nombre de usuario:
+        </div>
+        <div class="card-body py-4">                                  
+          <form action="/auth/login" method="post">                           
+            <label for="Username" class="form-label py-3">                                        
+              <input type="email" class="form-control" name="Username" id="Username" aria-describedby="emailHelpId" placeholder="abc@mail.com">
+            </label>
+          </br >
+            <button type="submit" class="btn btn-info border-dark mb-2 py-2 my-2">Ingresar</button>
+          </form>          
+        </div>                
+             
+        <div class="card-footer text-muted">
+          <h4 class="m-2"> <strong>IMPORTANTE:</strong></h4>
+          <p class="m-2" style="font-style: helvetica;">
+            Este estudio es anónimo. El correo electrónico es utilizado solo para comprobar 
+            que eres una persona real, y así poder validar la información recibida  en la 
+            encuesta.
+            <strong>*Desde esta aplicación jamas se te pedirá documentación personal o 
+            información sobre tu actividad financiera. Nunca reveles información sensible 
+            a desconocidos o de procedencia dudosa*</strong>
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-md-3">
+    </div>
+  </div>
+</div>
+
+</div>
+    
+  <br/>
+  <footer class="pie py-5 text-center" style="font-style: italic"> © Derechos reservados - Desarrollador Sarmientino 2023.</footer>        
+{% endblock %}

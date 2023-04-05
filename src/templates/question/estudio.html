@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <title>preguntas</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <body class="color" style="background-color: rgb(255, 255, 255);">     
+        
+         <div class="container-intro">
+          <h1 class="text-center" style="font-style: italic;">Bienvenido al primer estudio económico en Sarmiento</h1>
+            <div class="row py-3">
+              <div class="col-md-1"></div>
+              <div class="col-md-10"> 
+                <p style="font-size: helvetica;"><strong>ATENCIÓN:</strong> Este estudio puede generar datos e información muy importantes para la comunidad, por favor, se responsable a la hora de contestar las preguntas que se te realizarán.
+                  Los resultados de la encuesta serán publicado dentro de 60 dias o dependiendo del nivel de participación en el estudio.<strong> Y recordá, que este estudio es anónimo.</strong></p>
+          
+                <p style="font-size: helvetica;">Sin más que decir.. Adelante</p>
+              </div>
+              <div class="col-md-1"></div>
+            </div>
+         </div>
+
+
+        <div class="container-estudio">
+
+          <div class="row">
+           <div class="col-md-1"></div>
+
+           <div class="col-md-10">
+            {% if unregistered_user %}
+            <p>Debe registrarse para completar la encuesta.</p>
+            <a href="{{ url_for('login') }}">Registrarse</a>
+            {% else %}
+            <form action= "{{ url_for('guardar_encuesta') }}" method= "POST">
+                <p class="fw-bold">1-¿Cuantos años tienes?</p>
+                <div class="form-edad mb-2">
+                  <input class="form-check-input" type="radio" name="edad" value="menos de 18 años" />
+                  <label class="form-check-label" for="edad">
+                    menos de 18 años
+                  </label>
+                </div>
+                <div class="form-edad mb-2">
+                
+                  <input class="form-check-input" type="radio" name="edad" value="entre 18 y 24 años" />
+                  <label class="form-check-label" for="edad">
+                    entre 18 y 24 años
+                  </label>
+                </div>
+                <div class="form-edad mb-2">
+                
+                  <input class="form-check-input" type="radio" name="edad" value="entre 24 y35 años" />
+                  <label class="form-check-label" for="edad">
+                    entre 24 y 35 años
+                  </label>
+                </div>
+                <div class="form-edad mb-2">
+                
+                  <input class="form-check-input" type="radio" name="edad" value="entre 35 y 45 años" />
+                  <label class="form-check-label" for="edad">
+                    entre 35 y 45 Años
+                  </label>
+                </div>
+                <div class="form-edad mb-2">
+                  <input class="form-check-input" type="radio" name="edad" value="más de 45 años"/>
+                  <label class="form-check-label" for="edad">
+                    más de 45 años
+                  </label>
+                </div>
+           
+                <p class="fw-bold">2-¿Cual es tu profesión u ocupación?</p>
+                <div class="form-profesion mb-2">
+                  <input class="form-check-input" type="radio" name="profesion" value="desempleado"/>
+                  <label class="form-check-label" for="profesion">
+                    desempleado
+                  </label>
+                </div>
+                <div class="form-profesion mb-2">
+                  <input class="form-check-input" type="radio" name="profesion" value="trabajador independiente"/>
+                  <label class="form-check-label" for="profesion">
+                    trabajador independiente
+                  </label>
+                </div>
+                <div class="form-profesion mb-2">
+                  <input class="form-check-input" type="radio" name="profesion" value="trabajador en relación de dependencia"/>
+                  <label class="form-check-label" for="profesion">
+                    trabajador en relación de dependencia
+                  </label>
+                </div>
+                <div class="form-profesion mb-2">
+                  <input class="form-check-input" type="radio" name="profesion" value="estudiante"/>
+                  <label class="form-check-label" for="profesion">
+                    estudiante
+                  </label>
+                </div>
+                <div class="form-profesion mb-2">
+                  <input class="form-check-input" type="radio" name="profesion" value="empleado publico"/>
+                  <label class="form-check-label" for="profesion">
+                    empleado publico
+                  </label>
+                </div>
+            
+                <p class="fw-bold">3-¿Que calificación le pondrías al desenpeño de las instiutciones a cargo del pueblo?</p>
+                <div class="form-inst mb-2">
+                  <input class="form-check-input" type="radio" name="inst" value="muy bueno"/>
+                  <label class="form-check-label" for="inst">
+                    muy bueno
+                  </label>
+                </div>
+                <div class="form-inst mb-2">
+                  <input class="form-check-input" type="radio" name="inst" value="bueno"/>
+                  <label class="form-check-label" for="inst">
+                    bueno
+                  </label>
+                </div>
+                <div class="form-inst mb-2">
+                  <input class="form-check-input" type="radio" name="inst" value="mediocre"/>
+                  <label class="form-check-label" for="inst">
+                    mediocre
+                  </label>
+                </div>
+                <div class="form-inst mb-2">
+                  <input class="form-check-input" type="radio" name="inst" value="malo"/>
+                  <label class="form-check-label" for="inst">
+                    malo
+                  </label>
+                </div>
+                <div class="form-inst mb-2">
+                  <input class="form-check-input" type="radio" name="inst" value="muy malo" />
+                  <label class="form-check-label" for="inst">
+                    muy malo
+                  </label>
+                </div>
+              
+                <p class="fw-bold">4-¿Cual es la probabilidad de que se quede a vivir en Sarmiento?</p>
+                <div class="form-residencia mb-2">
+                  <input class="form-check-input" type="radio" name="sarmiento" value="muy probable"/>
+                  <label class="form-check-label" for="sarmiento">
+                    muy probable
+                  </label>
+                </div>
+                <div class="form-residencia mb-2">
+                  <input class="form-check-input" type="radio" name="sarmiento" value="probable"/>
+                  <label class="form-check-label" for="sarmiento">
+                    probable
+                  </label>
+                </div>
+                <div class="form-residencia mb-2">
+                  <input class="form-check-input" type="radio" name="sarmiento" value="poco probable"/>
+                  <label class="form-check-label" for="sarmiento">
+                    poco probable
+                  </label>
+                </div>
+                <div class="form-residencia mb-2">
+                  <input class="form-check-input" type="radio" name="sarmiento" value="lo pensaría"/>
+                  <label class="form-check-label" for="sarmiento">
+                    lo pensaría
+                  </label>
+                </div>
+                <div class="form-residencia mb-2">
+                  <input class="form-check-input" type="radio" name="sarmiento" value="nada probable"/>
+                  <label class="form-check-label" for="sarmiento">
+                    nada probable
+                  </label>
+                </div>
+            
+                <p class="fw-bold">5-¿Crees que es necesario para el crecimiento ecnoómico que existan fuentes de trabajo en Sarmiento?</p>
+                <div class="form-trabajo mb-2">
+                  <input class="form-check-input" type="radio" name="trabajo" value="no es necesario"/>
+                  <label class="form-check-label" for="trabajo">
+                  no es necesario
+                  </label>
+                </div>
+                <div class="form-trabajo mb-2">
+                  <input class="form-check-input" type="radio" name="trabajo" value="prefiero viajar a trabajar"/>
+                  <label class="form-check-label" for="trabajo">
+                    prefiero viajar a trabajar 
+                  </label>
+                </div>
+                <div class="form-trabajo mb-2">
+                  <input class="form-check-input" type="radio" name="trabajo" value="existen demasiadas fuentes de trabajo"/>
+                  <label class="form-check-label" for="trabajo">
+                    existen demasiadas funetes de trabajo
+                  </label>
+                </div>
+                <div class="form-trabajo mb-2">
+                  <input class="form-check-input" type="radio" name="trabajo" value="no existen fuentes de trabajo"/>
+                  <label class="form-check-label" for="trabajo">
+                    no existen fuentes de trabajo
+                  </label>
+                </div>
+              
+                <p class="fw-bold">6-¿Que calificación le pondrías al servico que ofrecen los comercios locales?</p>
+                <div class="form-comercios mb-2">
+                  <input class="form-check-input" type="radio" name="comercios" value="excelentes"/>
+                  <label class="form-check-label" for="comercios">
+                    excelentes
+                  </label>
+                </div>
+                <div class="form-comercios mb-2">
+                  <input class="form-check-input" type="radio" name="comercios" value="muy bueno"/>
+                  <label class="form-check-label" for="comercios">
+                    muy bueno
+                  </label>
+                </div>
+                <div class="form-comercios mb-2">
+                  <input class="form-check-input" type="radio" name="comercios" value="no tan bueno"/>
+                  <label class="form-check-label" for="comercios">
+                    no tan bueno
+                  </label>
+                </div>
+                <div class="form-comercios mb-2">
+                  <input class="form-check-input" type="radio" name="comercios" value="falta ofrecer variedad de productos"/>
+                  <label class="form-check-label" for="comercios">
+                    los precios son muy altos
+                  </label>
+                </div>
+                <div class="form-comercios mb-2">
+                  <input class="form-check-input" type="radio" name="comercios" value="los precios son muy altos" />
+                  <label class="form-check-label" for="comercios">
+                    compro en otro lugar
+                  </label>
+                </div>
+            
+                <p class="fw-bold">7-¿Cual es su ingreso mensual aproximado?</p>
+                <div class="form-salario mb-2">
+                  <input class="form-check-input" type="radio" name="salario" value="entre 10.000 y 30.000"/>
+                  <label class="form-check-label" for="salario">
+                    entre 10.000 y 30.000 
+                  </label>
+                </div>
+                <div class="form-salario mb-2">
+                  <input class="form-check-input" type="radio" name="salario" value="entre 30.000 y 60.000"/>
+                  <label class="form-check-label" for="salario">
+                    entre 30.000 y 60.000
+                  </label>
+                </div>
+                <div class="form-salario mb-2">
+                  <input class="form-check-input" type="radio" name="salario" value="entre 60.000 y 90.000"/>
+                  <label class="form-check-label" for="salario">
+                    entre 60.000 y 90.000
+                  </label>
+                </div>
+                <div class="form-salario mb-2">
+                  <input class="form-check-input" type="radio" name="salario" value="más de 100.000"/>
+                  <label class="form-check-label" for="salario">
+                    más de 100.000
+                  </label>
+                </div>
+                <div class="form-salario mb-2">
+                  <input class="form-check-input" type="radio" name="salario" value="o cuento con un salario mensual"/>
+                  <label class="form-check-label" for="salario">
+                    no cuento con un salario mensual
+                  </label>
+                </div>
+              
+                <p class="fw-bold">8-¿Ahorras dinero de tu trabajo, cual es el pocentaje si es así?</p>
+                <div class="form-ahorro mb-2">
+                  <input class="form-check-input" type="radio" name="ahorro" value="ahorro entre 10% y 15%"/>
+                  <label class="form-check-label" for="ahorro">
+                    ahorro entre 10% y 15%
+                  </label>
+                </div>
+                <div class="form-ahorro mb-2">
+                  <input class="form-check-input" type="radio" name="ahorro" value=" entre 15% y 30%"/>
+                  <label class="form-check-label" for="ahorro">
+                    ahorro entre 15% y 30%
+                  </label>
+                </div>
+                <div class="form-ahorro mb-2">
+                  <input class="form-check-input" type="radio" name="ahorro" value="ahorro más del 30%"/>
+                  <label class="form-check-label" for="ahorro">
+                    ahorro más del 30%
+                  </label>
+                </div>
+                <div class="form-ahorro mb-2">
+                  <input class="form-check-input" type="radio" name="ahorro" value="nunca he ahorrado"/>
+                  <label class="form-check-label" for="ahorro">
+                    nunca he ahorrado
+                  </label>
+                </div>
+                <div class="form-ahorro mb-2">
+                  <input class="form-check-input" type="radio" name="ahorro" value="no puedo ahorrar"/>
+                  <label class="form-check-label" for="ahorro">
+                    no puedo ahorrar
+                  </label>
+                </div>
+              
+                <p class="fw-bold">9-¿Que tan eficiente crees que es el trabajo que realiza la cooperativa de electricidad y serv publicos del pueblo?</p>
+                <div class="form-coop mb-2">
+                  <input class="form-check-input" type="radio" name="coop" value="muy eficiente"/>
+                  <label class="form-check-label" for="coop">
+                    muy eficiente
+                  </label>
+                </div>
+                <div class="form-coop mb-2">
+                  <input class="form-check-input" type="radio" name="coop" value="eficiente"/>
+                  <label class="form-check-label" for="coop">
+                    eficiente
+                  </label>
+                </div>
+                <div class="form-coop mb-2">
+                  <input class="form-check-input" type="radio" name="coop" value="mediocre"/>
+                  <label class="form-check-label" for="coop">
+                    mediocre
+                  </label>
+                </div>
+                <div class="form-coop mb-2">
+                  <input class="form-check-input" type="radio" name="coop" value="ineficiente"/>
+                  <label class="form-check-label" for="coop">
+                    ineficiente
+                  </label>
+                </div>
+                <div class="form-coop mb-2">
+                  <input class="form-check-input" type="radio" name="coop" value="muy ineficiente"/>
+                  <label class="form-check-label" for="coop">
+                    muy ineficiente
+                  </label>
+                </div>
+              
+                <p class="fw-bold">10-¿Que calificación le pondrías a la atención medica en el dispensario municpal?</p>
+                <div class="form-dispensario mb-2">
+                  <input class="form-check-input" type="radio" name="dispensario" value="falta personal medico"/>
+                  <label class="form-check-label" for="dispensario">
+                    falta personal medico
+                  </label>
+                </div>
+                <div class="form-dispensario mb-2">
+                  <input class="form-check-input" type="radio" name="dispensario" value="muy buena"/>
+                  <label class="form-check-label" for="dispensario">
+                    muy buena
+                  </label>
+                </div>
+                <div class="form-dispensario mb-2">
+                  <input class="form-check-input" type="radio" name="dispensario" value="buena"/>
+                  <label class="form-check-label" for="dispensario">
+                    buena
+                  </label>
+                </div>
+                <div class="form-dispensario mb-2">
+                  <input class="form-check-input" type="radio" name="dispensario" value=" falta mejorar el servicio"/>
+                  <label class="form-check-label" for="dispensario">
+                    falta mejorar los servcios medicos
+                  </label>
+                </div>
+                <div class="form-dispensario mb-2">
+                  <input class="form-check-input" type="radio" name="dispensario" value="muy mala"/>
+                  <label class="form-check-label" for="dispensario">
+                    muy mala
+                  </label>
+                </div>
+        
+                <p class="fw-bold">11-¿Crees que se utiliza adecuadamente el centro cultural municipal?</p>
+                <div class="form-cim mb-2">
+                  <input class="form-check-input" type="radio" name="cim" value="si"/>
+                  <label class="form-check-label" for="cim">
+                    si
+                  </label>
+                </div>
+                <div class="form-cim mb-2">
+                  <input class="form-check-input" type="radio" name="cim" value="si, pero deberían mejorar el servicio"/>
+                  <label class="form-check-label" for="cim">
+                    si, pero deberían mejorar el servicio
+                  </label>
+                </div>
+                <div class="form-cim mb-2">
+                  <input class="form-check-input" type="radio" name="cim" value="faltan dar mas talleres de capacitación"/>
+                  <label class="form-check-label" for="cim">
+                    si, pero faltan dar muchos mas talleres de capacitación de distintas disiplinas
+                  </label>
+                </div>
+                <div class="form-cim mb-2">
+                  <input class="form-check-input" type="radio" name="cim" value="no se usa de la mejor forma"/>
+                  <label class="form-check-label" for="cim">
+                    no se usa de la mejor forma
+                  </label>
+                </div>
+                <div class="form-cim mb-2">
+                  <input class="form-check-input" type="radio" name="cim" value=" no se usa en nada bueno"/>
+                  <label class="form-check-label" for="cim">
+                    no se usa en nada bueno
+                  </label>
+                </div>
+          
+                <p class="fw-bold">12-¿Estas conforme con el gobierno municipal actual?</p>
+                <div class="form-municipal mb-2">
+                  <input class="form-check-input" type="radio" name="municipalidad" value="muy conforme"/>
+                  <label class="form-check-label" for="municipalidad">
+                    muy conforme
+                  </label>
+                </div>
+                <div class="form-municipal mb-2">
+                  <input class="form-check-input" type="radio" name="municipalidad" value="conforme"/>
+                  <label class="form-check-label" for="municipalidad">
+                    conforme
+                  </label>
+                </div>
+                <div class="form-municipal mb-2">
+                  <input class="form-check-input" type="radio" name="municipalidad" value="conforme, pero deberían mejorar"/>
+                  <label class="form-check-label" for="municipalidad">
+                    conforme, pero deberían mejorar
+                  </label>
+                </div>
+                <div class="form-municipal mb-2">
+                  <input class="form-check-input" type="radio" name="municipalidad" value="inconforme"/>
+                  <label class="form-check-label" for="municipalidad">
+                    inconforme
+                  </label>
+                </div>
+                <div class="form-municipal mb-2">
+                  <input class="form-check-input" type="radio" name="municipalidad" value="muy inconforme"/>
+                  <label class="form-check-label" for="municipalidad">
+                    muy inconforme
+                  </label>
+                </div>
+          
+                <p class="fw-bold">13-¿Crees que el municipio debería informar más sobre el estado económico del pueblo?</p>
+                <div class="form-muni mb-2">
+                  <input class="form-check-input" type="radio" name="muni" value=""/>
+                  <label class="form-check-label" for="muni">
+                    creo que es muy necesario
+                  </label>
+                </div>
+                <div class="form-muni mb-2">
+                  <input class="form-check-input" type="radio" name="muni" value=""/>
+                  <label class="form-check-label" for="muni">
+                    creo que es necesario
+                  </label>
+                </div>
+                <div class="form-muni mb-2">
+                  <input class="form-check-input" type="radio" name="muni" value=""/>
+                  <label class="form-check-label" for="muni">
+                    no lo creo necesario
+                  </label>
+                </div>
+                <div class="form-muni mb-2">
+                  <input class="form-check-input" type="radio" name="muni" value=""/>
+                  <label class="form-check-label" for="muni">
+                    me da igual
+                  </label>
+                </div>
+                <div class="form-muni mb-2">
+                  <input class="form-check-input" type="radio" name="muni" value=""/>
+                  <label class="form-check-label" for="muni">
+                    no se para que me sería util
+                  </label>
+                </div>
+              
+                <p class="fw-bold">14-¿Crees que el servicio educativo funciona en buenas condiciones?</p>
+                <div class="form-educar mb-2">
+                  <input class="form-check-input" type="radio" name="educar" value="funciona muy bien"/>
+                  <label class="form-check-label" for="educar">
+                    funciona muy bien
+                  </label>
+                </div>
+                <div class="form-educar mb-2">
+                  <input class="form-check-input" type="radio" name="educar" value="funciona de forma regular"/>
+                  <label class="form-check-label" for="educar">
+                    funciona de forma regular
+                  </label>
+                </div>
+                <div class="form-educar mb-2">
+                  <input class="form-check-input" type="radio" name="educar" value="no funciona mal pero debería mejorar"/>
+                  <label class="form-check-label" for="educar">
+                    no funciona mal pero debería mejorar
+                  </label>
+                </div>
+                <div class="form-educar mb-2">
+                  <input class="form-check-input" type="radio" name="educar" value="necesita muchos más recursos"/>
+                  <label class="form-check-label" for="educar">
+                    necesita muchos más recursos
+                  </label>
+                </div>
+                <div class="form-educar mb-2">
+                  <input class="form-check-input" type="radio" name="educar" value="funciona mal"/>
+                  <label class="form-check-label" for="educar">
+                    funciona mal
+                  </label>
+                </div>
+              
+                <p class="fw-bold">15-¿Si estuvieras en un cargo publico que te permita mejorar las condicones económicas del pueblo que harías?</p>
+                <div class="form-opinion mb-2">
+                  <input class="form-check-input" type="radio" name="opinion" value="ayudaría a mejorar el sistema educativo"/>
+                  <label class="form-check-label" for="opinion">
+                  ayudaría a mejorar el sistema educativo
+                  </label>
+                </div>
+                <div class="form-opinion mb-2">
+                  <input class="form-check-input" type="radio" name="opinion" value="ayudaría a mejorar los servicios de atención medica"/>
+                  <label class="form-check-label" for="opinion">
+                    ayudaría a mejorar los servicios de atención medica
+                  </label>
+                </div>
+                <div class="form-opinion mb-2">
+                  <input class="form-check-input" type="radio" name="opinion" value="Buscaría mejorar las oportunidades laborales"/>
+                  <label class="form-check-label" for="opinion">
+                    Buscaría mejorar las oportunidades laborales
+                  </label>
+                </div>
+                <div class="form-opinion mb-2">
+                  <input class="form-check-input" type="radio" name="opinion" value="mejoraría la seguridad del pueblo"/>
+                  <label class="form-check-label" for="opinion">
+                    mejoraría la seguridad del pueblo
+                  </label>
+                </div>
+                <div class="form-opinion mb-2">
+                  <input class="form-check-input" type="radio" name="opinion" value="Haría todo lo anterior"/>
+                  <label class="form-check-label" for="opinion">
+                    Haría todo lo anterior
+                  </label>
+                </div>
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="radio" name="opinion" value="Dejaría todo tal y como esta"/>
+                  <label class="form-check-label" for="opinion">
+                    Dejaría todo tal y como esta
+                  </label>
+                </div>
+                <div class="text-end">
+                  <button type="submit" class="btn btn-primary">Enviar respuestas</button>
+                </div>
+            </form>
+          {% endif %}  
+           </div>
+     
+           <div class="col-md-1"></div>
+          </div>
+
+        </div>      
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

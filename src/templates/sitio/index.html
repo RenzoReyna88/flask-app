@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <title>Inicio</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.0-beta1 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+  
+
+</head>
+
+<body style="background-color: rgb(1, 1, 1); color: white;">
+  <!--inicio barra de navegación-->       
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: rgba(1 ,1 ,1); color: white;">
+        <a class="navbar-brand text-center" href="/">
+          <img src="/static/imagenes/image-logo.jpeg" style="border-radius: 100%; width:30%; height:30%;" alt="logo">
+        </a>  
+        <div class="container-fluid">
+          <button class="navbar-toggler" style="border-color: rgb(153, 153, 153);" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> 
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">              
+            <ul class="navbar-nav mt-lg-1">                
+              <li class="nav-item">
+                <a class="nav-link active" style="font-family:Arial" href="/">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="font-family:Arial" href="educ">Educación digital</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="font-family:Arial" href="tecno">Info tecnología</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="font-family:Arial" href="hogar">Hogar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="font-family:Arial" href="perfil">Perfil administrador</a>
+              </li>                             
+            </ul>                               
+          </div>           
+        </div>      
+      </nav>     
+    
+<br/>
+
+<div class="container">
+    <div class="row py-5">
+      <br/>  
+      <div class="intrudccion col-md-12 text-start">
+        <h1 class="text-start py-5" style="font-style: italic;">Bienvenido</h1>     
+        <p class="h5 py-2" style="font-style: helvetica;">A través de esta aplicación conocerás herramientas 
+          y recursos que te permitirán: Mejorar el desarrollo personal, potenciar proyectos o emprendimientos,
+          mejorar la comunicación con la internet y el mundo digital, obtener mayor comprensión sobre 
+          los recursos tecnológicos, y automatizar tareas diarias.</p>
+
+        <p class="h5 py-2" style="font-style: helvetica;">Te invito a sumarte en este viaje, a través de las
+          tecnologías emergentes, y los recursos practicamente ilimitados que ofrece internet en la actualidad y los proximos años.</p>     
+      </div>
+      <hr>
+   </div>
+</div>
+
+
+<div class="container-internet">
+  <div class="row">    
+    <div class="col-md-3">
+    </div>
+
+    <div class="col-md-6 text-center">
+      <h2 class="text-center" style="font-style:italic;">Estamos ante una nueva "Era digital"</h2>
+      <br/>
+      <img class="imagen py-0" src="/static/imagenes/word-digital.jpg" width="450px" height="300px" alt="imagen/mundo">
+      <h6>Fuente: <a href="https://www.istockphoto.com/es" style="text-decoration: none; color: #bbbcbc;" target="_blank" rel="noopener noreferrer">istockphoto</a></h6> 
+     <p class="h5 py-3 text-start" style="font-style: helvetica;">
+      Es un hecho que el mundo ha experimentado un cambio de 180°, como resultado de la pandemia de COVID-19. 
+      La vida de las personas no ha vuelto a ser la misma, y aunque la humanidad ha sido testigo de guerras, 
+      crisis económicas y crisis sanitarias, siempre ha sabido superarlas.
+      </p>
+      <p class="h5 py-3 text-start" style="font-style: helvetica;">
+        De hecho, estos problemas sociales han abierto nuevos caminos y horizontes que han dado lugar al surgimiento 
+        de nuevas tecnologías y herramientas de trabajo, así como a la innovación en casi todos los sectores de 
+        la economía. Sin embargo, estos cambios no pueden pasarse por alto, ya que la transición que estamos viviendo 
+        ha dejado en evidencia las deficiencias del sistema financiero y político.      
+      </p>
+      <p class="h5 py-3 text-start" style="font-style: helvetica;">
+        Los especialistas y expertos en <a href="https://www.plainconcepts.com/es/tendencias-tecnologicas-2023/" style="text-decoration: none; color: #1599e6" target="_blank" rel="noopener noreferrer">cambios tecnológicos</a> 
+        han señalado la importancia que tiene para la sociedad ser parte de esta transición y prepararse para recibir estos cambios, para no quedarse atrás. 
+        Es necesario estar al día y aprovechar todas las oportunidades que estos cambios ofrecen, 
+        para poder avanzar hacia un futuro más próspero y sostenible. 
+      </p>      
+    </div>
+ 
+    <div class="col-md-3">
+    </div>      
+  </div>
+</div>
+
+<br/>
+
+<div class="container-ingreso-estudio text-center">
+  <div class="row">
+   <div class="col-md-4"></div>
+ 
+   <div class="col-md-4">
+      <p>
+       <hr>
+       <br/>
+       <a href="/auth/login">
+         <button class="btn btn btn-lg" type="button"  style="border-color: gray; font-style: helvetica; color: white; background-color: #042961;">      
+             Ir al estudio económico en Sarmiento    
+         </button>
+       </a>
+      </p>
+   </div>
+ 
+   <div class="col-md-4"></div>
+  </div>  
+</div>
+
+</br>
+
+  <div class="container-pulbic">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-4 text-center py-5">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <a href="https://www.placidoluna.com/" target="_blank" rel="noopener noreferrer">
+                <img src="/static/imagenes/logo-fg.png" width="100px" height="300px" class="d-block w-100" alt="imagen1">
+              </a>
+              <h6>Conviertete en un experto en diseño</h6>
+
+            </div>
+
+            <div class="carousel-item">
+              <a href="https://hostinger.com.ar?REFERRALCODE=1DESARROLLA24" target="_blank" rel="noopener noreferrer">
+                <img src="/static/imagenes/host-image.jpeg" width="100px" height="300px" class="d-block w-100" alt="imagen2">
+              </a>
+              <h6>Proveedor de alojamientos y dominios web</h6>
+            </div>
+
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+     
+        <div class="col-md-1"></div>
+
+        <div class="col-md-5 text-center py-1">
+          <h2 class="art text-center" style="font-style: italic;">La web3 y el futuro del internet</h2>
+          <img src="/static/imagenes/web-3.0.jpg" width="400px" height="300px" alt="logo-web3">
+          <h6>Fuente: <a href="https://www.istockphoto.com/es" style="text-decoration: none; color: #bbbcbc;" target="_blank" rel="noopener noreferrer">istockphoto</a></h6>
+          <p class="text-start py-1" style="font-style: helvetica;">
+            La Web 3.0 busca otorgarnos el control sobre nuestra información en línea, 
+            al mismo tiempo que crea una web semántica que permita que las máquinas lean 
+            y procesen fácilmente el contenido generado por el usuario. La tecnología blockchain 
+            proporcionará el poder para la descentralización, identidades digitales gratuitas con 
+            criptobilleteras y economías digitales abiertas.
+          </p>
+          <p class="text-start" style="font-style: helvetica;">
+            La interacción con la red será más inmersiva gracias a las opciones 3D disponibles, 
+            y los usuarios se beneficiarán de una navegación más eficiente, publicidad relevante y 
+            un mejor soporte al cliente. 
+            Las tecnologías <a href="https://empowertalent.com/novedades/web-3-0-predicciones-2023/" style="text-decoration: none; color: #1599e6;" target="_blank" rel="noopener noreferrer">Web 3.0</a> más ampliamente utilizadas se pueden 
+            encontrar en los asistentes virtuales como Siri y Alexa, así como en los hogares inteligentes conectados.
+          </p>
+        </div>
+
+        <div class="col-md-1"></div>  
+    </div>
+  </div>  
+
+<br/>
+<hr>
+<br/>
+
+<div class="container-titleIA text-center">
+  <h2 style="font-style: italic;">La inteligencia artificial y su importancia en la sociedad</h2>
+   <br/>
+  <img src="/static/imagenes/imagen-IA.jpg" width="500px" height="300px" alt="Imagen-IA">
+  <h6>Fuente: <a href="https://www.istockphoto.com/es" style="text-decoration: none; color: #bbbcbc;" target="_blank" rel="noopener noreferrer">istockphoto</a></h6>
+</div>
+
+<div class="container-IA">
+  <div class="row">
+    <div class="col-md-1"></div>
+
+    <div class="col-md-3 py-3">
+      <h3>Trabajo</h3>
+      <p style="font-style: helvetica;">
+        es esencial en la vida de las personas para lograr el desarrollo personal 
+        y la prosperidad. Los modelos de <a href="https://www.iprofesional.com/tecnologia/376210-inteligencia-artificial-por-que-el-2023-sera-un-ano-de-quiebre" style="text-decoration: none; color: #e6a415;" target="_blank" rel="noopener noreferrer">
+        inteligencia artificial (IA)</a> y las comunidades de 
+        desarrolladores especializados en el campo del machine learning trabajan constantemente 
+        para entrenar modelos automatizados que permitan a los profesionales en diferentes áreas 
+        de trabajo mejorar la eficiencia, seguridad y toma de decisiones. 
+        Si bien los procesos de IA son complejos, la comunidad de desarrolladores 
+        ha avanzado significativamente en este campo, y se espera que continúen 
+        haciéndolo en el futuro cercano. La IA está destinada a ser un tema de gran 
+        relevancia en los próximos años, y su aplicación en diversas industrias y campos 
+        de trabajo será fundamental para el progreso y la innovación en la era digital. 
+      </p>
+    </div>
+
+    <div class="col-md-4 py-3">
+      <h3>Educación</h3>
+      <p style="font-style: helvetica;">
+      es fundamental para el crecimiento personal y la adopción del conocimiento. 
+      Los profesionales de la educación son responsables de generar modelos de enseñanza para 
+      estudiantes de nivel primario y secundario, otorgándoles el conocimiento necesario para 
+      que puedan insertarse y adaptarse a las demandas de la digitalización. <a href="https://www.edtick.com/es/news/tendencias-edtech-2023-educacion-tecnologia" style="text-decoration:none; color: #e6a415;" target="_blank" rel="noopener noreferrer">La IA</a> utiliza 
+      algoritmos sofisticados que permiten a los profesores interactuar con el machine learning, 
+      mejorando los modelos de enseñanza y brindando a los estudiantes la posibilidad de aprender 
+      de manera más sencilla y efectiva. 
+      La educación será uno de los desafíos más importantes para la IA y los modelos de machine learning, 
+      ya que es esencial para el desarrollo y el progreso de las personas y la sociedad en general. 
+      El avance de la IA en el campo educativo ha permitido la creación de nuevas formas de enseñanza, 
+      como la educación a distancia y la educación personalizada, que se adaptan a las necesidades y 
+      habilidades individuales de cada estudiante. Además, la IA también ha mejorado la eficiencia 
+      en la corrección de exámenes y la identificación de áreas de mejora para los estudiantes. 
+      En resumen, la IA y la educación están destinadas a trabajar juntas en el futuro para 
+      mejorar el aprendizaje y el desarrollo personal.
+      </p>        
+    </div>
+
+    <div class="col-md-3 py-3">
+      <h3>Salud</h3>
+      <p style="font-style: helvetica;">
+        Además de la educación y el trabajo, se encuentra un tercer componente fundamental: la salud. 
+      La salud es imprescindible para el funcionamiento ideal de este tridente, y junto con la inteligencia 
+      artificial, tiene un gran futuro por delante. <a href="https://lab.elmundo.es/inteligencia-artificial/salud.html" style="text-decoration: none; color: #e6a415;" target="_blank" rel="noopener noreferrer">La IA puede mejorar la atención medica</a> , la infraestructura  
+      de los centros de salud y los tratamientos para enfermedades crónicas como el cáncer. Además, le permitirá 
+      a los médicos avanzar en sus estudios sobre las enfermedades y posibles curas, así como evaluar la eficacia 
+      de los tratamientos médicos existentes y buscar alternativas para cada caso en particular. 
+      La IA puede ser un gran aliado para el paciente, el médico y el profesional de la salud en general. 
+      Algunas aplicaciones de la IA en el campo de la salud incluyen sistemas de diagnóstico asistido, 
+      análisis de datos masivos para identificar patrones y tendencias en los datos de salud, así como 
+      la optimización de tratamientos personalizados para cada paciente. 
+      En resumen, la inteligencia artificial está revolucionando la forma en que se aborda la salud, 
+      lo que puede conducir a mejores resultados y tratamientos más efectivos para los pacientes. 
+      Con el desarrollo continuo de la IA, es emocionante pensar en lo que el futuro puede deparar 
+      para la salud y el bienestar de las personas en todo el mundo. 
+      </p>
+    </div>
+    
+    <div class="col-md-1"></div>
+  </div>  
+</div>
+
+<br/>
+<hr>
+<br/>
+
+  <div class="container-contacto">
+      <div class="row">
+        <div class="col-md-3 py-3 text-center">
+          <ul class="text-start py-3">
+            <a href="/perfil">
+              <img src="/static/imagenes/image-logo.jpeg" style="border-radius: 100%; width:40%; height:40%;" alt="logo-pie">
+            </a>   
+          </ul>
+        </div>
+        <div class="col-md-3 py-3">
+          <ul class="py-3">                    
+            <address> 
+              <ol><H4 class="text-start"><strong>Contacto</strong></H4></ol>
+              <ol class="m-2 my-2 text-start" style="font-family:Arial;">Domicilio: Independencia s/n Sarmiento - Totoral, Cba.</ol>
+
+              <ol class="m-2 my-2 text-start" style="font-family:Arial;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                  <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                </svg>
+                Tel: 3525-620842</ol>
+              <ol class="m-2 my-2 text-start">
+                <a class="active" style="font-family:Arial; text-decoration:none; color: white;" href="mailto:desarrollador.sarmientino@gmail.com">
+                  mail:desarrollador.sarmientino@gmail.com
+                </a>
+              </ol>
+            </address>
+          </ul>
+        </div>
+
+        <div class="col-md-3 py-3">
+          <ul class="py-3">
+            <ol><h4 class="text-start"><strong>Sobre esta app</strong></h4></ol>
+            <ol><a class="active m-2 text-start" style="font-family:Arial; text-decoration:none; color: white;" href="/hogar"> Hogar</a></ol>
+            <ol><a class="active m-2 text-start" style="font-family:Arial; text-decoration:none; color: white;" href="https://1drv.ms/b/s!AvQgBbyyOlh1gY8DhGOPnZbO-6Dk0g?e=xYdC4B" target="_blank" rel="noopener noreferrer">Documentación</a></ol>
+          </ul>
+        </div>
+
+        <div class="col-md-3 py-3">
+          <ul class="py-3">
+            <ol><h4 class="text-start"><strong>Servicios</strong></h4></ol>
+            <ol><a class="active m-2 text-start" style="font-family:Arial; text-decoration:none; color: white;" href="/serv">Desarrollo web</a></ol>            
+            <ol><a class="active m-2 text-start" style="font-family:Arial; text-decoration:none; color: white;" href="/serv">Análisis de datos</a></ol>
+            <ol><a class="active m-2 text-start" style="font-family:Arial; text-decoration:none; color: white;" href="/serv">publicidad</a></ol>
+          </ul>
+        </div>
+      </div>      
+  </div>
+
+<footer class="text-center" style="font-style: italic">© Derechos reservados - Desarrollador Sarmientino 2023.</footer>
+  
+
+  
+
+    
+  <!-- Bootstrap JavaScript Libraries -->
+  
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+    integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

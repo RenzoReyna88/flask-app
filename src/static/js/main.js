@@ -1,0 +1,1 @@
+console.log("Hola a todos estoy aprendiendo desarrollo de aplicaciones web. Voy a mejor mi vida y la vida de mis hijos. Está escrito");
