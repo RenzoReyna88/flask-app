@@ -16,7 +16,7 @@
 <body class="color" style="background-color:#ffffff;">  
   <nav class="navbar navbar-expand-md shadow-lg navbar-dark fixed-top" style="background-color: rgba(133, 213, 35, 0.993);">
     <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" style="border-color: rgb(210, 208, 208);" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button> 
       <div class="collapse navbar-collapse me-5" id="navbarNavDropdown">              
@@ -54,10 +54,22 @@
       <div class="col-md-2"></div>
 
       <div class="col-md-8">
+        {% with messages = get_flashed_messages() %}
+
+          {% if messages %}    
+          {% for message in messages %}    
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>        
+              {{ message }}
+            </div>    
+          {% endfor %}
+          {% endif %}
+  
+        {% endwith %}
         <header class="text-center" style="font-style: italic;"><h1>Fundamento del proyecto</h1></header>
         <br>
         <p style="font-style: helvetica;">
-          Cuando comencé a estudiar sobre <a href="https://economipedia.com/" style="text-decoration: none; color: rgb(49, 23, 218);" target="_blank" rel="noopener noreferrer">económia</a> y el comportamiento de los mercados, con el tiempo intenté comprender, cuáles son los sectores de la sociedad que carecían de servicios. Servicios esenciales 
+          Cuando comencé a estudiar sobre <a href="https://economipedia.com/" style="text-decoration: none; color: green" target="_blank" rel="noopener noreferrer">económia</a> y el comportamiento de los mercados, con el tiempo intenté comprender, cuáles son los sectores de la sociedad que carecían de servicios. Servicios esenciales 
           y elementales para el crecimiento económico. Nací en una zona rural, y simpre me gusto el lugar en donde vivo. Algunas veces ese estado de bienestar ha sido distorsionado por la falta de recursos que carecen 
           particularmente las zonas rurales. Recursos de los cuales a falta de ellos, han impedido llegar los avances tecnológicos y los enormes recursos que nos oferce la internet.
     
@@ -71,7 +83,7 @@
         
         <p style="font-style: helvetica;">
           El objetivo fundamental de esta aplicación es que esté en constante crecimiento y mejoramiento dinamico que pueda permitir brindar un servicio de gran utilidad a la comunidad. Convencido de ello 
-          incursione en el mundo de la progrmación. Herramienta indispensable para acercar recursos a los lugares donde el conocimiento tecnologico no ha llegado en las condiciones necesarias para que 
+          incursione en el mundo de la progrmación. Herramienta indispensable para acercar recursos a los lugares donde el <a href="https://mba3.com/blog/item/como-va-a-cambiar-la-tecnologia-para-el-2030.html" style="text-decoration: none; color: green;" target="_blank" rel="noopener noreferrer">crecimiento tecnologico</a> no ha llegado en las condiciones necesarias para que 
           la comuniadad pueda aprovechar todas la herramientas que ofrece el sector tecnológico. lo bueno de esto es que aun estamos a tiempo, y la tecnología solo mejora.
         </p>  
   
@@ -129,7 +141,7 @@
       de modo que pueda ofrecer los mejores servicios y recursos a la comunidad, y ser una fuente confiable de información 
       y herramientas que permitan a las personas aprovechar al máximo las oportunidades 
       que brinda la tecnología. 
-      <a href="https://1drv.ms/b/s!AvQgBbyyOlh1gY8DhGOPnZbO-6Dk0g?e=xYdC4B" style="text-decoration: none; color: rgb(8, 48, 124);" target="_blank" rel="noopener noreferrer">Click aqui para ver el documento</a>
+      <a href="https://1drv.ms/b/s!AvQgBbyyOlh1gY8DhGOPnZbO-6Dk0g?e=xYdC4B" style="text-decoration: none; color: rgb(31, 174, 145);" target="_blank" rel="noopener noreferrer">Click aqui para ver el documento</a>
     </p>
     
   </section>
@@ -145,31 +157,35 @@
   </p>
 
 </div>
-<!--
+
 <div class="container-comentario">
   <div class="row">
     <div class="col-md-2"></div>
+    <div class="col-md-7 shadow" style="background-color: rgb(243, 247, 246);">
+     
+      <h4 class="text-start" style="font-style: italic;">Aquí puedes dejar tus comentarios</h4>
+      <br/>
 
-    <div class="col-md-8">
-      <form class="coment text-start" action="/hogar" method="post">
+      <form class="coment text-start" action="{{ url_for('guardar_comentarios') }}" method="post">
         <div class="mb-3">
-          <h6 class="text-start">Correo electronico:</h6>
-          <label for="usuario" class="form-label"></label>
-          <input type="email" class="form-control" id="usuario" placeholder="name@example.com">
+          <h6 class="text-start" style="font-style: helvetica;">Nombre</h6>
+          <label for="Name" class="form-label"></label>
+            <input class="form-control" type="text" name="Name" id="Name" placeholder="Ejemplo: Renzo R" minlength="5" maxlength="45" required>          
         </div>
         <div class="mb-3 text-end">
-          <h6 class="text-start">Comentarios:</h6>
-          <label for="comentario" class="form-label"></label>
-          <textarea class="form-control" placeholder="0/600" id="comentario" rows="6"></textarea>
-          <br/>
-          <button class="btn btn me-3" style="background-color: rgb(16, 175, 16); color: white; border: gray;" type="submit">enviar</button>
+          <h6 class="text-start" style="font-style: helvetica;">Comentarios</h6>
+          <label for="Coment" class="form-label"></label>
+            <textarea  class="form-control" name="Coment" placeholder="0/400" id="Coment" rows="6" minlength="20" maxlength="400" required></textarea>          
+        </div>
+        <div class="mb-3 text-end">
+          <button class="btn btn" style="background-color: rgb(133, 213, 35, 0.993); color: rgb(255, 255, 255); border: gray;" type="submit">Enviar comentarios</button>
         </div>
       </form>
     </div>
-    <div class="col-md-2"></div>
+    <div class="col-md-1"></div>
   </div>
 </div>
--->
+<br/>
 
     <footer class="text-center" style="font-style: italic">
       © Derechos reservados. Desarrollador Sarmientino 2023.
@@ -185,5 +201,3 @@
     integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
   </script>
 </body>
-
-</html>

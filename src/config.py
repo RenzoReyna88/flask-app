@@ -13,8 +13,11 @@ PASSWORD_DB = os.environ['password']
 NAME_DB = os.environ['db']
 
 
-#datos gmail   
-PASSWORD= os.environ['Password']
+#datos gmail
+USUARIO_GMAIL= os.environ['user_gmail']
+PASSWORD_GMAIL= os.environ['password_gmail']  
+
+#json web token contraseña
 SECRET = os.environ['jwt_key']
 
 class DevelopmentConfig():
