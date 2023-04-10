@@ -1,13 +1,22 @@
 from flask import Flask, redirect, render_template, url_for, request, flash, jsonify
+from flask import render_template_string
 from flask_mail import Mail, Message
 from utils.database import conexion
 import re
 from config import config, SECRET, USUARIO_GMAIL ,PASSWORD_GMAIL, SECRETKEY
 from utils.database import conexion
-from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_current_user
+from datetime import timedelta
+from flask_jwt_extended import JWTManager, create_access_token, get_jwt_identity, jwt_required
+from jwt.exceptions import InvalidTokenError
+import requests
+
+
 
 
 app= Flask(__name__)
+
+
+
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
@@ -17,8 +26,8 @@ app.config['MAIL_PASSWORD'] = f'{PASSWORD_GMAIL}'
 app.config['MAIL_DEFAULT_SENDER'] = f'{USUARIO_GMAIL}'
 mail = Mail(app)
 
-app.config['JWT_SECRET_KEY'] = f'{SECRET}'    
-jwt = JWTManager(app)
+app.config['JWT_SECRET_KEY']= F'{SECRETKEY}'
+JWT= JWTManager(app)   
 
 
 #Urls
@@ -79,6 +88,7 @@ def perfil_admin():
 def envio_mensaje():  
     return render_template('question/send_message.html')
 
+
 @app.route('/login')
 def registro():
     return render_template ('auth/login')
@@ -91,28 +101,28 @@ def login():
 @app.route('/auth/login', methods=['GET','POST'])
 def login_user():
     if request.method == 'POST':        
-        _user= request.form['Username'] 
-        try:  
-            if _user:
+        email= request.form['Username']                               
+        try:
+            if email:
                 patron = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
-                if re.match(patron, _user):
-                    access_token = create_access_token(identity=_user)
-                    #token = access_token.decode('UTF-8')
+                if re.match(patron, email):
                     cursor= conexion.cursor()
-                    user= _user
+                    user= email
                     sql_dato="INSERT INTO usuarios_encuestados (email) VALUES ('{0}')".format(user)
                     cursor.execute(sql_dato)
                     conexion.commit()
                     cursor.close()
-                    print(access_token)
-                    msg = Message(subject='Confirmación de correo electrónico', recipients=[_user])
-                    msg.body = f"Has click aquí para acceder al estudio: {access_token}"
-                    mail.send(msg)                    
+                    create_token= create_access_token(identity=email)
+                    token = 'http://127.0.0.1:9000/estudio?token='+ create_token
+                    html = render_template_string('<p>Has click en el siguiente enlace para acceder al estudio: <a href="{{ link }}">{{ link }}</a></p>', link=token)
+                    msg= Message(subject='Confirmar correo electrónico', recipients=[email],html=html)
+                    msg.body= f'Has click en el siguiente enlace para acceder al estudio:{token}'
+                    mail.send(msg)                                                                          
                     return redirect('/send_message')
             else:
-                flash('Error al ingresar los datos. Por favor, verifica los datos ingresados y vuelve a intentarlo..')
+                flash('Los datos ingresados no son correctos. Verifica la información que has ingresado y vuelve a intentar..')
                 return render_template('auth/login.html')
-
+            
         except Exception as ex:
             flash('Disculpe.. tu ya has participado de este estudio. El programa admite un registro por persona')
             return render_template('auth/login.html')
@@ -126,17 +136,12 @@ def base_login():
     return render_template('auth/base.html')
 
               
-@app.route('/estudio')
-@jwt_required
+@app.route('/estudio', methods=['GET'])
+@jwt_required()
 def inicio_estudio():
-    token = request.args.get('token')
-    try:
-        payload = jwt.decode(token, SECRETKEY, algorithms=['HS256'])
-        email = payload['email']
-        return render_template('estudio.html', email=email)
-    except jwt.exceptions.InvalidTokenError:
-        return 'Token inválido'    
-    #return render_template('question/estudio.html')
+    current_user= get_jwt_identity()
+    return render_template('question/estudio.html')
+    
     
 @app.route('/fin_estudio')
 def fin_estudio():
@@ -186,12 +191,11 @@ def status_401(error):
     return '<h1>Error 401, no estas autorizado a acceder a esta vista<h1>'
 
 def pagina_no_encontrada(error): 
-    return '<h1>Error 404. la pagina que estas buscando no existe</h1>'                                                              
-    
+    return '<h1>Error 404. la pagina que estas buscando no existe</h1>'
 
+                                                              
 if __name__ == '__main__':
     app.config.from_object(config['development'])
     app.register_error_handler(404, pagina_no_encontrada)
-    app.register_error_handler(401, status_401) 
-   # CSRF.init_app(app)  
+    app.register_error_handler(401, status_401)  
     app.run(debug=True, port=9000)
