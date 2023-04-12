@@ -1,21 +1,18 @@
 from flask import Flask, redirect, render_template, url_for, request, flash, jsonify
+from flask_login import login_user, logout_user
 from flask import render_template_string
 from flask_mail import Mail, Message
 from utils.database import conexion
 import re
-from config import config, SECRET, USUARIO_GMAIL ,PASSWORD_GMAIL, SECRETKEY
-from utils.database import conexion
+from config import config, USUARIO_GMAIL, PASSWORD_GMAIL, SECRETKEY
 from datetime import timedelta
 from flask_jwt_extended import JWTManager, create_access_token, get_jwt_identity, jwt_required
-from jwt.exceptions import InvalidTokenError
-import requests
+import jwt
 
 
 
 
 app= Flask(__name__)
-
-
 
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -30,14 +27,15 @@ app.config['JWT_SECRET_KEY']= F'{SECRETKEY}'
 JWT= JWTManager(app)   
 
 
-#Urls
 @app.route('/')
 def inicio():
     return render_template('sitio/index.html')  
 
+
 @app.route('/educ')
 def educar():
     return render_template('sitio/educ.html')
+
 
 @app.route('/tecno')
 def info_tecno():
@@ -47,6 +45,7 @@ def info_tecno():
 def home():
     return render_template('sitio/hogar.html')
 
+
 @app.route('/guardar_comentarios', methods=['GET', 'POST'])
 def guardar_comentarios():
     if request.method == 'POST':
@@ -54,9 +53,9 @@ def guardar_comentarios():
             usuario= request.form['Name']
             comentario= request.form['Coment']
         except Exception as e:
+            print(e)
             flash('Debes completar todos los campos')
             return render_template('sitio/hogar.html')
-
         try:
             if usuario != "" and comentario !="":
                 cursor= conexion.cursor()
@@ -68,6 +67,8 @@ def guardar_comentarios():
                 flash('Comentarios enviado con exito')
                 return render_template('/hogar') 
         except Exception as e:
+            print(e)
+            flash('Gracias por haber participado nuevamente con tus comentarios')
             return render_template('sitio/hogar.html')        
     else:
         return render_template('sitio/hogar.html')
@@ -77,21 +78,23 @@ def guardar_comentarios():
 def servicios():
     return render_template('sitio/serv.html')    
 
+
 @app.route('/perfil')
 def perfil_admin():
     return render_template('sitio/perfil.html')
 
-
 # rutas de interacción con el cuestionario
 
 @app.route('/send_message')
-def envio_mensaje():  
+def envio_mensaje():
     return render_template('question/send_message.html')
+    
 
 
 @app.route('/login')
 def registro():
     return render_template ('auth/login')
+
 
 @app.route('/login')
 def login():
@@ -112,8 +115,8 @@ def login_user():
                     cursor.execute(sql_dato)
                     conexion.commit()
                     cursor.close()
-                    create_token= create_access_token(identity=email)
-                    token = 'http://127.0.0.1:9000/estudio?token='+ create_token
+                    create_token= create_access_token(identity=email,expires_delta=timedelta(hours=1))
+                    token = 'http://127.0.0.1:9000/estudio?'
                     html = render_template_string('<p>Has click en el siguiente enlace para acceder al estudio: <a href="{{ link }}">{{ link }}</a></p>', link=token)
                     msg= Message(subject='Confirmar correo electrónico', recipients=[email],html=html)
                     msg.body= f'Has click en el siguiente enlace para acceder al estudio:{token}'
@@ -124,23 +127,24 @@ def login_user():
                 return render_template('auth/login.html')
             
         except Exception as ex:
+            print(ex)
             flash('Disculpe.. tu ya has participado de este estudio. El programa admite un registro por persona')
-            return render_template('auth/login.html')
-                                                                                                                                                                                                                
+            return render_template('auth/login.html')                                                                                                                                                                                                                
     else:
         return render_template('auth/login.html')
-
+    
 
 @app.route('/auth/base')
 def base_login():
     return render_template('auth/base.html')
 
               
-@app.route('/estudio', methods=['GET'])
+@app.route('/estudio')
 @jwt_required()
 def inicio_estudio():
-    current_user= get_jwt_identity()
     return render_template('question/estudio.html')
+                
+   
     
     
 @app.route('/fin_estudio')
@@ -167,8 +171,9 @@ def guardar_encuesta():
                 muni= request.form['muni']
                 educar= request.form['educar']
                 opinion= request.form['opinion']
-            except Exception as e:
-                flash('Debe responder todas la preguntas para poder enviar las respuestas')
+            except Exception as h:
+                print(h)
+                flash('Debe seleccionar todas las respuestas para poder enviarlas correctamente')
                 return render_template('question/estudio.html')
             try:
                 if edad != '' and profesion != '' and ins != '' and sarmiento != '' and trabajo != '' and comercios != '' and salario != '' and ahorro != '' and coop != '' and dispensario != ''and cim !='' and municipalidad != '' and muni !='' and educar != '' and opinion != '':
@@ -179,13 +184,15 @@ def guardar_encuesta():
                     conexion.commit()
                     cursor.close()
                     return redirect('/fin_estudio')
-            except Exception as e:
+            except Exception as h:
+                print(h)
                 return '<h1> error de conexión</h1>'
         else:
             return render_template('question/estudio.html')
+        
+def cerrar_sesion():
+    logout_user()
     
-
-
 
 def status_401(error):    
     return '<h1>Error 401, no estas autorizado a acceder a esta vista<h1>'
