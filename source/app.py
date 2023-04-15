@@ -1,15 +1,15 @@
 from flask import Flask, redirect, render_template, url_for, request, flash, jsonify
-from flask_login import login_user, logout_user
+from flask_login import login_user, login_required, logout_user, LoginManager
 from flask import render_template_string
 from flask_mail import Mail, Message
 from utils.database import conexion
 import re
 from config import config, USUARIO_GMAIL, PASSWORD_GMAIL, SECRETKEY
+from flask_jwt_extended import JWTManager
+from models.User import User
 from datetime import timedelta
 from flask_jwt_extended import JWTManager, create_access_token, get_jwt_identity, jwt_required
 import jwt
-
-
 
 
 app= Flask(__name__)
@@ -24,7 +24,16 @@ app.config['MAIL_DEFAULT_SENDER'] = f'{USUARIO_GMAIL}'
 mail = Mail(app)
 
 app.config['JWT_SECRET_KEY']= F'{SECRETKEY}'
-JWT= JWTManager(app)   
+JWT= JWTManager(app) 
+
+login_manager_app= LoginManager(app)
+@jwt.user_lookup_loader
+def user_lookup_callback(_jwt_header, jwt_data):
+    identity = jwt_data["sub"]
+    return User.query.filter_by(id=identity).one_or_none()
+
+
+
 
 
 @app.route('/')
@@ -68,7 +77,6 @@ def guardar_comentarios():
                 return render_template('/hogar') 
         except Exception as e:
             print(e)
-            flash('Gracias por haber participado nuevamente con tus comentarios')
             return render_template('sitio/hogar.html')        
     else:
         return render_template('sitio/hogar.html')
@@ -104,10 +112,10 @@ def login():
 @app.route('/auth/login', methods=['GET','POST'])
 def login_user():
     if request.method == 'POST':        
-        email= request.form['Username']                               
+        email= request.form['Username']
         try:
             if email:
-                patron = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+                patron = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[c-o-m]{1,3}$'
                 if re.match(patron, email):
                     cursor= conexion.cursor()
                     user= email
@@ -116,11 +124,12 @@ def login_user():
                     conexion.commit()
                     cursor.close()
                     create_token= create_access_token(identity=email,expires_delta=timedelta(hours=1))
-                    token = 'http://127.0.0.1:9000/estudio?'
-                    html = render_template_string('<p>Has click en el siguiente enlace para acceder al estudio: <a href="{{ link }}">{{ link }}</a></p>', link=token)
+                    url_protected = f'http://127.0.0.1:9000/estudio?{create_token}'
+                    html = render_template_string('<p>Has click en el siguiente enlace para acceder al estudio: <a href="{{ link }}">{{ link }}</a></p>', link=url_protected)
                     msg= Message(subject='Confirmar correo electrónico', recipients=[email],html=html)
-                    msg.body= f'Has click en el siguiente enlace para acceder al estudio:{token}'
-                    mail.send(msg)                                                                          
+                    msg.body= f'Has click en el siguiente enlace para acceder al estudio:{html}'
+                    mail.send(msg)
+                    print(create_token)                                                                          
                     return redirect('/send_message')
             else:
                 flash('Los datos ingresados no son correctos. Verifica la información que has ingresado y vuelve a intentar..')
@@ -138,18 +147,14 @@ def login_user():
 def base_login():
     return render_template('auth/base.html')
 
+
               
 @app.route('/estudio')
 @jwt_required()
 def inicio_estudio():
     return render_template('question/estudio.html')
-                
    
-    
-    
-@app.route('/fin_estudio')
-def fin_estudio():
-    return render_template('question/fin_estudio.html')
+   
 
 
 @app.route('/guardar_encuesta', methods=['GET','POST'])
@@ -189,6 +194,13 @@ def guardar_encuesta():
                 return '<h1> error de conexión</h1>'
         else:
             return render_template('question/estudio.html')
+                
+   
+        
+@app.route('/fin_estudio')
+def fin_estudio():
+    return render_template('question/fin_estudio.html')
+
         
 def cerrar_sesion():
     logout_user()

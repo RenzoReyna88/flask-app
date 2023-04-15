@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <body class="color" style="background-color: rgb(175, 214, 242);">     
+    <body class="color" style="background-color: rgb(170, 235, 252);">     
         
          <div class="container-intro">
           <h1 class="text-center" style="font-style: italic;">Bienvenido al primer estudio económico en Sarmiento</h1>
@@ -39,12 +39,12 @@
           <div class="row">
            <div class="col-md-1"></div>
 
-           <div class="col-md-10" style="background-color: rgb(255, 255, 255);">
+           <div class="col-md-10 shadow-lg" style="background-color: rgba(255, 255, 255, 0.788);">
               {% with messages = get_flashed_messages() %}
 
               {% if messages %}    
               {% for message in messages %}    
-                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>        
                       {{ message }}
                 </div>    
