@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, redirect, request, flash
 from utils.database import conexion
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
 question= Blueprint('question', __name__)
 
@@ -9,7 +10,9 @@ def envio_mensaje():
 
 
 @question.route('/estudio')
+@jwt_required()
 def inicio_estudio():
+    current_user= get_jwt_identity()
     return render_template('question/estudio.html')   
 
 

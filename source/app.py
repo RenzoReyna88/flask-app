@@ -3,8 +3,9 @@ from flask_mail import Mail
 from routes.auth import auth
 from routes.question import question
 from routes.sitio import sitio
-from config import config, USUARIO_GMAIL, PASSWORD_GMAIL, SECRETKEY
+from config import config, USUARIO_GMAIL, PASSWORD_GMAIL, SECRET_KEY_TOKEN
 from flask_jwt_extended import JWTManager
+
 
 
 
@@ -19,13 +20,14 @@ app.config['MAIL_DEFAULT_SENDER'] = f'{USUARIO_GMAIL}'
 mail= Mail(app)
 
 
-app.config['JWT_SECRET_KEY']= F'{SECRETKEY}'
+app.config['JWT_SECRET_KEY']= F'{SECRET_KEY_TOKEN}'
+app.config["JWT_TOKEN_LOCATION"] = ["headers"]
 JWT= JWTManager(app) 
+
 
 app.register_blueprint(auth)
 app.register_blueprint(question)
 app.register_blueprint(sitio)
-
 
 
 def status_401(error):    

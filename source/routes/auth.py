@@ -38,7 +38,8 @@ def login_user():
                     conexion.commit()
                     cursor.close()
                     create_token= create_access_token(identity=email,expires_delta=timedelta(hours=1))
-                    url_protected = f'http://127.0.0.1:9000/estudio?{create_token}'
+                    access_headers = {'Authorization': 'Bearer {}'.format(create_token)}
+                    url_protected= f'http://127.0.0.1:9000/estudio?{access_headers}'
                     html = render_template_string('<p>Has click en el siguiente enlace para acceder al estudio: <a href="{{ link }}">{{ link }}</a></p>', link=url_protected)
                     msg= Message(subject='Confirmar correo electrónico', recipients=[email],html=html)
                     msg.body= f'Has click en el siguiente enlace para acceder al estudio:{html}'                    
