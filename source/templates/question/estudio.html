@@ -54,7 +54,7 @@
               {% endwith %} 
               <form action= "{{ url_for('question.guardar_encuesta') }}" method= "POST">
 
-                  <p class="fw-bold">1-¿Cuantos años tienes?</p>
+                  <p class="fw-bold">1-¿Que edad tienes?</p>
                   <div class="form-edad mb-2">
                     <input class="form-check-input" type="radio" name="edad" value="18 anos"/>
                     <label class="form-check-label" for="18 anos">
@@ -171,7 +171,7 @@
                   <div class="form-residencia mb-2">
                     <input class="form-check-input" type="radio" name="residencia" value="poco probable"/>
                     <label class="form-check-label" for="poco probable">
-                      Lo pensaría
+                      Improbable
                     </label>
                   </div>
                   <div class="form-residencia mb-2">
@@ -185,7 +185,13 @@
                   <div class="form-trabajo mb-2">
                     <input class="form-check-input" type="radio" name="trabajo" value="no es necesario"/>
                     <label class="form-check-label" for="no es necesario">
-                      No es necesario
+                      Es muy necesario
+                    </label>
+                  </div>
+                  <div class="form-trabajo mb-2">
+                    <input class="form-check-input" type="radio" name="trabajo" value="no es necesario"/>
+                    <label class="form-check-label" for="no es necesario">
+                      no es tan necesario
                     </label>
                   </div>
                   <div class="form-trabajo mb-2">
@@ -197,7 +203,7 @@
                   <div class="form-trabajo mb-2">
                     <input class="form-check-input" type="radio" name="trabajo" value="existen demasiadas fuentes de trabajo"/>
                     <label class="form-check-label" for="existen demasidas fuentes de trabajo">
-                      Existen demasiadas funetes de trabajo
+                      Existen demasiadas fuentes de trabajo
                     </label>
                   </div>
                   <div class="form-trabajo mb-2">
@@ -339,25 +345,25 @@
                   <div class="form-dispensario mb-2">
                     <input class="form-check-input" type="radio" name="dispensario" value="falta personal medico"/>
                     <label class="form-check-label" for="falta personal medico">
-                      Falta personal medico
+                      Muy buena
                     </label>
                   </div>
                   <div class="form-dispensario mb-2">
                     <input class="form-check-input" type="radio" name="dispensario" value="muy buena"/>
                     <label class="form-check-label" for="muy buena">
-                      Muy buena
+                      Buena
                     </label>
                   </div>
                   <div class="form-dispensario mb-2">
                     <input class="form-check-input" type="radio" name="dispensario" value="buena"/>
                     <label class="form-check-label" for="buena">
-                      Buena
+                      Mediocre
                     </label>
                   </div>
                   <div class="form-dispensario mb-2">
                     <input class="form-check-input" type="radio" name="dispensario" value="falta mejorar el servicio"/>
                     <label class="form-check-label" for="falta mejorar el servicio">
-                      Faltan ampliar los servcios ej: servicio de diagnosticos, ecografias, radiografias, etc..
+                      Faltan ampliar los servcios ej: Mas profecionales medicos, mas servicio de diagnosticos, ecografias, radiografias, etc..
                     </label>
                   </div>
                   <div class="form-dispensario mb-2">
@@ -371,25 +377,25 @@
                   <div class="form-cim mb-2">
                     <input class="form-check-input" type="radio" name="cim" value="si"/>
                     <label class="form-check-label" for="si">
-                      Si
+                      Se utiliza muy bien
                     </label>
                   </div>
                   <div class="form-cim mb-2">
                     <input class="form-check-input" type="radio" name="cim" value="si, pero deberían mejorar el servicio"/>
                     <label class="form-check-label" for="si, pero deberían mejorar el servicio">
-                      Si. Aunque deberían mejorar el servicio
+                      No se utiliza
                     </label>
                   </div>
                   <div class="form-cim mb-2">
                     <input class="form-check-input" type="radio" name="cim" value="faltan dar mas talleres de capacitacion"/>
                     <label class="form-check-label" for="faltan dar mas talleres de capacitacion">
-                      No. Falta dar más talleres de capacitación y especialidades de distintas disiplinas
+                      Falta mejorar las utilidades ej: Dar más talleres de capacitación y especialidades en distintas disiplinas, ofrcer cursos de cararcter academico, ect.
                     </label>
                   </div>
                   <div class="form-cim mb-2">
                     <input class="form-check-input" type="radio" name="cim" value="no se usa de la mejor forma"/>
                     <label class="form-check-label" for="no se usa de la mejor forma">
-                      No se usa de la mejor forma
+                      Se utiliza de forma inadecuada
                     </label>
                   </div>
                   <div class="form-cim mb-2">
@@ -399,7 +405,7 @@
                     </label>
                   </div>
             
-                  <p class="fw-bold">12-¿Estas conforme con el gobierno municipal de turno?</p>
+                  <p class="fw-bold">12-¿Estas conforme con la administración municipal de turno?</p>
                   <div class="form-municipal mb-2">
                     <input class="form-check-input" type="radio" name="municipalidad" value="muy conforme"/>
                     <label class="form-check-label" for="muy conforme">

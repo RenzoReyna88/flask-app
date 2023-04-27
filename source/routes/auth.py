@@ -5,6 +5,7 @@ import re
 from flask_mail import Message, Mail
 from flask_jwt_extended import create_access_token
 import requests
+from datetime import datetime, timedelta
 
 auth= Blueprint('auth', __name__)
 
@@ -36,7 +37,7 @@ def login_user():
                     cursor.execute(insert_data)
                     conexion.commit()
                     cursor.close()
-                    create_token= create_access_token(identity=email)
+                    create_token= create_access_token(identity=email, expires_delta=timedelta(minutes=30))
                     url_protected= 'http://127.0.0.1:9000/estudio?jwt={}'.format(create_token)                    
                     headers = {
                         "Authorization": f"Bearer {create_token}"
@@ -55,7 +56,7 @@ def login_user():
             
         except Exception as ex:
             print(ex)
-            flash('Disculpe.. tu ya has participado de este estudio. El programa admite un registro por persona')
+            flash('Disculpe.. usted ya ha participado de este estudio. El programa admite un registro por persona')
             return render_template('auth/login.html')                                                                                                                                                                                                                
     else:
         return render_template('auth/login.html')
