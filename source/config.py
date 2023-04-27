@@ -16,8 +16,9 @@ NAME_DB= os.environ['db']
 USUARIO_GMAIL= os.environ['user_gmail']
 PASSWORD_GMAIL= os.environ['password_gmail']  
 
-#json web token
-SECRET_KEY_TOKEN= os.environ['jwt_key']
+#jwt password
+SECRET_JWT= os.environ['jwt_key']
+print(SECRET_JWT)
 
 class DevelopmentConfig():
     SECRET_KEY= os.environ['secret_key']

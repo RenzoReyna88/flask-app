@@ -1,4 +1,14 @@
-from utils.database import conexion
-class User(conexion.Model):
-    id = conexion.Column(conexion.Integer, primary_key=True)
-    email = conexion.Column(conexion.varchar, nullable=False, unique=True)
+from flask_login import UserMixin
+
+class User(UserMixin):
+    def __init__(self, id, email):
+        self.id= id
+        self.email = email
+      
+    
+    def get_id(self):
+        return str(self.email)
+    
+
+         
+

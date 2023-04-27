@@ -1,6 +1,7 @@
-from flask import Blueprint, render_template, redirect, request, flash
+from flask import Blueprint, render_template, redirect, request, flash,jsonify
 from utils.database import conexion
 from flask_jwt_extended import jwt_required, get_jwt_identity
+import jwt
 
 question= Blueprint('question', __name__)
 
@@ -9,11 +10,18 @@ def envio_mensaje():
     return render_template('question/send_message.html')
 
 
-@question.route('/estudio')
-@jwt_required()
+@question.route('/estudio', methods=['GET'])
+@jwt_required(locations=['headers','query_string'])
 def inicio_estudio():
-    current_user= get_jwt_identity()
-    return render_template('question/estudio.html')   
+    try:
+        email= get_jwt_identity()
+        if email:       
+                return render_template('question/estudio.html')
+        else:
+            return jsonify(msg='Token inválido'), 401   
+
+    except jwt.exceptions.InvalidTokenError:
+        return jsonify(msg='Token inválido'), 401
 
 
 @question.route('/guardar_encuesta', methods=['GET','POST'])
