@@ -5,7 +5,7 @@ import re
 from flask_mail import Message, Mail
 from flask_jwt_extended import create_access_token
 import requests
-from datetime import datetime, timedelta
+from datetime import timedelta
 
 auth= Blueprint('auth', __name__)
 
@@ -46,9 +46,7 @@ def login_user():
                     html = render_template_string('<p>Has click en el siguiente enlace para acceder al estudio: <a href="{{ link }}">{{ link }}</a></p>', link=url_protected)
                     msg= Message(subject='Confirmar correo electrónico', recipients=[email],html=html)
                     msg.body= f'Has click en el siguiente enlace para acceder al estudio:{html}'                    
-                    mail.send(msg) 
-                    print(create_token)
-                    print(response.content)                                                                     
+                    mail.send(msg)                                                                     
                     return redirect('/send_message')
             else:
                 flash('Los datos ingresados no son correctos. Verifica la información que has ingresado y vuelve a intentar..')

@@ -5,10 +5,10 @@ import jwt
 
 question= Blueprint('question', __name__)
 
-@question.route('/send_message')
-def envio_mensaje():
+@question.route('/send_message', methods=['GET'])
+def envio_mensaje():    
     return render_template('question/send_message.html')
-
+   
 
 @question.route('/estudio', methods=['GET'])
 @jwt_required(locations=['headers','query_string'])
@@ -21,7 +21,9 @@ def inicio_estudio():
             return jsonify(msg='Token inválido'), 401   
 
     except jwt.exceptions.InvalidTokenError:
-        return jsonify(msg='Token inválido'), 401
+        response= jsonify(msg='Token inválido')
+        response.status_code= 401
+        return response
 
 
 @question.route('/guardar_encuesta', methods=['GET','POST'])

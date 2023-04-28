@@ -18,7 +18,7 @@ PASSWORD_GMAIL= os.environ['password_gmail']
 
 #jwt password
 SECRET_JWT= os.environ['jwt_key']
-print(SECRET_JWT)
+
 
 class DevelopmentConfig():
     SECRET_KEY= os.environ['secret_key']
