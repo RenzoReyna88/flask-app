@@ -38,7 +38,7 @@ def login_user():
                     conexion.commit()
                     cursor.close()
                     create_token= create_access_token(identity=email, expires_delta=timedelta(minutes=30))
-                    url_protected= 'http://127.0.0.1:9000/estudio?jwt={}'.format(create_token)                    
+                    url_protected= 'http://desarrolladorsarmientino.pythonanywhere.com/estudio?jwt={}'.format(create_token)                    
                     headers = {
                         "Authorization": f"Bearer {create_token}"
                     }
@@ -46,7 +46,9 @@ def login_user():
                     html = render_template_string('<p>Has click en el siguiente enlace para acceder al estudio: <a href="{{ link }}">{{ link }}</a></p>', link=url_protected)
                     msg= Message(subject='Confirmar correo electrónico', recipients=[email],html=html)
                     msg.body= f'Has click en el siguiente enlace para acceder al estudio:{html}'                    
-                    mail.send(msg)                                                                     
+                    mail.send(msg)
+                    print(create_token)
+                    print(response)                                                                     
                     return redirect('/send_message')
             else:
                 flash('Los datos ingresados no son correctos. Verifica la información que has ingresado y vuelve a intentar..')

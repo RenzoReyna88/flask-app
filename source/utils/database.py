@@ -1,6 +1,8 @@
 from config import HOST_DB, USER_DB, PASSWORD_DB, NAME_DB
 import mysql.connector
 
+conexion= None
+
 try:
     conexion= mysql.connector.connect(
                                     host= f'{HOST_DB}', 
@@ -11,9 +13,10 @@ try:
                                     )    
     if conexion.is_connected:
         print(conexion)
+        infoserver= conexion.get_server_info()
+        print(infoserver)
 except Exception as ex:
         print('Error al realizar la conexión:{}'.format(ex))
 
-infoserver= conexion.get_server_info()
-print(infoserver)
+
 
