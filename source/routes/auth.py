@@ -38,7 +38,7 @@ def login_user():
                     conexion.commit()
                     cursor.close()
                     create_token= create_access_token(identity=email, expires_delta=timedelta(minutes=30))
-                    url_protected= 'http://desarrolladorsarmientino.pythonanywhere.com/estudio?jwt={}'.format(create_token)                    
+                    url_protected= 'http://127.0.0.1:5000/estudio?jwt={}'.format(create_token)                    
                     headers = {
                         "Authorization": f"Bearer {create_token}"
                     }

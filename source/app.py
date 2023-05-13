@@ -3,7 +3,7 @@ from flask_mail import Mail
 from routes.auth import auth
 from routes.question import question
 from routes.sitio import sitio
-from config import config, USUARIO_GMAIL, PASSWORD_GMAIL, SECRET_JWT
+from config import USUARIO_GMAIL, PASSWORD_GMAIL, SECRET_JWT, SECRET_KEY
 from flask_jwt_extended import JWTManager
 
 app= Flask(__name__)
@@ -15,6 +15,9 @@ app.config['MAIL_USERNAME']= f'{USUARIO_GMAIL}'
 app.config['MAIL_PASSWORD']= f'{PASSWORD_GMAIL}'
 app.config['MAIL_DEFAULT_SENDER']= f'{USUARIO_GMAIL}'
 mail= Mail(app)
+
+app.config['SECRET_KEY']= f'{SECRET_KEY}'
+
 
 app.config['JWT_SECRET_KEY']= f'{SECRET_JWT}'
 JWT= JWTManager(app)

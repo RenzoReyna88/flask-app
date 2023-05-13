@@ -28,41 +28,47 @@ def inicio_estudio():
 
 @question.route('/guardar_encuesta', methods=['GET','POST'])
 def guardar_encuesta():
-        if request.method == 'POST':
-            try:
-                edad= request.form['edad']
-                profesion= request.form['profesion']
-                ins= request.form['inst']
-                sarmiento= request.form['residencia']
-                trabajo= request.form['trabajo']
-                comercios= request.form['comercios']
-                salario= request.form['salario']
-                ahorro= request.form['ahorro']
-                coop= request.form['coop']
-                dispensario= request.form['dispensario']
-                cim= request.form['cim']
-                municipalidad= request.form['municipalidad']
-                muni= request.form['muni']
-                educar= request.form['educar']
-                opinion= request.form['opinion']
-            except Exception as h:
-                print(h)
-                flash('Debe seleccionar todas las respuestas para poder enviarlas correctamente')
-                return render_template('question/estudio.html')
-            try:
-                if edad != '' and profesion != '' and ins != '' and sarmiento != '' and trabajo != '' and comercios != '' and salario != '' and ahorro != '' and coop != '' and dispensario != ''and cim !='' and municipalidad != '' and muni !='' and educar != '' and opinion != '':
-                    cursor= conexion.cursor()   
-                    sentencia= "INSERT INTO respuestas_encuestados (resp_1, resp_2, resp_3, resp_4, resp_5, resp_6, resp_7, resp_8, resp_9, resp_10, resp_11, resp_12, resp_13, resp_14, resp_15) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-                    valores = (edad, profesion, ins, sarmiento, trabajo, comercios, salario, ahorro, coop, dispensario, cim, municipalidad, muni, educar, opinion)
-                    cursor.execute(sentencia, valores)
-                    conexion.commit()
-                    cursor.close()
-                    return redirect('/fin_estudio')
-            except Exception as h:
-                print(h)
-                return '<h1> error de conexión</h1>'
-        else:
-            return render_template('question/estudio.html')
+    try:
+        # Obtener los valores del formulario
+        edad = request.form.get('edad')
+        profesion = request.form.get('profesion')
+        ins = request.form.get('inst')
+        sarmiento = request.form.get('residencia')
+        trabajo = request.form.get('trabajo')
+        comercios = request.form.get('comercios')
+        salario = request.form.get('salario')
+        ahorro = request.form.get('ahorro')
+        coop = request.form.get('coop')
+        dispensario = request.form.get('dispensario')
+        cim = request.form.get('cim')
+        municipalidad = request.form.get('municipalidad')
+        muni = request.form.get('muni')
+        educar = request.form.get('educar')
+        opinion = request.form.get('opinion')
+
+        
+        if not all([edad, profesion, ins, sarmiento, trabajo, comercios, salario, ahorro, coop, dispensario, cim, municipalidad, muni, educar, opinion]):
+            raise ValueError('Debe seleccionar todas las respuestas para poder enviarlas correctamente')
+
+        
+        else:       
+            cursor = conexion.cursor()
+            sentencia = "INSERT INTO respuestas_encuestados (resp_1, resp_2, resp_3, resp_4, resp_5, resp_6, resp_7, resp_8, resp_9, resp_10, resp_11, resp_12, resp_13, resp_14, resp_15) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            valores = (edad, profesion, ins, sarmiento, trabajo, comercios, salario, ahorro, coop, dispensario, cim, municipalidad, muni, educar, opinion)
+            cursor.execute(sentencia, valores)
+            conexion.commit()
+            cursor.close()
+            return redirect('/fin_estudio')
+
+    except ValueError as ex:
+        flash(str(ex))
+        return render_template('question/estudio.html')
+
+    except Exception as ex:
+        print(ex)
+        flash('Error de conexión a la base de datos')
+        return render_template('question/estudio.html')
+
                 
    
         
