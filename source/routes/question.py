@@ -1,5 +1,4 @@
 from flask import Blueprint, render_template, redirect, request, flash,jsonify
-from utils.database import conexion
 from flask_jwt_extended import jwt_required, get_jwt_identity
 import jwt
 
@@ -28,6 +27,7 @@ def inicio_estudio():
 
 @question.route('/guardar_encuesta', methods=['GET','POST'])
 def guardar_encuesta():
+    from utils.database import conexion
     try:
         # Obtener los valores del formulario
         edad = request.form.get('edad')

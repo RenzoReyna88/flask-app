@@ -1,5 +1,4 @@
 from flask import Blueprint, render_template, request, flash
-from utils.database import conexion
 
 
 sitio= Blueprint('sitio', __name__)
@@ -25,6 +24,7 @@ def home():
 
 @sitio.route('/guardar_comentarios)', methods=['GET', 'POST'])
 def guardar_comentarios():
+    from utils.database import conexion
     if request.method == 'POST':
         try:
             usuario= request.form['Name']
