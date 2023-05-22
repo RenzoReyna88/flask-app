@@ -27,7 +27,7 @@ def inicio_estudio():
 
 @question.route('/guardar_encuesta', methods=['GET','POST'])
 def guardar_encuesta():
-    from utils.database import conexion
+    from app import get_db_connect
     try:
         # Obtener los valores del formulario
         edad = request.form.get('edad')
@@ -51,13 +51,15 @@ def guardar_encuesta():
             raise ValueError('Debe seleccionar todas las respuestas para poder enviarlas correctamente')
 
         
-        else:       
+        else:
+            conexion= get_db_connect()       
             cursor = conexion.cursor()
             sentencia = "INSERT INTO respuestas_encuestados (resp_1, resp_2, resp_3, resp_4, resp_5, resp_6, resp_7, resp_8, resp_9, resp_10, resp_11, resp_12, resp_13, resp_14, resp_15) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
             valores = (edad, profesion, ins, sarmiento, trabajo, comercios, salario, ahorro, coop, dispensario, cim, municipalidad, muni, educar, opinion)
             cursor.execute(sentencia, valores)
             conexion.commit()
             cursor.close()
+            conexion.close()
             return redirect('/fin_estudio')
 
     except ValueError as ex:
