@@ -23,33 +23,37 @@ def login():
 
 @auth.route('/auth/login', methods=['GET','POST'])
 def login_user():
-    from app import get_db_connect
+    from utils.database import connect_to_db
     from app import mail
     if request.method == 'POST':
-        email= request.form['Username']        
+        email= request.form['Username']
+
         if not validate_email(email):
             flash('Los datos ingresados no son correctos. Verifica la información que has ingresado y vuelve a intentar..')
-            return render_template('auth/login.html')
+        
         try:
-            conexion= get_db_connect()
-            cursor= conexion.cursor()
-            user= email
-            insert_data= "INSERT INTO usuarios_encuestados (email) VALUES(%s)"
-            cursor.execute(insert_data, (user,))
-            conexion.commit()
-            cursor.close()
-            conexion.close()
-            create_token= create_access_token(identity=email, expires_delta=timedelta(minutes=30))
-            url_protected= 'http://127.0.0.1:5000/estudio?jwt={}'.format(create_token)
-            headers = {
-                        "Authorization": f"Bearer {create_token}"
-                    }
-            response = requests.get(url_protected, headers=headers)
-            html = render_template_string('<p>Has click en el siguiente enlace para acceder al estudio: <a href="{{ link }}">{{ link }}</a></p>', link=url_protected)
-            msg= Message(subject='Confirmar correo electrónico', recipients=[email],html=html)
-            msg.body= f'Has click en el siguiente enlace para acceder al estudio:{html}'
-            mail.send(msg)
-            print(response)
+            conexion= connect_to_db()
+            with conexion.cursor() as cursor:
+                cursor.execute("SELECT * FROM usuarios_encuestados WHERE email=%s", (email,))
+                if cursor.fetchone():
+                    flash('Disculpe.. usted ya ha participado de este estudio. El programa admite un registro por persona')
+                    return redirect('/login')
+                user= email
+                insert_data= "INSERT INTO usuarios_encuestados (email) VALUES(%s)"
+                cursor.execute(insert_data, (user,))
+                conexion.commit()
+                cursor.close()
+                create_token= create_access_token(identity=email, expires_delta=timedelta(minutes=30))
+                url_protected= 'http://127.0.0.1:5000/estudio?jwt={}'.format(create_token)
+                headers = {
+                            "Authorization": f"Bearer {create_token}"
+                            }
+                response = requests.get(url_protected, headers=headers)
+                html = render_template_string('<p>Has click en el siguiente enlace para acceder al estudio: <a href="{{ link }}">{{ link }}</a></p>', link=url_protected)
+                msg= Message(subject='Confirmar correo electrónico', recipients=[email],html=html)
+                msg.body= f'Has click en el siguiente enlace para acceder al estudio:{html}'
+                mail.send(msg)
+                print(response)
             return redirect('/send_message')
 
         except Exception as ex:

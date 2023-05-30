@@ -1,24 +1,14 @@
 from flask import Flask, jsonify
 from flask_mail import Mail
-from config import USUARIO_GMAIL, PASSWORD_GMAIL, SECRET_JWT, SECRET_KEY,HOST_DB,USER_DB,PASSWORD_DB,NAME_DB
+from config import USUARIO_GMAIL, PASSWORD_GMAIL, SECRET_JWT, SECRET_KEY
 from flask_jwt_extended import JWTManager
 from routes.auth import auth
 from routes.question import question
 from routes.sitio import sitio
-import mysql.connector
+
 
 app= Flask(__name__)
 
-
-def get_db_connect():
-    conexion= mysql.connector.connect(
-                                    host= f'{HOST_DB}', 
-                                    user= f'{USER_DB}', 
-                                    password= f'{PASSWORD_DB}',
-                                    db= f'{NAME_DB}',
-                                    port= 3306
-                                    )    
-    return conexion
 
 
 app.config['MAIL_SERVER']= 'smtp.gmail.com'

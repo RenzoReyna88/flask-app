@@ -10,7 +10,7 @@ def envio_mensaje():
    
 
 @question.route('/estudio', methods=['GET'])
-@jwt_required(locations=['headers','query_string'])
+@jwt_required(locations=['headers','query_string'], optional=True)
 def inicio_estudio():
     try:
         email= get_jwt_identity()
@@ -27,9 +27,9 @@ def inicio_estudio():
 
 @question.route('/guardar_encuesta', methods=['GET','POST'])
 def guardar_encuesta():
-    from app import get_db_connect
-    try:
-        # Obtener los valores del formulario
+    from utils.database import connect_to_db
+    
+    if request.method == 'POST':
         edad = request.form.get('edad')
         profesion = request.form.get('profesion')
         ins = request.form.get('inst')
@@ -46,30 +46,28 @@ def guardar_encuesta():
         educar = request.form.get('educar')
         opinion = request.form.get('opinion')
 
-        
-        if not all([edad, profesion, ins, sarmiento, trabajo, comercios, salario, ahorro, coop, dispensario, cim, municipalidad, muni, educar, opinion]):
-            raise ValueError('Debe seleccionar todas las respuestas para poder enviarlas correctamente')
-
-        
-        else:
-            conexion= get_db_connect()       
-            cursor = conexion.cursor()
-            sentencia = "INSERT INTO respuestas_encuestados (resp_1, resp_2, resp_3, resp_4, resp_5, resp_6, resp_7, resp_8, resp_9, resp_10, resp_11, resp_12, resp_13, resp_14, resp_15) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-            valores = (edad, profesion, ins, sarmiento, trabajo, comercios, salario, ahorro, coop, dispensario, cim, municipalidad, muni, educar, opinion)
-            cursor.execute(sentencia, valores)
-            conexion.commit()
-            cursor.close()
-            conexion.close()
+        try:        
+            if not all([edad, profesion, ins, sarmiento, trabajo, comercios, salario, ahorro, coop, dispensario, cim, municipalidad, muni, educar, opinion]):
+                raise ValueError('Debe seleccionar todas las respuestas para poder enviarlas correctamente')
+                
+            conexion= connect_to_db()
+            with conexion.cursor() as cursor:                 
+                sentencia = "INSERT INTO respuestas_encuestados (resp_1, resp_2, resp_3, resp_4, resp_5, resp_6, resp_7, resp_8, resp_9, resp_10, resp_11, resp_12, resp_13, resp_14, resp_15) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                valores = (edad, profesion, ins, sarmiento, trabajo, comercios, salario, ahorro, coop, dispensario, cim, municipalidad, muni, educar, opinion)
+                cursor.execute(sentencia, valores)
+                conexion.commit()
+                cursor.close()
             return redirect('/fin_estudio')
 
-    except ValueError as ex:
-        flash(str(ex))
-        return render_template('question/estudio.html')
-
-    except Exception as ex:
-        print(ex)
-        flash('Error de conexión a la base de datos')
-        return render_template('question/estudio.html')
+        except ValueError as ex:
+            flash(str(ex))
+            return render_template('question/estudio.html')
+        except Exception as ex:
+            print(ex)
+            flash('Error de conexión a la base de datos')
+            return render_template('question/estudio.html')
+    else:
+        return render_template('question/estudio.html')    
 
                 
    

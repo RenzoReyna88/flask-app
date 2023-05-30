@@ -24,29 +24,27 @@ def home():
 
 @sitio.route('/guardar_comentarios)', methods=['GET', 'POST'])
 def guardar_comentarios():
-    from app import get_db_connect
+    from utils.database import connect_to_db
     if request.method == 'POST':
         try:
             usuario= request.form['Name']
             comentario= request.form['Coment']
-        except Exception as e:
-            print(e)
-            return render_template('sitio/hogar.html')
-        try:
-            if usuario != "" and comentario !="":
-                conexion= get_db_connect()
-                cursor= conexion.cursor()
+            if not usuario or not comentario:
+                raise ValueError('Debes completar todos los campos')
+            conexion= connect_to_db()
+            with conexion.cursor() as cursor:
                 insert= "INSERT INTO comentarios (usuario, comentario) VALUES (%s, %s)"
                 valores =(usuario, comentario)
                 cursor.execute(insert, valores)
                 conexion.commit()
                 cursor.close()
-                conexion.close()
-                flash('Comentarios enviado con exito')
-                return render_template('/hogar') 
+            flash('Comentarios enviado con exito')
+            return render_template('sitio/hogar.html')
+
+        except ValueError as e:
+            flash(str(e))         
         except Exception as e:
             print(e)
-            flash('Debes completar todos los campos')
             return render_template('sitio/hogar.html')        
     else:
         return render_template('sitio/hogar.html')

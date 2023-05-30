@@ -1,24 +1,28 @@
 from config import HOST_DB, USER_DB, PASSWORD_DB, NAME_DB
-import mysql.connector
+import psycopg2
+from psycopg2 import DatabaseError
 
-conexion= None
 
-try:
-    conexion= mysql.connector.connect(
-                                        host= f'{HOST_DB}', 
-                                        user= f'{USER_DB}', 
-                                        password= f'{PASSWORD_DB}',
-                                        db= f'{NAME_DB}',
-                                        port= 3306
-                                    )    
-    if conexion.is_connected:
-        print(conexion)
-        infoserver= conexion.get_server_info()
-        print(infoserver)
+def connect_to_db():
+    try:
+        conexion= psycopg2.connect(
+                                    host= f'{HOST_DB}', 
+                                    user= f'{USER_DB}', 
+                                    password= f'{PASSWORD_DB}',
+                                    dbname= f'{NAME_DB}',
+                                    port= 5432
+                                        )    
+        if conexion is not None:
+            print(conexion)
+            return conexion
                
-except Exception as ex:
-                    print('Error al realizar la conexión:{}'.format(ex))
-                    
+    except DatabaseError as ex:
+            print("Error al realizar la conexión:", ex)
+            return None
+    
+        
+    
+                        
 
    
 
