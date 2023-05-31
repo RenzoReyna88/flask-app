@@ -41,8 +41,8 @@ def guardar_comentarios():
             flash('Comentarios enviado con exito')
             return render_template('sitio/hogar.html')
 
-        except ValueError as e:
-            flash(str(e))         
+        except ValueError as ex:
+            flash(str(ex))         
         except Exception as e:
             print(e)
             return render_template('sitio/hogar.html')        

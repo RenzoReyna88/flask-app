@@ -30,14 +30,17 @@ def login_user():
 
         if not validate_email(email):
             flash('Los datos ingresados no son correctos. Verifica la información que has ingresado y vuelve a intentar..')
-        
+            return redirect('login')
+
         try:
             conexion= connect_to_db()
             with conexion.cursor() as cursor:
                 cursor.execute("SELECT * FROM usuarios_encuestados WHERE email=%s", (email,))
+                
                 if cursor.fetchone():
                     flash('Disculpe.. usted ya ha participado de este estudio. El programa admite un registro por persona')
-                    return redirect('/login')
+                    return redirect('login')
+                
                 user= email
                 insert_data= "INSERT INTO usuarios_encuestados (email) VALUES(%s)"
                 cursor.execute(insert_data, (user,))
@@ -55,7 +58,10 @@ def login_user():
                 mail.send(msg)
                 print(response)
             return redirect('/send_message')
-
+        
+        except ValueError as ex:
+            flash(str(ex))
+            return render_template('auth/login.html')
         except Exception as ex:
             print(ex)
             flash('Error de conexión...')

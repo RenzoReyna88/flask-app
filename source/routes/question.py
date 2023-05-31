@@ -59,8 +59,8 @@ def guardar_encuesta():
                 cursor.close()
             return redirect('/fin_estudio')
 
-        except ValueError as ex:
-            flash(str(ex))
+        except ValueError as e:
+            flash(str(e))
             return render_template('question/estudio.html')
         except Exception as ex:
             print(ex)
