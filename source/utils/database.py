@@ -13,7 +13,6 @@ def connect_to_db():
                                     port= 5432
                                         )    
         if conexion is not None:
-            print(conexion)
             return conexion
                
     except DatabaseError as ex:
