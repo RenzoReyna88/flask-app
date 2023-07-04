@@ -10,7 +10,7 @@ def envio_mensaje():
    
 
 @question.route('/estudio', methods=['GET'])
-@jwt_required(locations=['headers','query_string'], optional=True)
+@jwt_required(locations=['headers','query_string'], optional=False)
 def inicio_estudio():
     try:
         email= get_jwt_identity()
@@ -75,3 +75,4 @@ def guardar_encuesta():
 @question.route('/fin_estudio')
 def fin_estudio():
     return render_template('question/fin_estudio.html')
+  
