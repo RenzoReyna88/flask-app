@@ -18,7 +18,6 @@
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
 </head>
-
 <body class="color" style="background-color:#f8f3f3;">  
   <nav class="navbar navbar-expand-md shadow-lg navbar-dark fixed-top" style="background-color: rgba(133, 213, 35, 0.911);">
     <div class="container-fluid">
@@ -102,29 +101,29 @@
 <br/>
 <hr>
 
-<div class="container d-flex tools-tech py-2">
+<div class="container-d-flex tools-tech py-2">
   <section class="tech py-5" id="tecno">
-    <h3 class=" text-start py-2" style="font-style: italic;">Tecnologías Aplicadas en este Proyecto</h3>
+    <h3 class=" text-start py-3" style="font-style: italic;">Tecnologías Aplicadas en este Proyecto</h3>
     <div class="d-flex justify-content-center py-3">  
 
-      <div class="col-sm-2 me-3 "><a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">
-        <img src="/static/imagenes/python-logo.png" width="100px" height="60px" alt="logo-Python"></a>
+      <div class="col-sm-2"><a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">
+        <img src="/static/imagenes/python-logo.png" width="90px" height="60px" alt="logo-Python"></a>
       </div>
       
-      <div class="col-sm-2 me-3 "><a href="https://flask.palletsprojects.com/en/2.2.x/" target="_blank" rel="noopener noreferrer">
-        <img src="/static/imagenes/flask-logo.png" width="100px" height="60px" alt="logo-flask"></a>
+      <div class="col-sm-2"><a href="https://flask.palletsprojects.com/en/2.2.x/" target="_blank" rel="noopener noreferrer">
+        <img src="/static/imagenes/flask-logo.png" width="90px" height="60px" alt="logo-flask"></a>
       </div>
       
-      <div class="col-sm-2 me-3 "><a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">
-        <img src="/static/imagenes/B5-logo.jpeg" width="100px" height="60px" alt="logo-bootstrap"></a>
+      <div class="col-sm-2"><a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">
+        <img src="/static/imagenes/B5-logo.jpeg" width="70px" height="60px" alt="logo-bootstrap"></a>
       </div>
 
-      <div class="col-sm-2 me-3 "><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
-        <img src="/static/imagenes/html-logo.jpeg" width="100px" height="60px" alt="logo-html"></a>
+      <div class="col-sm-2"><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
+        <img src="/static/imagenes/html-logo.jpeg" width="90px" height="60px" alt="logo-html"></a>
       </div>
     
-      <div class="col-sm-2 me-3 "><a href="https://dev.mysql.com/doc/connector-python/en/" target="_blank" rel="noopener noreferrer">
-        <img src="/static/imagenes/py-mysql-logo.jpeg" width="100px" height="60px" alt="logo.MySQL"></a>
+      <div class="col-sm-2"><a href="https://dev.mysql.com/doc/connector-python/en/" target="_blank" rel="noopener noreferrer">
+        <img src="/static/imagenes/py-mysql-logo.jpeg" width="90px" height="60px" alt="logo.MySQL"></a>
       </div>
                           
     </div>
@@ -133,10 +132,10 @@
 
 <br/>
 <hr>
-<div class="container document">
-  <div class="d-flex-justify-content-center"> 
-    <section class="document" id="document">
-      <h3 class="py-3" style="font-style: italic;">Documentación para desarrolladores</h3>
+<div class="container d-flex document">
+  <div class="row"> 
+    <section class="document py-3" id="document">
+      <h3 class="py-5" style="font-style: italic;">Documentación para desarrolladores</h3>
       <p style="font-style: helvetica;">Este es un documento dinámico que está en constante
         cambio, adaptándose a las nuevas condiciones que propone internet y las nuevas tecnologías.
         Consciente de que el mundo digital evoluciona a un ritmo vertiginoso, por lo que 
@@ -156,40 +155,39 @@
 
 <br/>
 <hr>
-<div class="container-end">
+<div class="container endpage">
   <p class="py-5" style="font-style: helvetica;">
     Esta app está abierta a sugerencias y comentarios, y agradezco cualquier aporte que 
     permita mejorar y hacer crecer este proyecto. El objetivo de esta aplicación es seguir 
     trabajando para ofrecer una solución práctica y útil a las necesidades de la comunidad.
   </p>
-
 </div>
 
-<div class="container-comentario">
+<div class="container comentario">
   <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-7 shadow" style="background-color: rgb(243, 247, 246);">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-7 shadow" style="background-color: rgb(243, 247, 246);">
      
       <h4 class="text-start" style="font-style: italic;">Aquí puedes dejar tus comentarios</h4>
       <br/>
 
       <form class="coment text-start" action="{{ url_for('sitio.guardar_comentarios') }}" method="post">
-        <div class="mb-3">
+        <div class="sm-3">
           <h6 class="text-start" style="font-style: helvetica;">Nombre</h6>
           <label for="Name" class="form-label"></label>
             <input class="form-control" type="text" name="Name" id="Name" placeholder="Ejemplo: Renzo R" minlength="5" maxlength="45" required>          
         </div>
-        <div class="mb-3 text-end">
+        <div class="sm-3 text-end">
           <h6 class="text-start" style="font-style: helvetica;">Comentarios</h6>
           <label for="Coment" class="form-label"></label>
             <textarea  class="form-control" name="Coment" placeholder="0/400" id="Coment" rows="6" minlength="20" maxlength="400" required></textarea>          
         </div>
-        <div class="mb-3 text-end">
+        <div class="sm-3 text-end py-2">
           <button class="btn btn" style="background-color: rgb(133, 213, 35, 0.993); color: rgb(255, 255, 255); border: gray;" type="submit">Enviar comentarios</button>
         </div>
       </form>
     </div>
-    <div class="col-md-1"></div>
+    <div class="col-sm-1"></div>
   </div>
 </div>
 <br/>
