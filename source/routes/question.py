@@ -10,12 +10,12 @@ def envio_mensaje():
    
 
 @question.route('/estudio', methods=['GET','POST'])
-@jwt_required(locations=['headers','query_string'], optional=True)
+@jwt_required(locations=['headers','query_string'], optional=False)
 def inicio_estudio():
     try:
         email= get_jwt_identity()
-        if email:       
-                return render_template('question/estudio.html')
+        if email: 
+            return render_template('question/estudio.html')
         else:
             return jsonify(msg='Token inválido'), 401   
 
