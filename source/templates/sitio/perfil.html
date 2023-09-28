@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-  <title>Perfil Administrador</title>
+  <title>Perfil administrador</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body class="color" style="background-color: rgb(0, 0, 0.514); color: rgb(209, 209, 209, 0.871);">
 <nav class="navbar navbar-expand-md shadow-lg navbar-dark fixed-top" style="background-color:#1b227eab;">
@@ -23,17 +25,20 @@
           <span class="navbar-toggler-icon"></span>
         </button> 
     <div class="collapse navbar-collapse" id="collapsibleNavId">
-        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+        <ul class="navbar-nav me-auto mt-2 mt-lg-0 h5" style="font-style: normal;">
           <li class="nav-item">
-            <a class="nav-link" style="font-family:Arial" href="/"><< Inicio</a>
+            <a class="nav-link" href="/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+              <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+            </svg> Inicio</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" style="font-family:Arial" href="perfil">Perfil Administrador</a>
+            <a class="nav-link active" href="perfil">Perfil administrador</a>
           </li> 
 
           <li class="nav-item">
-            <a class="nav-link" style="font-family:Arial" href="serv">Servicios</a>
+            <a class="nav-link" href="serv">Servicios</a>
           </li>
         </ul>
     </div>
@@ -52,7 +57,9 @@
 
         <div class="col-sm-7 text-center py-5">
           <header class="text-start" style="color: white;"><h1>¡Hola!</h1></header>
-          <p class="text-start" style="font-style: helvetica;">Mi nombre es Renzo. Me considero Autodidacta y Un Entusiasta de la Tecnología. Vivo en la localidad de <a href="https://www.google.com.ar/maps/place/Sarmiento,+C%C3%B3rdoba/@-30.7738271,-64.1206788,15z/data=!3m1!4b1!4m6!3m5!1s0x94326c43306075a3:0x2a070e04bcdfa02f!8m2!3d-30.7744186!4d-64.1096061!16s%2Fg%2F121dw63m?entry=ttu" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">Sarmiento</a>,
+          <p class="text-start" style="font-style: helvetica;">Mi nombre es Renzo Reyna. Me considero Autodidacta y Un Entusiasta de la Tecnología. 
+            Vivo en la localidad de <a href="https://www.google.com.ar/maps/place/Sarmiento,+C%C3%B3rdoba/@-30.7738271,-64.1206788,15z/data=!3m1!4b1!4m6!3m5!1s0x94326c43306075a3:0x2a070e04bcdfa02f!8m2!3d-30.7744186!4d-64.1096061!16s%2Fg%2F121dw63m?entry=ttu" 
+            target="_blank" rel="noopener noreferrer" style="text-decoration: none;">Sarmiento</a>,
             pueblo ubicado al norte de la provincia de Córdoba, Argentina.
           </p>
           <p class="text-start" style="font-style: helvetica;">Me dedico al estudio de la Economía, el comportamiento de Mercado, e 
@@ -80,18 +87,38 @@
           </p>             
 
           <p class="text-start">
-              <a href="https://1drv.ms/w/s!AvQgBbyyOlh1gvQftrwaCEMPEzQ88Q?e=Ajpq88" style="font-style: helvetica; color: #1b227eab;" target="_blank" rel="noopener noreferrer">Carta de presentación</a>
+              <a href="https://1drv.ms/w/s!AvQgBbyyOlh1g7AlrCJoUzWveovYVw?e=EjTTWy" style="font-style: helvetica; color: white;" target="_blank" rel="noopener noreferrer">Carta de presentación</a>
           </p>
           <p class="text-start">
-              <a href="https://www.credly.com/users/renzo-reyna.89cf15e3" style="font-style: helvetica; color: #1b227eab;" target="_blank" rel="noopener noreferrer">Mis Credenciales</a>
+              <a href="https://www.credly.com/users/renzo-reyna.89cf15e3" style="font-style: helvetica; color: white;" target="_blank" rel="noopener noreferrer">Mis Credenciales</a>
           </p>        
         </div>
 
         <div class="col-sm-2"></div>
         <hr style="color: #1b227eab;">
     </div>
+    
+  <h2 style="font-style: italic; color: white;">"Proyecto en Desarrollo: Investigación Económica Local" </h2>
+  <p class="py-1" style="font-style: Helvetica;">Actualmente, estoy llevando a cabo una investigación económica de manera independiente 
+    en mi pueblo natal. Los objetivos de este estudio económico son:
+    <ul style="font-style: Helvetica;">
+      <li>Comprender en profundidad las condiciones del tejido socioeconómico de la localidad.</li> 
+      <li>Medir el rendimiento institucional tanto en el sector público como en el privado.</li>   
+      <li>Analizar el funcionamiento del sistema comercial.</li>   
+      <li>Evaluar el acceso a los recursos y servicios disponibles, etc.</li>  
+    </ul> 
+  </p>
+  <p style="font-style: Helvetica;">
+    Es de suma importancia que la comunidad comprenda el valor de este trabajo y pueda colaborar en la investigación. 
+    Su participación en la encuesta y en el proyecto en general será fundamental para el éxito de esta iniciativa. 
+  </p>
+  <p>
+    <div class="d-flex justify-content">
+      <img src="/static/imagenes/estudio-economico.png" style="width: 400px; height: 300px;" alt="grafico">
+    </div>
+    <h6 class="py-2" style="font-style: helvetica;">Participación de la comunidad. Fuente: desarrolladorsarmientino.com</h6>
+  </p>
 </div>
-
 <div class="container-sm rrss">
   <div class="d-flex justify-content-center">
     <div class="col-sm-4"></div>
@@ -108,7 +135,7 @@
         </div>
         
         <div class="col-sm-3 text-center me-4">
-          <a href="https://www.instagram.com/reynarenzo88/" style="text-decoration: none; color: rgb(56, 56, 56);" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/reynarenzo88/" style="text-decoration: none; color: rgb(196, 16, 67);" target="_blank" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
               <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
             </svg>

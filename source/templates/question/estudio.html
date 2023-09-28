@@ -56,36 +56,36 @@
               {% endif %}
         
               {% endwith %} 
-              <form action= "{{ url_for('question.guardar_encuesta') }}" method= "POST">
+              <form action= "{{ url_for('question.guardar') }}" method= "POST">
 
                   <p class="fw-bold">1-¿Que edad tienes?</p>
                   <div class="form-edad mb-2">
-                    <input class="form-check-input" type="radio" name="edad" value="18 anos"/>
-                    <label class="form-check-label" for="18 anos">
+                    <input class="form-check-input" type="radio" name="edad" value="18 años"/>
+                    <label class="form-check-label" for="18 años">
                       Entre 16 y 18 años
                     </label>
                   </div>
                   <div class="form-edad mb-2">                
-                    <input class="form-check-input" type="radio" name="edad" value="entre 18 y 24 anos"/>
-                    <label class="form-check-label" for="entre 18 y 24 anos">
+                    <input class="form-check-input" type="radio" name="edad" value="entre 18 y 24 años"/>
+                    <label class="form-check-label" for="entre 18 y 24 años">
                       Entre 18 y 24 años
                     </label>
                   </div>
                   <div class="form-edad mb-2">                
-                    <input class="form-check-input" type="radio" name="edad" value="entre 24 y 35 anos"/>
-                    <label class="form-check-label"  for="entre 24 y 35 anos">
+                    <input class="form-check-input" type="radio" name="edad" value="entre 24 y 35 años"/>
+                    <label class="form-check-label"  for="entre 24 y 35 años">
                       Entre 24 y 35 años
                     </label> 
                   </div>
                   <div class="form-edad mb-2">                  
-                    <input class="form-check-input" type="radio" name="edad" value="entre 35 y 45 anos"/>
-                    <label class="form-check-label" for="entre 35 y 45 anos">
+                    <input class="form-check-input" type="radio" name="edad" value="entre 35 y 45 años"/>
+                    <label class="form-check-label" for="entre 35 y 45 años">
                       Entre 35 y 45 Años
                     </label>
                   </div>
                   <div class="form-edad mb-2">
-                    <input class="form-check-input" type="radio" name="edad" value="más de 45 anos"/>
-                    <label class="form-check-label" for="más de 45 anos">
+                    <input class="form-check-input" type="radio" name="edad" value="más de 45 años"/>
+                    <label class="form-check-label" for="más de 45 años">
                       Más de 45 años
                     </label>
                   </div>           
@@ -103,8 +103,8 @@
                     </label>
                   </div>
                   <div class="form-profesion mb-2">
-                    <input class="form-check-input" type="radio" name="profesion" value="trabajador en relacion de dependencia"/>
-                    <label class="form-check-label" for="trabajador en relacion de dependencia">
+                    <input class="form-check-input" type="radio" name="profesion" value="en relacion de dependencia"/>
+                    <label class="form-check-label" for="en relacion de dependencia">
                       Trabajador en relación de dependencia
                     </label>
                   </div>
@@ -123,27 +123,27 @@
               
                   <p class="fw-bold">3-¿Cual es el nivel educativo que has alcanzado?</p>
                   <div class="form-inst mb-2">
-                    <input class="form-check-input" type="radio" name="inst" value="p"/>
-                    <label class="form-check-label" for="p">
+                    <input class="form-check-input" type="radio" name="inst" value="primario"/>
+                    <label class="form-check-label" for="primario">
                       primario
                     </label>
                   </div>
                   <div class="form-inst mb-2">
-                    <input class="form-check-input" type="radio" name="inst" value="ps"/>
-                    <label class="form-check-label" for="ps">
+                    <input class="form-check-input" type="radio" name="inst" value="primario secundario"/>
+                    <label class="form-check-label" for="primario secundario">
                       Primario - Secundario
                     </label>
                   </div>
                   <div class="form-inst mb-2">
-                    <input class="form-check-input" type="radio" name="inst" value="pst"/>
-                    <label class="form-check-label" for="pst">
+                    <input class="form-check-input" type="radio" name="inst" value="primario secundario terciario"/>
+                    <label class="form-check-label" for="primario secundario terciario">
                       Primario - Secundario - terciario
                     </label>
                   </div>
                   <div class="form-inst mb-2">
-                    <input class="form-check-input" type="radio" name="inst" value="no alcance"/>
-                    <label class="form-check-label" for="no alcance">
-                      No alcance a completar el primario
+                    <input class="form-check-input" type="radio" name="inst" value="primario incompleto"/>
+                    <label class="form-check-label" for="primario incompleto">
+                      Primario incompleto
                     </label>
                   </div>
                   <div class="form-inst mb-2">
@@ -169,12 +169,12 @@
                   <div class="form-residencia mb-2">
                     <input class="form-check-input" type="radio" name="residencia" value="lo pensaria"/>
                     <label class="form-check-label" for="lo pensaria">
-                      Poco probable
+                      Lo pensaría
                     </label>
                   </div>
                   <div class="form-residencia mb-2">
-                    <input class="form-check-input" type="radio" name="residencia" value="poco probable"/>
-                    <label class="form-check-label" for="poco probable">
+                    <input class="form-check-input" type="radio" name="residencia" value="improbable"/>
+                    <label class="form-check-label" for="improbable">
                       Improbable
                     </label>
                   </div>
@@ -187,14 +187,14 @@
               
                   <p class="fw-bold">5-¿Crees que es necesario para el crecimiento ecnómico que existan fuentes de trabajo en Sarmiento?</p>
                   <div class="form-trabajo mb-2">
-                    <input class="form-check-input" type="radio" name="trabajo" value="es necesario"/>
-                    <label class="form-check-label" for="es necesario">
+                    <input class="form-check-input" type="radio" name="trabajo" value="es muy necesario"/>
+                    <label class="form-check-label" for="es muy necesario">
                       Es muy necesario
                     </label>
                   </div>
                   <div class="form-trabajo mb-2">
-                    <input class="form-check-input" type="radio" name="trabajo" value="no es necesario"/>
-                    <label class="form-check-label" for="no es necesario">
+                    <input class="form-check-input" type="radio" name="trabajo" value="no es tan necesario"/>
+                    <label class="form-check-label" for="no es tan necesario">
                       no es tan necesario
                     </label>
                   </div>
@@ -237,14 +237,14 @@
                     </label>
                   </div>
                   <div class="form-comercios mb-2">
-                    <input class="form-check-input" type="radio" name="comercios" value="falta ofrecer variedad de productos"/>
-                    <label class="form-check-label" for="falta ofrecer variedad de productos">
+                    <input class="form-check-input" type="radio" name="comercios" value="los precios son muy altos"/>
+                    <label class="form-check-label" for="los precios son muy altos">
                       Los precios son muy altos
                     </label>
                   </div>
                   <div class="form-comercios mb-2">
-                    <input class="form-check-input" type="radio" name="comercios" value="los precios son muy altos" />
-                    <label class="form-check-label" for="los precios son muy altos">
+                    <input class="form-check-input" type="radio" name="comercios" value="compro en otro lugar" />
+                    <label class="form-check-label" for="compro en otro lugar">
                       Compro en otro lugar
                     </label>
                   </div>
@@ -275,27 +275,27 @@
                     </label>
                   </div>
                   <div class="form-salario mb-2">
-                    <input class="form-check-input" type="radio" name="salario" value="no salario mensual"/>
-                    <label class="form-check-label" for="no salario mensual">
+                    <input class="form-check-input" type="radio" name="salario" value="no cuento con salario mensual"/>
+                    <label class="form-check-label" for="no cuento con salario mensual">
                       No cuento con un salario mensual
                     </label>
                   </div>
                 
                   <p class="fw-bold">8-¿Ahorras dinero de tu trabajo, cual es el pocentaje si es así?</p>
                   <div class="form-ahorro mb-2">
-                    <input class="form-check-input" type="radio" name="ahorro" value="entre 10 y 15"/>
+                    <input class="form-check-input" type="radio" name="ahorro" value="entre 10 y 15 porcentaje"/>
                     <label class="form-check-label" for="entre 10 y 15">
                       Ahorro entre 10% y 15%
                     </label>
                   </div>
                   <div class="form-ahorro mb-2">
-                    <input class="form-check-input" type="radio" name="ahorro" value="entre 15 y 30"/>
+                    <input class="form-check-input" type="radio" name="ahorro" value="entre 15 y 30 porcentaje"/>
                     <label class="form-check-label" for="entre 15 y 30">
                       Ahorro entre 15% y 30%
                     </label>
                   </div>
                   <div class="form-ahorro mb-2">
-                    <input class="form-check-input" type="radio" name="ahorro" value="mas del 30"/>
+                    <input class="form-check-input" type="radio" name="ahorro" value="mas del 30 porcentaje"/>
                     <label class="form-check-label" for="mas del 30">
                       Ahorro más del 30%
                     </label>
@@ -345,10 +345,10 @@
                     </label>
                   </div>
                 
-                  <p class="fw-bold">10-¿Que calificación le pondrías a la atención medica del dispensario municipal?</p>
+                  <p class="fw-bold">10-¿Que calificación le pondrías a la atención del dispensario municipal?</p>
                   <div class="form-dispensario mb-2">
-                    <input class="form-check-input" type="radio" name="dispensario" value="personal medico"/>
-                    <label class="form-check-label" for="personal medico">
+                    <input class="form-check-input" type="radio" name="dispensario" value="muy buena"/>
+                    <label class="form-check-label" for="muy buena">
                       Muy buena
                     </label>
                   </div>
@@ -367,7 +367,7 @@
                   <div class="form-dispensario mb-2">
                     <input class="form-check-input" type="radio" name="dispensario" value="falta mejorar servicio"/>
                     <label class="form-check-label" for="falta mejorar servicio">
-                      Faltan ampliar los servcios ej: Mas profesionales medicos, mas servicio de diagnosticos, ecografias, radiografias, etc..
+                      Faltan ampliar servcios ej: Profesionales medicos, servicios de diagnósticos por imagen, etc.
                     </label>
                   </div>
                   <div class="form-dispensario mb-2">
@@ -393,7 +393,7 @@
                   <div class="form-cim mb-2">
                     <input class="form-check-input" type="radio" name="cim" value="faltan mejorar las utilidades"/>
                     <label class="form-check-label" for="faltan mejorar las utilidades">
-                      Falta mejorar las utilidades ej: Dar más talleres de capacitación y especialidades en distintas disiplinas, ofrcer cursos de cararcter academico, ect.
+                      Falta mejorar las utilidades ej: Talleres de capacitación y especialidades en distintas disiplinas, cursos académicos, ect.
                     </label>
                   </div>
                   <div class="form-cim mb-2">
@@ -403,8 +403,8 @@
                     </label>
                   </div>
                   <div class="form-cim mb-2">
-                    <input class="form-check-input" type="radio" name="cim" value="no se usa"/>
-                    <label class="form-check-label" for="no se usa">
+                    <input class="form-check-input" type="radio" name="cim" value="no lo se"/>
+                    <label class="form-check-label" for="no lo se">
                       No lo sé
                     </label>
                   </div>
@@ -441,16 +441,16 @@
                     </label>
                   </div>
             
-                  <p class="fw-bold">13-¿Crees que el municipio debería informar más sobre el estado de los recursos económicos?</p>
+                  <p class="fw-bold">13-¿Crees que el municipio debería informar sobre el estado de los recursos económicos?</p>
                   <div class="form-muni mb-2">
-                    <input class="form-check-input" type="radio" name="muni" value="creo que es muy necesario"/>
-                    <label class="form-check-label" for="creo que es muy necesario">
+                    <input class="form-check-input" type="radio" name="muni" value="si es muy necesario"/>
+                    <label class="form-check-label" for="si es muy necesario">
                       Si, es muy necesario
                     </label>
                   </div>
                   <div class="form-muni mb-2">
-                    <input class="form-check-input" type="radio" name="muni" value="creo que es necesario"/>
-                    <label class="form-check-label" for="creo que es necesario">
+                    <input class="form-check-input" type="radio" name="muni" value="es necesario"/>
+                    <label class="form-check-label" for="es necesario">
                       Es necesario
                     </label>
                   </div>
@@ -473,11 +473,11 @@
                     </label>
                   </div>
                 
-                  <p class="fw-bold">14-¿Crees que las instituciones educativas están funcionando en buenas condiciones?</p>
+                  <p class="fw-bold">14-¿Crees que las instituciones educativas Funcionan en buenas condiciones?</p>
                   <div class="form-educar mb-2">
                     <input class="form-check-input" type="radio" name="educar" value="funciona muy bien"/>
                     <label class="form-check-label" for="funciona muy bien">
-                      Si. Funciona muy bien
+                      Funciona muy bien
                     </label>
                   </div>
                   <div class="form-educar mb-2">
@@ -487,9 +487,9 @@
                     </label>
                   </div>
                   <div class="form-educar mb-2">
-                    <input class="form-check-input" type="radio" name="educar" value="necesita muchos mas recursos"/>
-                    <label class="form-check-label" for="necesita muchos mas recursos">
-                    Funciona bien, pero necesita muchos más recursos
+                    <input class="form-check-input" type="radio" name="educar" value="necesita mas recursos"/>
+                    <label class="form-check-label" for="necesita mas recursos">
+                      Funcionan bien, pero necesitan más recursos
                     </label>
                   </div>
                   <div class="form-educar mb-2">
@@ -499,23 +499,23 @@
                     </label>
                   </div>
                 
-                  <p class="fw-bold">15-¿Si estuvieras en un cargo que te permitierá mejorar los recursos y condiciones del pueblo, que harías?</p>
+                  <p class="fw-bold">15-¿Si fueras parte de la administración publica que harías?</p>
                   <div class="form-opinion mb-2">
                     <input class="form-check-input" type="radio" name="opinion" value="ayudaria a mejorar el sistema educativo"/>
                     <label class="form-check-label" for="ayudaria a mejorar el sistema educativo">
-                    Ayudaría a mejorar el sistema educativo
+                    Mejoraría el sistema educativo
                     </label>
                   </div>
                   <div class="form-opinion mb-2">
                     <input class="form-check-input" type="radio" name="opinion" value="ayudaria a mejorar los servicios de atencion medica"/>
                     <label class="form-check-label" for="ayudaria a mejorar los servicios de atencion medica">
-                      Ayudaría a mejorar los servicios de atención medica
+                      Mejoraría el sistema de salud médica
                     </label>
                   </div>
                   <div class="form-opinion mb-2">
                     <input class="form-check-input" type="radio" name="opinion" value="mejorar las oportunidades"/>
                     <label class="form-check-label" for="mejorar las oportunidades">
-                      Buscaría generar fuentes de trabajo solidas y mejorar las oportunidades laborales
+                      Trabjaría en generar fuentes de trabajo y oportunidades laborales
                     </label>
                   </div>
                   <div class="form-opinion mb-2">
@@ -531,9 +531,9 @@
                     </label>
                   </div>
                   <div class="form-opinion mb-2">
-                    <input class="form-check-input" type="radio" name="opinion" value="dejaria"/>
-                    <label class="form-check-label" for="dejaria">
-                      Dejaría todo tal como esta
+                    <input class="form-check-input" type="radio" name="opinion" value="dejaria todo como esta"/>
+                    <label class="form-check-label" for="dejaria todo como esta">
+                      Dejaría todo como esta
                     </label>
                   </div>
                   <div class="text-end mb-4 m-2">

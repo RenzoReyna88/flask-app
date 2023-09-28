@@ -4,13 +4,13 @@ import jwt
 
 question= Blueprint('question', __name__)
 
-@question.route('/send_message', methods=['GET'])
+@question.route('/send_message')
 def envio_mensaje():    
     return render_template('question/send_message.html')
    
 
-@question.route('/estudio', methods=['GET'])
-@jwt_required(locations=['headers','query_string'], optional=False)
+@question.route('/estudio', methods=['GET','POST'])
+@jwt_required(locations=['headers','query_string'], optional=True)
 def inicio_estudio():
     try:
         email= get_jwt_identity()
@@ -25,10 +25,9 @@ def inicio_estudio():
         return response
 
 
-@question.route('/guardar_encuesta', methods=['GET','POST'])
-def guardar_encuesta():
+@question.route('/guardar', methods=['POST'])
+def guardar():
     from utils.database import connect_to_db
-    
     if request.method == 'POST':
         edad = request.form.get('edad')
         profesion = request.form.get('profesion')
@@ -46,10 +45,10 @@ def guardar_encuesta():
         educar = request.form.get('educar')
         opinion = request.form.get('opinion')
 
-        try:        
+        try:
             if not all([edad, profesion, ins, sarmiento, trabajo, comercios, salario, ahorro, coop, dispensario, cim, municipalidad, muni, educar, opinion]):
                 raise ValueError('Debe seleccionar todas las respuestas para poder enviarlas correctamente')
-                
+                 
             conexion= connect_to_db()
             with conexion.cursor() as cursor:                 
                 sentencia = "INSERT INTO respuestas_encuestados (resp_1, resp_2, resp_3, resp_4, resp_5, resp_6, resp_7, resp_8, resp_9, resp_10, resp_11, resp_12, resp_13, resp_14, resp_15) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"

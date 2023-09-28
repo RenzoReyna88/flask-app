@@ -11,7 +11,7 @@ def connect_to_db():
                                     password= f'{PASSWORD_DB}',
                                     dbname= f'{NAME_DB}',
                                     port= 5432
-                                        )    
+                                    )    
         if conexion is not None:
             return conexion
                
