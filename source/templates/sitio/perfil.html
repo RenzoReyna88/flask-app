@@ -7,17 +7,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta property="og:title" content="Desarrollador Sarmientino">
-  <meta property="og:image" content="https://www.desarrolladorsarmientino.com//static/imagenes/logonew-app.png">
+  <meta property="og:image" content="https://www.desarrolladorsarmientino.com//static/imagenes/logonew-app-black.jpeg">
   <meta property="og:description" content="Información sobre el Administrador, Conocimientos, Objetivos">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="http://www.desarrolladorsarmientino.com/">
   <link rel="website icon" type="png" href="/static/imagenes/logonew-app.png">
   <!-- Bootstrap CSS v5.2.0-beta1 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
 </head>
+
 <body class="color" style="background-color: rgb(0, 0, 0.514); color: rgb(209, 209, 209, 0.871);">
-<nav class="navbar navbar-expand-md shadow-lg navbar-dark fixed-top" style="background-color:#1b227eab;">
+<nav class="navbar navbar-expand-md shadow-lg navbar-dark fixed-top" style="background-color: rgba(1, 1, 17, 0.846);">
   <div class="container-fluid">
         <button class="navbar-toggler" style="border-color:  rgb(210, 208, 208);" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -32,11 +34,11 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="perfil">Perfil administrador</a>
+            <a class="nav-link active" style="font-family:Arial" href="perfil">Perfil administrador</a>
           </li> 
 
           <li class="nav-item">
-            <a class="nav-link" href="serv">Servicios</a>
+            <a class="nav-link" style="font-family:Arial" href="serv">Servicios</a>
           </li>
         </ul>
     </div>
@@ -45,78 +47,95 @@
 
       <br/>
 
-<div class="container py-5">        
-      <div class="row">
-
-        <div class="col-sm-3 text-center me-5 py-5">
-          <img src="/static/imagenes/IMG-20220323-WA0010.jpeg" style="border-radius: 100%;" width="180px" height="180px" alt="imagen perfil">
-            <h6 class="my-1 py-2" style="font-style: helvetica;">Data Analyst / Python Developer</h6>
+<main>
+  <div class="container py-5">
+    <div class="card mb-3" style="max-width: 1200px; background-color: rgb(1, 1, 17);">        
+      <div class="row g-0">
+        <div class="col-md-3 text-center me-2 py-5">
+          <img src="/static/imagenes/IMG-20220323-WA0010.jpeg" style="border-radius: 100%;" width="170px" height="170px" alt="imagen perfil">
+          <p class="my-0 py-2" style="font-style: helvetica;">Data Analyst/Python Developer</p>
         </div>
-
-        <div class="col-sm-7 text-center py-5">
-          <header class="text-start" style="color: white;"><h1>¡Hola!</h1></header>
-          <p class="text-start" style="font-style: helvetica;">Mi nombre es Renzo Reyna. Me considero Autodidacta y Un Entusiasta de la Tecnología. 
-            Vivo en la localidad de <a href="https://www.google.com.ar/maps/place/Sarmiento,+C%C3%B3rdoba/@-30.7738271,-64.1206788,15z/data=!3m1!4b1!4m6!3m5!1s0x94326c43306075a3:0x2a070e04bcdfa02f!8m2!3d-30.7744186!4d-64.1096061!16s%2Fg%2F121dw63m?entry=ttu" 
-            target="_blank" rel="noopener noreferrer" style="text-decoration: none;">Sarmiento</a>,
-            pueblo ubicado al norte de la provincia de Córdoba, Argentina.
-          </p>
-          <p class="text-start" style="font-style: helvetica;">Me dedico al estudio de la Economía, el comportamiento de Mercado, e 
+    
+        <div class="col-md-8 text-center py-5">
+          <div class="card-body">
+            <h1 class="text-start" style="color: white;">¡Hola!</h1>
+            <p class="text-start" style="font-style: helvetica;">Mi nombre es Renzo Reyna. Me considero Autodidacta y Un Entusiasta de la Tecnología. 
+              Vivo en la localidad de <a href="https://www.google.com.ar/maps/place/Sarmiento,+C%C3%B3rdoba/@-30.7738271,-64.1206788,15z/data=!3m1!4b1!4m6!3m5!1s0x94326c43306075a3:0x2a070e04bcdfa02f!8m2!3d-30.7744186!4d-64.1096061!16s%2Fg%2F121dw63m?entry=ttu" 
+              target="_blank" rel="noopener noreferrer" style="text-decoration: none;">Sarmiento</a>,
+              pueblo ubicado al norte de la provincia de Córdoba, Argentina.
+            </p>
+            <p class="text-start" style="font-style: helvetica;">Me dedico al estudio de la Economía, el comportamiento de Mercado, e 
               inserción de la Tecnolgía en el ámbito social. Además, me especializo en análisis de datos, desarrollo en Python, y me estoy formando en el campo de la ciencia de datos.
-          </p>
-          
-          <p class="text-start" style="font-style: helvetica;">
+            </p>
+                
+            <p class="text-start" style="font-style: helvetica;">
               Desde hace algún tiempo, he estado trabajando en mi Crecimiento Personal a través de la formación 
               y capacitación en el campo de las Tecnologías Emergentes y la Programación. He descubierto nuevos 
               horizontes gracias a las Nuevas Tecnologías y las he incorporado en mi vida diaria como algo Esencial. 
-          </p>
-
-          <p class="text-start" style="font-style: helvetica;">
+            </p>
+      
+            <p class="text-start" style="font-style: helvetica;">
               Comprendí la importancia de sintonizar la Tecnología con nuestras Acciones Cotidianas y cómo 
               esta puede ayudarnos a mejorar nuestras vidas de muchas maneras. Desde entonces, mi objetivo 
               ha sido Perfeccionarme día a día y Mejorar en lo que he Aprendido, a la vez que comparto mi 
               Experiencia a través de Servicios Útiles para la comunidad. 
-          </p>
-          <p class="text-start"  style="font-style: helvetica;">
+            </p>
+            <p class="text-start"  style="font-style: helvetica;">
               Mi crecimiento personal ha sido un camino emocionante y desafiante, pero estoy agradecido por 
               la Oportunidad de seguir Aprendiendo y Creciendo en este campo. Estoy comprometido a seguir 
               Explorando y descubriendo todo lo que la Tecnología puede ofrecer, y a utilizar mi Conocimiento 
               para ayudar a otros a aprovechar al Máximo las Oportunidades que brinda este campo en constante 
               Evolución. 
-          </p>             
-
-          <p class="text-start">
-              <a href="https://1drv.ms/w/s!AvQgBbyyOlh1g7AlrCJoUzWveovYVw?e=EjTTWy" style="font-style: helvetica; color: white;" target="_blank" rel="noopener noreferrer">Carta de presentación</a>
-          </p>
-          <p class="text-start">
-              <a href="https://www.credly.com/users/renzo-reyna.89cf15e3" style="font-style: helvetica; color: white;" target="_blank" rel="noopener noreferrer">Mis Credenciales</a>
-          </p>        
+            </p>
+      
+            <br/>
+      
+            <p class="text-start">
+              <a href="https://www.credly.com/users/renzo-reyna.89cf15e3" style="font-style: helvetica; color: white;" target="_blank" 
+              rel="noopener noreferrer">Conoce mis Credenciales Digitales en Credly.com</a>                  
+            </p>
+            <p class="text-start">
+              <a href="https://1drv.ms/w/s!AvQgBbyyOlh1g7AlrCJoUzWveovYVw?e=EjTTWy" style="font-style: helvetica; color: white;" target="_blank" 
+              rel="noopener noreferrer">Carta de presentación</a>
+            </p>  
+          </div>                          
         </div>
-
-        <div class="col-sm-2"></div>
-        <hr style="color: #1b227eab;">
-    </div>
     
-  <h2 style="font-style: italic; color: white;">"Proyecto en Desarrollo: Investigación Económica Local" </h2>
-  <p class="py-1" style="font-style: Helvetica;">Actualmente, estoy llevando a cabo una investigación económica de manera independiente 
-    en mi pueblo natal. Los objetivos de este estudio económico son:
-    <ul style="font-style: Helvetica;">
-      <li>Comprender en profundidad las condiciones del tejido socioeconómico de la localidad.</li> 
-      <li>Medir el rendimiento institucional tanto en el sector público como en el privado.</li>   
-      <li>Analizar el funcionamiento del sistema comercial.</li>   
-      <li>Evaluar el acceso a los recursos y servicios disponibles, etc.</li>  
-    </ul> 
-  </p>
-  <p style="font-style: Helvetica;">
-    Es de suma importancia que la comunidad comprenda el valor de este trabajo y pueda colaborar en la investigación. 
-    Su participación en la encuesta y en el proyecto en general será fundamental para el éxito de esta iniciativa. 
-  </p>
-  <p>
-    <div class="d-flex justify-content">
-      <img src="/static/imagenes/estudio-economico.png" style="width: 400px; height: 300px;" alt="grafico">
+        <div class="col-md-1"></div>
+      </div>
     </div>
-    <h6 class="py-2" style="font-style: helvetica;">Participación de la comunidad. Fuente: desarrolladorsarmientino.com</h6>
-  </p>
-</div>
+
+<hr style="color: #6166acab;">
+    
+    <div class="row">
+      <div class="col-sm-11">
+        <h3 class="text-start" style="font-style: italic; color: white;">"Proyecto en Desarrollo: Investigación Económica Local" </h3>
+          <p class="py-1 text-start" style="font-style: Helvetica;">Actualmente, estoy llevando a cabo una investigación económica de manera independiente 
+            en mi pueblo natal. Los objetivos de este estudio económico son:
+            <ul style="font-style: Helvetica;">
+              <li>Comprender en profundidad las condiciones del tejido socioeconómico de la localidad.</li> 
+              <li>Medir el rendimiento institucional tanto en el sector público como en el privado.</li>   
+              <li>Analizar el funcionamiento del sistema comercial.</li>   
+              <li>Evaluar el acceso a los recursos y servicios disponibles, etc.</li>  
+            </ul> 
+          </p>
+          <p style="font-style: Helvetica;">
+            Es de suma importancia que la comunidad comprenda el valor de este trabajo y pueda colaborar en la investigación. 
+            Su participación en la encuesta y en el proyecto en general será fundamental para el éxito de esta iniciativa. 
+          </p>
+          <P>Click en el siguinte enlace: <a href="/historiasarmientina" style="text-decoration: none;" target="_blank" rel="noopener noreferrer">Historia de Sarmiento</a> para acceder a información sobre el estudio 
+             Económico. Y además, podrás encontar una linea cronologica sobre los acontecimientos más importantes sucedidos en Sarmiento a lo largo de la historia,
+             Textos e imagenes que marcaron una epoca de prosperidad económica en esta hermosa Localidad.
+          </P>
+      </div>
+  
+      <div class="col-sm-1"></div>
+    </div>
+  </div>
+</main>
+
+<br/>
+
 <div class="container rrss">
   <div class="d-flex justify-content-center">
     <div class="col-sm-4"></div>
@@ -141,9 +160,9 @@
         </div>
 
         <div class="col-sm-3 text-center me-4">
-          <a href="https://twitter.com/Reynarenzo88" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
-              <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+          <a href="https://twitter.com/Reynarenzo88" style="text-decoration: none; color:white;" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+              <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
             </svg>
           </a>
         </div>

@@ -74,4 +74,8 @@ def guardar():
 @question.route('/fin_estudio')
 def fin_estudio():
     return render_template('question/fin_estudio.html')
+
+@question.route('/historiasarmientina')
+def hist_sar():
+    return render_template('sarmiento/historiasarmientina.html')
   

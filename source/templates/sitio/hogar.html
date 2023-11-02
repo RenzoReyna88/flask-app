@@ -6,10 +6,11 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:image" content="https://www.desarrolladorsarmientino.com/static/imagenes/logonew-app.png">
+  <meta property="og:image" content="https://www.desarrolladorsarmientino.com/static/imagenes/logonew-app-black.jpeg">
   <meta property="og:title" content="Hogar">
   <meta property="og:description" content="Fundamento del Proyecto, Documentación, Tecnologías Aplicadas al Proyecto, Retroalimentación">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="http://www.desarrolladorsarmientino.com/">
   <link rel="website icon" type="png" href="/static/imagenes/logonew-app.png">
   <!-- Bootstrap CSS v5.2.0-beta1 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
@@ -17,7 +18,7 @@
 
 </head>
 <body class="color" style="background-color: rgb(0, 0, 0.514); color: rgb(209, 209, 209, 0.871);">  
-  <nav class="navbar navbar-expand-md shadow-lg navbar-dark fixed-top" style="background-color: rgba(133, 213, 35, 0.705); color:rgb(143, 141, 141);">
+  <nav class="navbar navbar-expand-md shadow-lg navbar-dark fixed-top" style="background-color: rgba(0, 128, 0, 0.749); color:rgb(143, 141, 141);">
     <div class="container-fluid">
       <button class="navbar-toggler" style="border-color: rgb(210, 208, 208);" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -32,15 +33,15 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="educ">Educación digital</a>
+            <a class="nav-link" style="font-family:Arial" href="educ">Educación digital</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="tecno">Tecnología</a>
+            <a class="nav-link" style="font-family:Arial" href="tecno">Tecnología</a>
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="/hogar" role="button" aria-expanded="false">Hogar</a>
+            <a class="nav-link active dropdown-toggle" style="font-family:Arial" data-bs-toggle="dropdown" href="/hogar" role="button" aria-expanded="false">Hogar</a>
             <ul class="dropdown-menu" style="background-color: rgba(133, 213, 35, 0.911); border: white;">
               <li><a class="dropdown-item" style="text-decoration:none;" href="#tecno">Tecnologías Utilizadas</a></li>
               <li class="py-0"><a class="dropdown-item" style="text-decoration:none;" href="#document">Documentación</a></li>             
@@ -48,7 +49,7 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="perfil">Perfil administrador</a>
+            <a class="nav-link" style="font-family:Arial" href="perfil">Perfil administrador</a>
           </li>   
         </ul>                               
       </div>           
@@ -57,8 +58,7 @@
   <br/>
   <div class="container">
     <div class="row py-5">
-      <div class="col-sm-1"></div>
-
+      <div class="col-md-1"></div>
       <div class="col-sm-10 text-center">
         {% with messages = get_flashed_messages() %}
 
@@ -75,171 +75,204 @@
         <h1 class="text-start" style="font-style: italic; color: white;"><u>Fundamento del Proyecto</u></h1>
         <br>
         <p class="text-start" style="font-style: helvetica;">
-          Cuando comencé a Estudiar sobre el Funcionamiento de la <a href="https://economipedia.com/" style=" color: green" target="_blank" rel="noopener noreferrer">Economía</a> y el Comportamiento de los Mercados,
-          con el Tiempo Trabajé para Comprender, cuáles son los sectores de la Sociedad que carecían de servicios. Servicios esenciales 
-          y Elementales para el <a href="https://economipedia.com/definiciones/crecimiento-economico.html" style="color: green;" target="_blank" rel="noopener noreferrer">Crecimiento Económico</a>. Nací en una Zona Rural, y simpre me gusto el lugar en donde vivo. Algunas veces ese estado de Bienestar ha sido distorsionado por la falta de Recursos que Carecen 
-          particularmente las zonas rurales. Recursos de los cuales a falta de ellos, han impedido llegar los Avances Tecnológicos y los enormes Recursos que nos oferce Internet.
-    
+          Desde que inicié mi estudio sobre el funcionamiento de la <a href="https://economipedia.com/" 
+          style=" color: green; text-decoration: none;" target="_blank" rel="noopener noreferrer">economía</a> y el comportamiento 
+          de los mercados, me he dedicado a comprender qué sectores de la sociedad carecen de servicios esenciales 
+          y elementales para su <a href="https://economipedia.com/definiciones/crecimiento-economico.html" 
+          style="color: green; text-decoration: none;" target="_blank" rel="noopener noreferrer">crecimiento económico</a>. 
+          Nací en una zona rural y siempre me ha encantado el lugar donde vivo. Sin embargo, este estado de 
+          bienestar a menudo se ve distorsionado por la falta de recursos en las zonas rurales. La ausencia de estos 
+          recursos ha impedido el avance tecnológico y el acceso a los vastos recursos que Internet ofrece.    
         </p>
         <p class="text-start" style="font-style: helvetica;">
-          A raiz de eso, decidí iniciar este Proyecto con el proposito de mostrarle a la comunidad las herramientas, el conocimiento y los recursos practicamente ilimitados que nos ofrece hoy en dia la internet,
-          y que están al alcance practicamente de todas las persona que cuentan con <a href="https://www.oracle.com/ar/internet-of-things/what-is-iot/" style="color: green;" target="_blank" rel="noopener noreferrer">Dispositivos IoT</a> (Smartphone, Tablets, Computadores, etc.) y una conexión a Internet. además de mostrarles de que manera podemos 
-          tomar beneficios de estas Herramientas y Recursos sin la necesidad de contar con grandes Recursos Financieros e incluso sin la necesidad de trasladarse de lugar en busca de mejorar los estudios, 
-          el Trabajo o el Conocimiento y Desarrollo Personal.
+          Motivado por esta realidad, decidí iniciar este proyecto con el propósito de mostrar a nuestra comunidad 
+          las herramientas, el conocimiento y los recursos prácticamente ilimitados que Internet nos ofrece en la 
+          actualidad. Estos están al alcance de prácticamente todas las personas que disponen de <a href="https://www.oracle.com/ar/internet-of-things/what-is-iot/" 
+          style="color: green; text-decoration: none;" target="_blank" rel="noopener noreferrer">Dispositivos IoT</a> como smartphones, 
+          tablets, computadoras, etc., y una conexión a Internet. Además, quiero demostrar de qué manera podemos 
+          aprovechar estas herramientas y recursos sin necesidad de contar con grandes recursos financieros o de 
+          trasladarnos a otros lugares en busca de mejorar nuestros estudios, trabajo, o desarrollo personal.
         </p>
         
         <p class="text-start" style="font-style: helvetica;">
-          El objetivo Fundamental de esta Aplicación es que esté en constante Crecimiento y Mejoramiento Dinamico que pueda permitir Brindar un servicio de gran Utilidad a la comunidad. Convencido de ello 
-          incursione en el mundo de la Progrmación. Herramienta indispensable para Acercar Recursos a los lugares donde el <a href="https://mba3.com/blog/item/como-va-a-cambiar-la-tecnologia-para-el-2030.html" style="color: green;" target="_blank" rel="noopener noreferrer">Crecimiento Tecnologico</a> no ha llegado en las condiciones necesarias para que 
-          la comuniadad pueda Aprovechar todas la Herramientas que ofrece el Sector Tecnológico. lo bueno de esto es que aun estamos a Tiempo, y la Tecnología solo mejora.
-        </p>  
-  
+          El objetivo fundamental de esta aplicación es estar en constante crecimiento y mejora dinámica para brindar 
+          un servicio de gran utilidad a nuestra comunidad. Convencido de esto, decidí adentrarme en el mundo de la 
+          programación, una herramienta indispensable para llevar recursos a lugares donde el 
+          <a href="https://mba3.com/blog/item/como-va-a-cambiar-la-tecnologia-para-el-2030.html" style="color: green; text-decoration: none;" 
+          target="_blank" rel="noopener noreferrer">Crecimiento Tecnologico</a> no ha llegado en las condiciones necesarias 
+          para que la comunidad pueda aprovechar todas las herramientas que ofrece el sector tecnológico. Lo positivo de 
+          esta situación es que aún estamos a tiempo, y la tecnología sigue mejorando día a día.
+        </p>    
       </div>
 
-      <div class="col-sm-1"></div>
-  </div>
-
+      <div class="col-md-1"></div>
+    </div>
 <br/>
 <hr>
-
-<div class="container-d-flex tools-tech py-2">
-  <section class="tech py-5" id="tecno">
-    <h3 class=" text-start py-3" style="font-style: italic; color: white;">Tecnologías Aplicadas en este Proyecto</h3>
-    <div class="d-flex justify-content-center py-3">  
-
-      <div class="col-sm-2"><a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">
-        <img src="/static/imagenes/python-logo.png" width="80px" height="60px" alt="logo-Python"></a>
-      </div>
-      
-      <div class="col-sm-2"><a href="https://flask.palletsprojects.com/en/2.2.x/" target="_blank" rel="noopener noreferrer">
-        <img src="/static/imagenes/flask-logo.png" width="80px" height="60px" alt="logo-flask"></a>
-      </div>
-      
-      <div class="col-sm-2"><a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">
-        <img src="/static/imagenes/B5-logo.jpeg" width="70px" height="62px" alt="logo-bootstrap"></a>
-      </div>
-
-      <div class="col-sm-2"><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
-        <img src="/static/imagenes/html-logo.jpeg" width="80px" height="60px" alt="logo-html"></a>
-      </div>
-    
-      <div class="col-sm-2"><a href="https://dev.mysql.com/doc/connector-python/en/" target="_blank" rel="noopener noreferrer">
-        <img src="/static/imagenes/postgresql.png" width="80px" height="60px" alt="logo.MySQL"></a>
-      </div>
-                          
-    </div>
-  </section>
 </div>
 
-<br/>
-<hr>
-<div class="container d-flex document">
-  <div class="row"> 
-    <section class="document py-3" id="document">
-      <h3 class="py-5" style="font-style: italic; color: white;">Documentación para desarrolladores</h3>
-      <p style="font-style: helvetica;">Este es un documento dinámico que está en constante
-        cambio, adaptándose a las nuevas condiciones que propone internet y las nuevas tecnologías.
-        Consciente de que el mundo digital evoluciona a un ritmo vertiginoso, por lo que 
-        es importante mantenernos actualizados y estar en sintonía con las tendencias tecnológicas.
-      </p>
-      <p style="font-style: helvetica;">
-        Es por eso, que es importante mantener este proyecto actualizado y en constante evolución, 
-        de modo que pueda ofrecer los mejores servicios y recursos a la comunidad, y ser una fuente confiable de información 
-        y herramientas que permitan a las personas aprovechar al máximo las oportunidades 
-        que brinda la tecnología. 
-        <a href="https://1drv.ms/b/s!AvQgBbyyOlh1gY8DhGOPnZbO-6Dk0g?e=xYdC4B" style="text-decoration: none; color: rgb(31, 174, 145);" target="_blank" rel="noopener noreferrer">Acceder al Documento</a>
-      </p>
-      
+
+  <div class="container tools-tech py-2">
+    <section class="tech py-5" id="tecno">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <h3 class=" text-start py-3" style="font-style: italic; color: white;">Tecnologías Aplicadas en este Proyecto</h3>
+        <div class="row">
+          <div class="col-md-1"></div>
+
+          <div class="col-md-2 me-1"><a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">
+            <img src="/static/imagenes/python-logo.png" width="90px" height="90px" alt="logo-Python"></a>
+          </div>
+          
+          <div class="col-md-2 me-1"><a href="https://flask.palletsprojects.com/en/2.2.x/" target="_blank" rel="noopener noreferrer">
+            <img src="/static/imagenes/flask-logo.png" width="90px" height="90px" alt="logo-flask"></a>
+          </div>
+          
+          <div class="col-md-2 me-1"><a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">
+            <img src="/static/imagenes/B5-logo.png" width="90px" height="90px" alt="logo-bootstrap"></a>
+          </div>
+    
+          <div class="col-md-2 me-1"><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
+            <img src="/static/imagenes/html-logo.jpeg" width="90px" height="90px" alt="logo-html"></a>
+          </div>
+        
+          <div class="col-md-2 me-1"><a href="https://dev.mysql.com/doc/connector-python/en/" target="_blank" rel="noopener noreferrer">
+            <img src="/static/imagenes/postgresql.png" width="90px" height="90px" alt="logo.MySQL"></a>
+          </div>
+          <div class="col-md-1"></div>
+        </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>                          
     </section>
+  <br/>
+  <hr>
   </div>
-</div>
 
-<br/>
-<hr>
-<div class="container endpage">
-  <p class="py-5" style="font-style: helvetica;">
-    Esta app está abierta a sugerencias y comentarios, y agradezco cualquier aporte que 
-    permita mejorar y hacer crecer este proyecto. El objetivo de esta aplicación es seguir 
-    trabajando para ofrecer una solución práctica y útil a las necesidades de la comunidad.
-  </p>
-</div>
-
-<div class="container comentario">
-  <div class="row">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-7" style="border-radius: 3%; background-color: rgba(133, 213, 35, 0.705);">
-     
-      <h4 class="text-start" style="font-style: italic; color: white;">Aquí puedes dejar tus comentarios</h4>
-      <br/>
-
-      <form class="coment text-start" action="{{ url_for('sitio.guardar_comentarios') }}" method="post">
-        <div class="sm-3">
-          <h6 class="text-start" style="font-style: helvetica;">Nombre</h6>
-          <label for="Name" class="form-label"></label>
-            <input class="form-control" type="text" name="Name" id="Name" placeholder="Ejemplo: Renzo R" minlength="5" maxlength="45" required>          
+  <div class="container d-flex document">  
+    <section class="document py-3" id="document">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <h3 class="py-5" style="font-style: italic; color: white;">Documentación para desarrolladores</h3>
+        <p style="font-style: helvetica;">Este es un documento dinámico que está en constante
+          cambio, adaptándose a las nuevas condiciones que propone internet y las nuevas tecnologías.
+          Consciente de que el mundo digital evoluciona a un ritmo vertiginoso, por lo que 
+          es importante mantenernos actualizados y estar en sintonía con las tendencias tecnológicas.
+        </p>
+        <p style="font-style: helvetica;">
+          Es por eso, que es importante mantener este proyecto actualizado y en constante evolución, 
+          de modo que pueda ofrecer los mejores servicios y recursos a la comunidad, y ser una fuente confiable de información 
+          y herramientas que permitan a las personas aprovechar al máximo las oportunidades 
+          que brinda la tecnología. 
+          <a href="https://1drv.ms/b/s!AvQgBbyyOlh1gY8DhGOPnZbO-6Dk0g?e=xYdC4B" style="text-decoration: none; color: rgb(31, 174, 145);" target="_blank" rel="noopener noreferrer">Acceder al Documento</a>
+        </p>
         </div>
-        <div class="sm-3 text-end">
-          <h6 class="text-start" style="font-style: helvetica;">Comentarios</h6>
-          <label for="Coment" class="form-label"></label>
-            <textarea  class="form-control" name="Coment" placeholder="0/400" id="Coment" rows="6" minlength="20" maxlength="400" required></textarea>          
-        </div>
-        <div class="sm-3 text-end py-2">
-          <button class="btn btn" style="background-color: rgba(66, 163, 76, 0.993); color: rgb(255, 255, 255); border: gray;" type="submit">Enviar comentarios</button>
-        </div>
-      </form>
-    </div>
-    <div class="col-sm-1"></div>
-  </div>
-</div>
-<br/>
-<div class="container rrss">
-  <div class="d-flex justify-content-center">
-    <div class="col-sm-4"></div>
-
-    <div class="col-sm-4">
-      <h6 class="text-center" style="font-style: italic">Sigueme en Redes Sociales:</h6>
-      <div class="d-flex justify-content-center">
-        <div class="col-sm-3 text-center me-4">
-          <a href="https://www.facebook.com/renzoreyna.88/" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-              <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-            </svg>
-          </a>
-        </div>
-        
-        <div class="col-sm-3 text-center me-4">
-          <a href="https://www.instagram.com/reynarenzo88/" style="text-decoration: none; color: rgb(196, 16, 67);" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-            </svg>
-          </a>
-        </div>
-
-        <div class="col-sm-3 text-center me-4">
-          <a href="https://twitter.com/Reynarenzo88" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
-              <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-            </svg>
-          </a>
-        </div>
-
-        <div class="col-sm-3 text-center me-4">
-          <a href="https://www.linkedin.com/in/renzo-reyna/" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
-            </svg>
-          </a>
-        </div>
-
+        <div class="col-md-1"></div>
       </div>
-    </div>
-
-    <div class="col-sm-4"></div>
+    </section>
+    <br/>
+    <hr>
   </div>
-</div>
+
+
+  <div class="container endpage">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <p class="py-5" style="font-style: helvetica;">
+          Esta app está abierta a sugerencias y comentarios, y agradezco cualquier aporte que 
+          permita mejorar y hacer crecer este proyecto. El objetivo de esta aplicación es seguir 
+          trabajando para ofrecer una solución práctica y útil a las necesidades de la comunidad.
+        </p>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+
+
+  <div class="container comentario">
+    <div class="row">
+      <div class="col-sm-2"></div>
+        <div class="col-md-8">  
+          <div class="card" style="border-radius: 1%; background-color: rgba(38, 184, 15, 0.508); height: auto;">
+            <div class="card-header">
+              <h4 class="text-start" style="font-style: italic; color: white;">Aquí puedes dejar tus comentarios</h4>
+            </div>
+            
+            <form class="coment" action="{{ url_for('sitio.guardar_comentarios') }}" method="post">
+              <div class="card-body">
+                <h6 class="text-start" style="font-style: helvetica;">Nombre</h6>
+                <label for="Name" class="form-label"></label>
+                <input class="form-control" type="text" name="Name" id="Name" placeholder="Ejemplo: Renzo R" minlength="5" maxlength="45" required>          
+        
+                <h6 class="text-start" style="font-style: helvetica;">Comentarios</h6>
+                <label for="Coment" class="form-label"></label>
+                <textarea  class="form-control" name="Coment" placeholder="0/400" id="Coment" rows="3" minlength="20" maxlength="400" required></textarea>
+              </div>
+
+              <div class="card-footer text-end">
+                <button class="btn btn  btn-sm mb-2" style="color: rgb(239, 239, 239); border-bottom: 2cap;" type="submit">Enviar comentarios</button>
+              </div>                                        
+            </form> 
+          </div>
+        </div>
+       
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+ 
+<br/>
+
+  <div class="container rrss">
+    <div class="d-flex justify-content-center">
+      <div class="col-sm-4"></div>
+
+      <div class="col-sm-4">
+        <h6 class="text-center" style="font-style: italic">Sigueme en Redes Sociales:</h6>
+        <div class="d-flex justify-content-center">
+          <div class="col-sm-3 text-center me-4">
+            <a href="https://www.facebook.com/renzoreyna.88/" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+              </svg>
+            </a>
+          </div>
+          
+          <div class="col-sm-3 text-center me-4">
+            <a href="https://www.instagram.com/reynarenzo88/" style="text-decoration: none; color: rgb(196, 16, 67);" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="col-sm-3 text-center me-4">
+            <a href="https://twitter.com/Reynarenzo88" style="text-decoration: none; color:white;" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="col-sm-3 text-center me-4">
+            <a href="https://www.linkedin.com/in/renzo-reyna/" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-sm-4"></div>
+    </div>
+  </div>
 
 <br/>
-<footer class="text-center" style="font-style: italic"> © Derechos reservados - <img src="/static/imagenes/logonew-app-black.jpeg" style="border-radius: 100%; width:2%; height:2%;" alt="logo"><a href="/perfil" class="perfil" style="color:rgb(133, 213, 35);">Desarrollador Sarmientino</a> 2023.</footer>          
+<footer class="text-center" style="font-style: italic"> © Derechos reservados - <img src="/static/imagenes/logonew-app-black.jpeg" style="border-radius: 100%; width:2%; height:2%;" alt="logo"><a href="/perfil" class="perfil" style="color:rgb(133, 213, 35); text-decoration: none;">Desarrollador Sarmientino</a> 2023.</footer>          
 <br/>   
   
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
