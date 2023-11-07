@@ -25,7 +25,7 @@ def inicio_estudio():
         return response
 
 
-@question.route('/guardar', methods=['POST'])
+@question.route('/guardar_encuesta', methods=['POST'])
 def guardar():
     from utils.database import connect_to_db
     if request.method == 'POST':

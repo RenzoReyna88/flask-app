@@ -27,9 +27,13 @@ def login_user():
     from app import mail
     if request.method == 'POST':
         email= request.form['Username']
+        ter_y_cond = request.form.get('acepta_terminos') == 'on'
 
         if not validate_email(email):
             flash('Los datos ingresados no son correctos. Verifica la información que has ingresado y vuelve a intentar..')
+            return redirect('login')
+        elif not ter_y_cond:
+            flash('Acepta los términos y condiciones para poder participar')
             return redirect('login')
 
         try:
@@ -42,12 +46,12 @@ def login_user():
                     return redirect('login')
                 
                 user= email
-                insert_data= "INSERT INTO usuarios_encuestados (email) VALUES(%s)"
-                cursor.execute(insert_data, (user,))
+                insert_data= "INSERT INTO usuarios_encuestados (email,acepta_terminos ) VALUES(%s,%s)"
+                cursor.execute(insert_data, (user, ter_y_cond))
                 conexion.commit()
                 cursor.close()
                 create_token= create_access_token(identity=email, expires_delta=timedelta(minutes=30))
-                url_protected= 'http://127.0.0.1:5000/estudio?jwt={}'.format(create_token)
+                url_protected= 'http://www.desarrolladorsarmientino.com/estudio?jwt={}'.format(create_token)
                 headers = {
                             "Authorization": f"Bearer {create_token}"
                             }
@@ -56,7 +60,6 @@ def login_user():
                 msg= Message(subject='Confirmar correo electrónico', recipients=[email],html=html)
                 msg.body= f'Has click en el siguiente enlace para acceder al estudio:{html}'
                 mail.send(msg)
-                print(response)
             return redirect('/send_message')
         
         except ValueError as ex:

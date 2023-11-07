@@ -58,6 +58,10 @@ def perfil_admin():
 def servicios():
     return render_template('sitio/serv.html') 
 
+@sitio.route('/doc')
+def document():
+    return render_template('sitio/doc.html')
+
 
 
 @sitio.route('/mantenimiento')
