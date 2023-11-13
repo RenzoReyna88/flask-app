@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 import os
 load_dotenv()
+
 # datos para la conexión con la BD
 HOST_DB= os.environ['host']
 USER_DB= os.environ['user']

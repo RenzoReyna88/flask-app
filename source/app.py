@@ -5,6 +5,8 @@ from flask_jwt_extended import JWTManager
 from routes.auth import auth
 from routes.question import question
 from routes.sitio import sitio
+from routes.articulos import articulo
+
 
 
 app= Flask(__name__)
@@ -20,13 +22,14 @@ mail= Mail(app)
 
 app.config['SECRET_KEY']= f'{SECRET_KEY}'
 
-
 app.config['JWT_SECRET_KEY']= f'{SECRET_JWT}'
 JWT= JWTManager(app)
 
 app.register_blueprint(auth)
 app.register_blueprint(question)
 app.register_blueprint(sitio)
+app.register_blueprint(articulo)
+
 
 def status_401(error):   
     return '<h1>Error 401. No está autorizado a acceder esta vista</h1>'
@@ -38,4 +41,4 @@ def pagina_no_encontrada(error):
 if __name__ == '__main__':
     app.register_error_handler(404, pagina_no_encontrada)
     app.register_error_handler(401, status_401)  
-    app.run(debug=False)
+    app.run(debug=True)
