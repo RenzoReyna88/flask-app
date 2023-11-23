@@ -26,7 +26,7 @@ def inicio_estudio():
 
 
 @question.route('/guardar_encuesta', methods=['POST'])
-def guardar():
+def guardar_encuesta():
     from utils.database import connect_to_db
     if request.method == 'POST':
         edad = request.form.get('edad')
