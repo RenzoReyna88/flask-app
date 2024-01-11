@@ -18,310 +18,316 @@
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
 </head>
+
 <body class="fondo" style="background-color: rgb(5, 5, 5); color: rgba(209, 209, 209, 0.871);">
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: rgba(255, 52, 248, 0.613); color:rgb(143, 141, 141);">
-    <div class="container-fluid">
-      <button class="navbar-toggler" style="border-color: rgb(175, 174, 174);;" type="button" data-bs-toggle="collapse" data-bs-target="#tecno" aria-controls="tecno" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="tecno">
+
+  <header class="nav">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: rgba(255, 52, 248, 0.613); color:rgb(143, 141, 141);">
+      <div class="container-fluid">
+        <button class="navbar-toggler" style="border-color: rgb(175, 174, 174);;" type="button" data-bs-toggle="collapse" data-bs-target="#tecno" aria-controls="tecno" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="tecno">
           <ul class="navbar-nav me-auto mt-2 mt-lg-0 h5" style="font-style: normal;">
-              <li class="nav-item">
-                <a class="nav-link" href="/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
-                  <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
-                </svg> Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" style="font-family:Arial" href="educ">Educación digital</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link active" style="font-family:Arial" href="tecno">Tecnología</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" style="font-family:Arial" href="hogar">Hogar</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" style="font-family:Arial" href="perfil">Perfil administrador</a>
-              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+                <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+              </svg> Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="font-family:Arial" href="educ">Educación digital</a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link active" style="font-family:Arial" href="tecno">Tecnología</a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" style="font-family:Arial" href="hogar">Hogar</a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" style="font-family:Arial" href="perfil">Perfil administrador</a>
+            </li>
           </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <br/>
+
+  <main class="body">
+    <div class="container py-2 powertecno">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 py-5">
+          <h1 class="text-center" style="font-style:italic; color: white;">El Poder de la Tecnología</h1>
+          <br/>
+          <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="d-flex justify-content-center">
+                  <img src="/static/imagenes/digital-world.png" style="width: 400px; height: 400px;" class="d-block w-100" alt="tecno-world">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                  <img src="/static/imagenes/tecno-mente.png" style="width: 400px; height: 400px;" class="d-block w-100" alt="tecno-mente">
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>  
+          <p class="text-start py-2" style="font-family: Helvetica;">
+            Durante toda la existencia de la humanidad, la tecnología ha sido un factor determinante no solo
+            para la vida en sí, sino también para la evolución de nuestra especie.
+            La tecnología es la disciplina que ha permitido a las civilizaciones subsistir y mejorar su calidad
+            de vida, y ha sido parte fundamental de la historia de la humanidad. La vida tal y como la conocemos
+            tiene un alto componente tecnológico, y es que la tecnología es como magia para el ser humano, ya que
+            <a href="https://www.plainconcepts.com/es/tendencias-tecnologicas-2023/" style="text-decoration: none; color: green;" target="_blank" rel="noopener noreferrer"> tiene la virtud de aplicarse prácticamente a todas las actividades que realizamos</a>: deportes, recreación,
+            profesiones, finanzas, economía, salud, educación, etc.
+          </p>
+    
+          <p class="text-start" style="font-family: Helvetica;">
+            En la actualidad nos encontramos en un punto en el que los avances tecnológicos y el surgimiento de nuevas
+            tecnologías están cambiando la forma en que interactuamos entre nosotros. Por ejemplo, el desarrollo personal,
+            la educación, el trabajo, la salud y las finanzas están siendo transformados gracias a la digitalización.
+            Es un hecho que la era de la digitalización llegó para quedarse, y es nuestra responsabilidad incluir
+            la tecnología como parte fundamental de nuestras vidas. 
+          </p>
+          <p class="text-start" style="font-family: Helvetica; color: white;">¡Ya lo has hecho tú!</p>
+          <br/>
+          <div class="d-flex justify-content-start">
+            <div class="div-col-sm-4 me-4">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.desarrolladorsarmientino.com/tecno&text=El Poder de la Tecnología" target="_blank" rel="noopener noreferrer" style="color: gray;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                </svg>
+              </a> 
+            </div>
+    
+            <div class="div-col-sm-4 me-4">                
+              <a href="https://twitter.com/intent/tweet?url=[https:www.desarrolladorsarmientino.com/tecno]&text=[El Poder de la Tecnología]" target="_blank" rel="noopener noreferrer" style="color: gray;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                </svg>
+              </a>  
+            </div>
+    
+            <div class="div-col-sm-4 me-4">
+              <a href="https://www.linkedin.com/shareArticle?url=[https:www.desarrolladorsarmientino.com/tecno]&title=[El Poder de la Tecnología]" target="_blank" rel="noopener noreferrer" style="color: gray;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                </svg>
+              </a>  
+            </div>
+          </div>
+          <hr>
+        </div>
+
+        <div class="col-md-1"></div>
       </div>
     </div>
-  </nav>
-<div class="container py-2 powertecno">
-  <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-sm-10 py-5">
-      <h1 class="text-center" style="font-style:italic; color: white;">El Poder de la Tecnología</h1>
-      <br/>
-      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="/static/imagenes/digital-world.jpg" style="width: 50%; height: 30%;" class="d-block w-100" alt="tecno-world">
+    
+    <br/>
+
+    <div class="container cambio-tecno">
+      <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-3">   
+          <h5 class="text-start" style="font-style: italic; color: white;">"El Surgimiento del Fuego. Un Cambio tecnológico"</h5>    
+          <div class="d-flex justify-content-start">
+            <img src="/static/imagenes/mano-fuego.png" style="border-radius: 10px; width: 250px; height: 200px;" alt="Imagen de fuego">
           </div>
-          <div class="carousel-item">
-            <img src="/static/imagenes/tecno-mente.jpg" style="width: 50%; height: 70%;" class="d-block w-100" alt="tecno-mente">
+          <p class="text-start py-3" style="font-family: Helvetica;"><small>La evidencia más temprana conocida de la manipulación del fuego por parte de los
+            humanos data de hace alrededor de 800,000 años. <a href="https://www.commonlit.org/es/texts/la-importancia-del-fuego-en-la-evolucion-humana-cambios-en-el-cerebro" style="text-decoration: none; color: green;" target="_blank" rel="noopener noreferrer">El uso del fuego ha sido un hito importante en la evolución humana.</a></small>
+          </p>     
+        </div>
+
+        <div class="col-md-1"></div>
+         
+        <div class="col-md-3">
+          <h5 class="text-start" style="font-style: italic; color: white;">"Una Nueva herramienta de Comunicación"</h5>    
+          <div class="d-flex justify-content-start">
+            <img src="/static/imagenes/mundo-en-mano.png" style="border-radius: 10px; width: 250px; height: 200px;" alt="smartphone">
           </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>  
-      <p class="text-start" style="font-family: Arial;">
-        Durante toda la existencia de la humanidad, la tecnología ha sido un factor determinante no solo
-        para la vida en sí, sino también para la evolución de nuestra especie.
-        La tecnología es la disciplina que ha permitido a las civilizaciones subsistir y mejorar su calidad
-        de vida, y ha sido parte fundamental de la historia de la humanidad. La vida tal y como la conocemos
-        tiene un alto componente tecnológico, y es que la tecnología es como magia para el ser humano, ya que
-        <a href="https://www.plainconcepts.com/es/tendencias-tecnologicas-2023/" style="text-decoration: none; color: green;" target="_blank" rel="noopener noreferrer"> tiene la virtud de aplicarse prácticamente a todas las actividades que realizamos:</a>  deportes, recreación,
-        profesiones, finanzas, economía, salud, educación, etc.
-      </p>
-
-      <p class="text-start" style="font-family: Arial;">
-        En la actualidad nos encontramos en un punto en el que los avances tecnológicos y el surgimiento de nuevas
-        tecnologías están cambiando la forma en que interactuamos entre nosotros. Por ejemplo, el desarrollo personal,
-        la educación, el trabajo, la salud y las finanzas están siendo transformados gracias a la digitalización.
-        Es un hecho que la era de la digitalización llegó para quedarse, y es nuestra responsabilidad incluir
-        la tecnología como parte fundamental de nuestras vidas. Ya lo has hecho tú!
-      </p>
-      <br/>
-      <div class="d-flex justify-content-start">
-        <div class="div-col-sm-4 me-4">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.desarrolladorsarmientino.com/tecno&text=El Poder de la Tecnología" target="_blank" rel="noopener noreferrer" style="color: gray;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-              <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-            </svg>
-          </a> 
+          <p class="text-start py-3" style="font-family: Helvetica;">
+            <small>los smartphones han cambiado la forma en que las personas se relacionan con la tecnología y han ayudado a impulsar la innovación y el desarrollo de nuevas tecnologías.
+            También han sido una herramienta importante <a href="https://www.itreseller.es/en-cifras/2022/11/el-mercado-mundial-de-telefonos-moviles-comenzara-a-crecer-en-2024" style="text-decoration: none; color: green;" target="_blank" rel="noopener noreferrer">en la evolución de la economía digital.</a></small>
+          </p>        
         </div>
 
-        <div class="div-col-sm-4 me-4">                
-          <a href="https://twitter.com/intent/tweet?url=[https:www.desarrolladorsarmientino.com/tecno]&text=[El Poder de la Tecnología]" target="_blank" rel="noopener noreferrer" style="color: gray;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
-              <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-            </svg>
-          </a>  
-        </div>
+        <div class="col-md-3"></div>
+        <hr>
+      </div>
+    </div>
 
-        <div class="div-col-sm-4 me-4">
-          <a href="https://www.linkedin.com/shareArticle?url=[https:www.desarrolladorsarmientino.com/tecno]&title=[El Poder de la Tecnología]" target="_blank" rel="noopener noreferrer" style="color: gray;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
-            </svg>
-          </a>  
+    <br/>
+    
+    <div class="container evoluciontecno py-3">
+      <div class="row">
+        <div class="col-md-1"></div>
+    
+        <div class="col-md-7">
+          <h2 class="text-start" style="font-style:italic; color: white;">Evolución Tecnológica</h2>
+          <div class="d-flex">
+            <img src="/static/imagenes/evolution-tech.jpg" style="width: 100%; height: 100%;" alt="evolución tecno">
+          </div>
+          <p class="text-start py-2" style="font-family: Helvetica;">La tecnología ha tenido un impacto significativo en la economía actual de las personas. En primer lugar, <a href="https://www.trendtic.cl/2021/02/en-rescate-del-rol-social-de-la-tecnologia-y-su-aporte-en-la-sustentabilidad/" style="text-decoration: none; color: rgb(63, 29, 105);" target="_blank" rel="noopener noreferrer">la tecnología ha cambiado la forma en que las personas trabajan y se comunican</a> , lo que ha llevado a una mayor eficiencia en la producción y un aumento en la cantidad de empleos que se realizan de forma remota.
+            Además, la tecnología ha transformado la forma en que las personas compran y venden bienes y servicios, lo que ha llevado a un aumento en la cantidad de transacciones electrónicas y una disminución en el uso de efectivo. 
+          </p>
+          <p class="text-start py-2" style="font-family: Helvetica;">
+            La tecnología también ha permitido a las empresas recopilar y analizar grandes cantidades de datos, lo que les ha permitido mejorar sus estrategias de marketing y tomar decisiones más informadas sobre el desarrollo de productos y la inversión en innovación.
+            Sin embargo, la tecnología también ha llevado a la automatización de ciertos trabajos, lo que ha llevado a la pérdida de empleos para algunas personas. Además, el acceso desigual a la tecnología y la brecha digital pueden perpetuar la desigualdad económica 
+            y limitar las oportunidades de ciertas personas para acceder a trabajos y servicios en línea.
+          </p>
+        </div>
+        
+        <div class="col-md-1"></div>
+
+        <div class="col-md-2 py-5">
+          <img src="/static/imagenes/word-tech-digital.jpeg" width="200px" height="150px" alt="mundotecno">          
+          <p class="text-start" style="font-style: italic; color: white;">
+            <small>La Digitalización Genera Recursos en Remoto.</small></p>  
+            <br/>
+          <a class="py-3" href="/auth/login" type="button">
+            <button class="btn btn border-white btn-lg" type="button" style="border-radius: 10px; font-style: helvetica; color: white; background-color:rgb(12, 156, 125);">
+              Participar del Estudio económico en Sarmiento
+            </button>
+          </a>
         </div>
       </div>
       <hr>
     </div>
-    <div class="col-md-1"></div>
-  </div>
-</div>
 
-<br/>
-<div class="container">
-  <h4 class="text-center" style="font-style: italic; color: white;">Cambios Tecnológicos que marcaron un antes y después en la civilizaciones <h4>
+    <br/>    
+
+    <div class="container tecnomercado">
+      <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-2 py-5">
+          <div class="d-flex">
+            <img src="/static/imagenes/tecno-comercio.jpg" width="100%" height="100%" alt="tecno-comercio">
+          </div>
+          <br/>
+          <H6 style="font-style: italic; color: white;"><small>La Digitalización Mejoró las realciones comerciales</small></H6>
+          <p class="text-center" style="font-style: helvetica;"><small>
+            <ul>
+              <li>Estableció Nuevas reglas de comercio.</li>
+              <li>Optmizó los sistemas de Pagos.</li>
+              <li>Redujo los costos operativos de los Servicios.</li>
+            </ul>
+          </small>
+          </p>
+          <div class="d-flex justify-content-start">
+            <img src="/static/imagenes/inversora-digital.jpg" width="100%" height="100%" alt="inversora-digital">
+          </div>
+          <br/>
+          <h6 class="text-start" style=" font-style: italic; color: white;"><small>Tecnología e Inversiones</small></h6>
+          <p class="text-start" style="font-style: helvetica;"><small>
+            Los Paradigmas Tecnológicos han Modificado completamente la manera de ahorra y realizar Inversiones,
+            permitiendo a pequeños inversores acceder a los distintos mercados. 
+          </small>
+          </p>
+        </div>
+
+        <div class="col-md-1"></div>
+
+        <div class="col-md-7"> 
+          <h2 class="text-start" style="font-style:italic; color: white;">Tecnología en los mercados</h2> 
+          <div class="d-flex">
+            <img src="/static/imagenes/grafico.jpeg" width="600%" height="300%" alt="imagen-grafico de velas">
+          </div>   
+          <p class="text-start py-2" style="font-family: Arial;">
+            La inclusión de la tecnología en el mercado de activos digitales ha generado una revolución en la forma en que 
+            los inversores remotos pueden acceder a los mercados financieros. Gracias a la tecnología blockchain, los activos 
+            digitales como Bitcoin y Ethereum se han vuelto cada vez más populares, y se están convirtiendo en una forma más común de inversión.  
+            En cuanto a los puestos de trabajo que se generan, la inclusión de la tecnología en este mercado ha dado lugar a nuevas oportunidades 
+            de trabajo en campos como la ingeniería de blockchain, el desarrollo de software de criptomonedas, la ciberseguridad y la analítica de datos. 
+            Además, la creciente demanda de inversores remotos ha impulsado la necesidad de profesionales con habilidades en finanzas, análisis de mercado 
+            y gestión de cartera, entre otros.
+          </p>
+          <p class="text-start py-6" style="font-family: Arial;">
+            En resumen, la inclusión de <a href="https://www.forbesargentina.com/money/asi-estan-evolucionando-mercados-financieros-gracias-avance-tecnologia-n30168" 
+            style="text-decoration: none; color: rgb(63, 29, 105);" target="_blank" rel="noopener noreferrer"> la tecnología en el mercado</a> de activos digitales ha abierto 
+            nuevas oportunidades para inversores remotos y ha creado una demanda de habilidades y talentos específicos en áreas como la tecnología y las finanzas.
+          </p>
+          <br/>      
+        </div>
+        <hr>
+      </div>
+    </div>
+
+    <br/>
+    
+    <div class="container e-comerce">
+      <div class="row">
+        <div class="col-md-1"></div>
+    
+        <div class="col-md-7">
+          <h2 class="text-start" style="font-style:italic; color: white;"> ¿Que es Tecnología Blockchain?</h2>
+          <div class="d-flex justify-content-center">
+            <img src="static/imagenes/blockchain.jpg" width="100%" height="100%" alt="blockchain-imagen">
+          </div>
+          <p class="text-start py-2" style="font-family: Arial;">
+            <a href="https://www.ibm.com/es-es/topics/blockchain" style="text-decoration: none; color: rgb(63, 29, 105);" 
+            target="_blank" rel="noopener noreferrer">La Tecnología Blockchain</a> es un tipo de registro Digital que permite 
+            almacenar Información de manera Segura, Transparente y Descentralizada, sin necesidad de Intermediarios. 
+            En Esencia, es una Base de Datos distribuida
+            en la que se registran transacciones o eventos, y cada bloque de Información está enlazado con el anterior,
+            Formando una Cadena de Bloques.
+          </p>
+          <br/>
+          <div class="d-flex justify-content-center">
+            <img src="/static/imagenes/bitcoin.jpg" width="50%" height="50%" alt="bitcoin">
+          </div>
+          <h6 class="text-center" style="font-style: italic; color: white;">Aparición de Bitcoin, Año 2009.</h6>
+          <br/>
+          <p class="text-start" style="font-family: Arial;">
+            La Tecnología Blockchain se Popularizó gracias a su uso en las Criptomonedas, como <a href="https://es.cointelegraph.com/bitcoin-for-beginners/what-is-bitcoin" style="text-decoration: none; color: orange;" target="_blank" rel="noopener noreferrer">Bitcoin</a> , Ethereum, y
+            muchas otras. En estos casos, se utiliza para registrar y validar transacciones de manera segura y
+            transparente, sin necesidad de un Intermediario, como un banco. También se está Utilizando en otros Ámbitos,
+            como la gestión de la Identidad Digital, la trazabilidad de alimentos y productos, la Gestión de Derechos de
+            autor, y mucho más.
+          </p>
+        </div>
+    
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+    
+    <br/>
+    
+    <div class="container Conclusión">
+      <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-10 py-5">
+          <p class="text-start" style="font-family: Helvetica;"><svg xmlns="http://www.w3.org/2000/svg" style="color: yellow;" width="16" height="16" fill="currentColor" class="bi bi-emoji-grin-fill" viewBox="0 0 16 16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16M6.488 7c-.23-.598-.661-1-1.155-1-.493 0-.924.402-1.155 1A2.794 2.794 0 0 1 4 6c0-1.105.597-2 1.333-2 .737 0 1.334.895 1.334 2 0 .364-.065.706-.179 1Zm5.334 0c-.23-.598-.662-1-1.155-1-.494 0-.925.402-1.155 1a2.793 2.793 0 0 1-.179-1c0-1.105.597-2 1.334-2C11.403 4 12 4.895 12 6c0 .364-.065.706-.178 1M2.696 8.756a.48.48 0 0 1 .382-.118C4.348 8.786 6.448 9 8 9c1.553 0 3.653-.214 4.922-.362a.48.48 0 0 1 .383.118.3.3 0 0 1 .096.29c-.09.47-.242.921-.445 1.342-.263.035-.576.075-.929.115A36.798 36.798 0 0 1 8 10.75c-1.475 0-2.934-.123-4.027-.247-.353-.04-.666-.08-.93-.115A5.457 5.457 0 0 1 2.6 9.045a.3.3 0 0 1 .097-.29ZM8 13.5a5.49 5.49 0 0 1-4.256-2.017l.116.014c1.115.126 2.615.253 4.14.253 1.525 0 3.025-.127 4.14-.253l.117-.014A5.49 5.49 0 0 1 8 13.5"/>
+          </svg> “Los conceptos que se expresan aquí son breves reseñas que te permitirán comprender la relación que podemos establecer con diversas herramientas tecnológicas. Estas serán útiles para iniciar tu propia investigación. 
+            Descubre los ámbitos de tu vida en los que podrías incorporar estas tecnologías y generar beneficios tanto a nivel individual como colectivo. Recuerda, la exploración es el primer paso hacia el conocimiento.”
+          </p>
+        </div>
+
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+  </main> 
+
   <br/>
-  <div class="row">
-   <div class="col-md-1"></div> 
-   <div class="col-md-5">
-    <div class="card" style="background-color: rgb(5, 5, 5);">
-      <div class="d-flex justify-content-center">
-        <img src="/static/imagenes/mano-fuego.png" style="border-radius: 10px; width: 400px; height: 270px;" class="card-img-top" alt="smartphone">
-      </div>
-      <div class="card-body">
-        <p class="text-start h6" style="font-style: helvetica;">La evidencia más temprana conocida de la manipulación del fuego por parte de los
-          humanos data de hace alrededor de 800,000 años.
-          <a href="https://www.commonlit.org/es/texts/la-importancia-del-fuego-en-la-evolucion-humana-cambios-en-el-cerebro" style="text-decoration: none; color: green;" target="_blank" rel="noopener noreferrer">El uso del fuego ha sido un hito importante en la evolución humana</a> , permitiendo a
-          los humanos cocinar alimentos, proporcionar calor y luz, y desarrollar herramientas más avanzadas.
-        </p>
-      </div>
-    </div>
-   </div>
-
-   <div class="col-md-5">
-    <div class="card" style="background-color: rgb(5, 5, 5);">
-      <div class="d-flex justify-content-center">
-        <img src="/static/imagenes/mundoenmano.jpg" style="border-radius: 3%; width: 90%; height: 90%;" class="card-img-top" alt="smartphone">
-      </div>
-     <div class="card-body">
-        <p class="text-start h6" style="font-style: helvetica;">
-          los smartphones han cambiado la forma en que las personas se relacionan con la tecnología y
-          han ayudado a impulsar la innovación y el desarrollo de nuevas tecnologías.
-          También han sido una herramienta importante <a href="https://www.itreseller.es/en-cifras/2022/11/el-mercado-mundial-de-telefonos-moviles-comenzara-a-crecer-en-2024" style="text-decoration: none; color: green;" target="_blank" rel="noopener noreferrer">en la evolución de la economía digital.</a>
-          Han creado nuevas formas de trabajo y emprendimiento, como aplicaciones móviles y servicios
-          en línea que permiten a las personas trabajar y ganar dinero desde cualquier lugar con
-          una conexión a Internet.
-        </p>
-      </div>
-    </div>
-   </div>
-
-   <div class="col-sm-1"></div>
-  </div>
-  <hr>
-</div>
-<br/>
-<div class="container evoluciontecno">
-  <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-6 me-2 py-2">
-      <h3 class="text-start" style="font-style:italic; color: white;">Evolución Tecnológica</h3>
-      <div class="d-flex">
-        <img src="/static/imagenes/evolution-tech.jpg" width="100%" height="50%" alt="evolución tecno">
-      </div>
-      <p class="text-start py-2" style="font-family: Arial;">La tecnología ha tenido un impacto significativo en la economía actual de las personas. En primer lugar, <a href="https://www.trendtic.cl/2021/02/en-rescate-del-rol-social-de-la-tecnologia-y-su-aporte-en-la-sustentabilidad/" style="text-decoration: none; color: rgb(63, 29, 105);" target="_blank" rel="noopener noreferrer">la tecnología ha cambiado la forma en que las personas trabajan y se comunican</a> , lo que ha llevado a una mayor eficiencia en la producción y un aumento en la cantidad de empleos que se realizan de forma remota.
-        Además, la tecnología ha transformado la forma en que las personas compran y venden bienes y servicios, lo que ha llevado a un aumento en la cantidad de transacciones electrónicas y una disminución en el uso de efectivo.
-        La tecnología también ha permitido a las empresas recopilar y analizar grandes cantidades de datos, lo que les ha permitido mejorar sus estrategias de marketing y tomar decisiones más informadas sobre el desarrollo de productos y la inversión en innovación.
-        Sin embargo, la tecnología también ha llevado a la automatización de ciertos trabajos, lo que ha llevado a la pérdida de empleos para algunas personas. Además, el acceso desigual a la tecnología y la brecha digital pueden perpetuar la desigualdad económica 
-        y limitar las oportunidades de ciertas personas para acceder a trabajos y servicios en línea. 
-      </p>
-    </div>
-
-    <div class="col-md-1"></div>
-
-    <div class="col-md-3 text-center py-5"> 
-      <div class="d-flex justify-content-center">
-        <img src="/static/imagenes/word-tech-digital.jpeg" width="200px" height="150px" alt="mundotecno">
-      </div> 
-        <h6 class="text-center py-2" style="font-style: italic; color: white;">La Digitalización genera Recursos en Remoto</h6>  
-        <p class="text-start">
-          Los Pueblos y Zonas rurales en Donde los recursos fisicos escasean, son lugares ideal en donde Aplicar Todos los Recursos
-          Tecnologicos discponibles. Y Apartir de eso; Mejorar los recursos existentes, optimizar los servicios, y Poder lograr un Crecimiento
-          Económico Sostenible.
-        </p>
-        <br/>
-        <a href="/auth/login" type="button">
-          <button class="btn btn text-center border-white btn-lg" type="button" style="font-style: helvetica; color: white; background-color:rgb(12, 156, 125);">
-              Estudio económico en Sarmiento
-          </button>
-        </a>
-    </div>
-    <div class="col-md-1"></div>
-  </div>
-  <hr>
-</div>
-
-<div class="container tecnomercado">
-  <br/> 
-  <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-5"> 
-      <h2 class="text-start" style="font-style:italic; color: white;">Tecnología en los mercados</h2> 
-      <br/>  
-      <div class="d-flex">
-        <img src="/static/imagenes/grafico.jpeg" width="500px" height="250px" alt="imagen-grafico de velas">
-      </div>   
-      <p class="text-start py-6" style="font-family: Arial;">
-        La inclusión de la tecnología en el mercado de activos digitales ha generado una revolución en la forma en que 
-        los inversores remotos pueden acceder a los mercados financieros. Gracias a la tecnología blockchain, los activos 
-        digitales como Bitcoin y Ethereum se han vuelto cada vez más populares, y se están convirtiendo en una forma más común de inversión.  
-        En cuanto a los puestos de trabajo que se generan, la inclusión de la tecnología en este mercado ha dado lugar a nuevas oportunidades 
-        de trabajo en campos como la ingeniería de blockchain, el desarrollo de software de criptomonedas, la ciberseguridad y la analítica de datos. 
-        Además, la creciente demanda de inversores remotos ha impulsado la necesidad de profesionales con habilidades en finanzas, análisis de mercado 
-        y gestión de cartera, entre otros.
-        En resumen, la inclusión de <a href="https://www.forbesargentina.com/money/asi-estan-evolucionando-mercados-financieros-gracias-avance-tecnologia-n30168" 
-        style="text-decoration: none; color: rgb(63, 29, 105);" target="_blank" rel="noopener noreferrer"> la tecnología en el mercado</a> de activos digitales ha abierto 
-        nuevas oportunidades para inversores remotos y ha creado una demanda de habilidades y talentos específicos en áreas como la tecnología y las finanzas.
-      </p>
-      <br/>      
-    </div>
-
-    <div class="col-md-1"></div>
-
-    <div class="col-md-4 py-5">
-      <br/>
-      <div class="d-flex">
-        <img src="/static/imagenes/tecno-comercio.jpg" width="50%" height="50%" alt="tecno-comercio">
-      </div>
-      <br/>
-      <H6 style="font-style: italic; color: white;">La Digitalización Mejoró las realciones comerciales</H6>
-      <p class="text-center" style="font-style: helvetica;">
-        <ul>
-          <li>Estableció Nuevas reglas de comercio.</li>
-          <li>Optmizó los sistemas de Pagos.</li>
-          <li>Redujo los costos operativos de los Servicios.</li>
-        </ul>
-      </p>
-      <div class="d-flex justify-content-start">
-        <img src="/static/imagenes/inversora-digital.jpg" width="50%" height="50%" alt="inversora-digital">
-      </div>
-      <br/>
-      <h6 class="text-start" style=" font-style: italic; color: white;">Tecnología e Invesión</h6>
-      <p class="text-start" style="font-style: helvetica;">
-        Los Paradigmas Tecnológicos han Modificado completamente la manera de ahorra y realizar Inversiones,
-        permitiendo a pequeños inversores acceder a los distintos mercados. 
-      </p>
-      <p class="text-start" style="font-style: helvetica;">
-        Además, la Tecnología Nos ha Proporcionado una Visión mas Clara y Precisa sobre el Funcionamiento de las Inversiones Tradicionales, 
-        y nuevas formas de Inversión. 
-      </p>
-      <p class="text-start" style=" font-style: helvetica;">
-        Existen innumerables Programas de Enseñanza y Capacitación sobre inversiones, trading, ect.
-        Con lo cual, hoy no solo es un asunto de inversión, si no que además, invertir se ha vuelto una Profesión para los apasionados en este sector.
-      </p>
-    </div>
-    <div class="col-md-1"></div>
-    <hr>
-  </div>
-</div>
-<br/>
-
-<div class="container e-comerce">
-  <div class="row">
-    <div class="col-md-1"></div>
-
-    <div class="col-md-10">
-      <h2 class="text-center" style="font-style:italic; color: white;"> ¿Que es Tecnología Blockchain?</h2>
-      <div class="d-flex justify-content-center">
-        <img src="static/imagenes/blockchain.jpg" width="70%" height="70%" alt="blockchain-imagen">
-      </div>
-      <p class="text-start py-2" style="font-family: Arial;">
-        <a href="https://www.ibm.com/es-es/topics/blockchain" style="text-decoration: none; color: rgb(63, 29, 105);" 
-        target="_blank" rel="noopener noreferrer">La Tecnología Blockchain</a> es un tipo de registro Digital que permite 
-        almacenar Información de manera Segura, Transparente y Descentralizada, sin necesidad de Intermediarios. 
-        En Esencia, es una Base de Datos distribuida
-        en la que se registran transacciones o eventos, y cada bloque de Información está enlazado con el anterior,
-        Formando una Cadena de Bloques.
-      </p>
-      <br/>
-      <div class="d-flex justify-content-center">
-        <img src="/static/imagenes/bitcoin.jpg" width="70%" height="70%" alt="bitcoin">
-      </div>
-      <h6 class="text-center" style="font-style: italic; color: white;">Aparición de Bitcoin, Año 2009.</h6>
-      <br/>
-      <p class="text-start" style="font-family: Arial;">
-        La Tecnología Blockchain se Popularizó gracias a su uso en las Criptomonedas, como <a href="https://es.cointelegraph.com/bitcoin-for-beginners/what-is-bitcoin" style="text-decoration: none; color: orange;" target="_blank" rel="noopener noreferrer">Bitcoin</a> , Ethereum, y
-        muchas otras. En estos casos, se utiliza para registrar y validar transacciones de manera segura y
-        transparente, sin necesidad de un Intermediario, como un banco. También se está Utilizando en otros Ámbitos,
-        como la gestión de la Identidad Digital, la trazabilidad de alimentos y productos, la Gestión de Derechos de
-        autor, y mucho más.
-      </p>
-    </div>
-
-    <div class="col-md-1"></div>
-  </div>
-  <hr>
-</div>
-
-<br/>
-
-<div class="container Conclusión">
-  <div class="d-flex">
-    <p class="text-start" style="font-family: Arial;">* Los conceptos expresados son breves reseñas que te permitirán comprender el vinculo que podemos tener con distintas herramientas
-      tecnológicas. Y te serán utiles para comenzar tu propia investigación. Descubre, en que lugares de tu vida, podrás incorporar las
-      distintas tecnologías y generar beneficios individuales y/o en conjunto.
-    </p>
-  </div>
-</div>
-
-<br/>
 
 <footer class="pie">
   <div class="container rrss">

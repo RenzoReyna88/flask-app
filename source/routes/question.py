@@ -78,4 +78,8 @@ def fin_estudio():
 @question.route('/historiasarmientina')
 def hist_sar():
     return render_template('sarmiento/historiasarmientina.html')
+
+@question.route('/resultados_parciales_del_estudio')
+def result_parcial():
+    return render_template('sarmiento/resultados_parciales_del_estudio.html')
   
