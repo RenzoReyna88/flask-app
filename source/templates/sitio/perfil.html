@@ -19,29 +19,40 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
 </head>
 
-<body class="color" style="background-color: rgb(0, 0, 0.514); color: rgb(209, 209, 209, 0.871);">
+<body class="color" style="background-color:rgb(0, 0, 17); color: rgb(209, 209, 209, 0.871);">
 
   <header class="nav">
-    <nav class="navbar navbar-expand-md shadow-lg navbar-dark fixed-top" style="background-color: rgba(2, 2, 37, 0.805);">
+    <nav class="navbar navbar-expand-md shadow-lg navbar-dark fixed-top" style="background-color:rgba(0, 0, 17, 0.845);">
+      <a class="navbar-brand text-end" href="/">
+        <img src="/static/imagenes/logonew-app.png" style="border-radius: 100%; width:27%; height:27%;" alt="logo">
+      </a>
       <div class="container-fluid">
             <button class="navbar-toggler" style="border-color:  rgb(210, 208, 208);" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button> 
         <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav me-auto mt-2 mt-lg-0 h5" style="font-style: normal;">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0 h5" style="font-family: Helvetica;">
               <li class="nav-item">
                 <a class="nav-link" href="/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
                   <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
                 </svg> Inicio</a>
               </li>
+
+              <li class="nav-item">
+                <a class="nav-link" style="font-family:Arial" href="hogar">Hogar</a>
+              </li>
     
               <li class="nav-item">
-                <a class="nav-link active" style="font-family:Arial" href="perfil">Perfil administrador</a>
+                <a class="nav-link active" href="perfil">Perfil administrador</a>
               </li> 
     
               <li class="nav-item">
-                <a class="nav-link" style="font-family:Arial" href="serv">Servicios</a>
+                <a class="nav-link" href="serv">Servicios</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="propuestas_de_proyectos">Propuestas de proyectos</a>
               </li>
             </ul>
         </div>
@@ -54,15 +65,17 @@
 <main class="main">
   <div class="container py-5">
       <div class="row">
-        <div class="col-md-4 text-start py-5">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-3 text-start py-5">
           <br/>
-          <article class="imagen py-3">
-            <img src="/static/imagenes/IMG-20220323-WA0010.jpeg" style="border-radius: 100px;" width="200px" height="200px" alt="imagen perfil">
-            <p class="my-0 py-2 text-start" style="font-style: helvetica; color: white;">Data Analyst | Python Developer</p>
+          <article class="imagen text-center py-5">
+            <img src="/static/imagenes/IMG-20220323-WA0010.jpeg" style="border-radius: 100px;" width="180px" height="180px" alt="imagen perfil">
+            <p class="my-0 py-2 text-center" style="font-style: helvetica; color: white;"><small><strong>Data Analyst | Python Developer</strong></small></p>
           </article>   
         </div>
         
-        <div class="col-md-8 text-center py-5" style="background-color: rgba(2, 2, 37, 0.805);">
+        <div class="col-md-8 text-center py-5">
             <h2 class="Saludo text-start"style="font-style: italic; color: white;">¡Hola!</h2>
               <p class="text-start" style="font-family: Helvetica;">Mi nombre es Renzo Reyna. Me considero Autodidacta y Un Entusiasta de la Tecnología. 
                 Vivo en la localidad de <a href="https://www.google.com.ar/maps/place/Sarmiento,+C%C3%B3rdoba/@-30.7738271,-64.1206788,15z/data=!3m1!4b1!4m6!3m5!1s0x94326c43306075a3:0x2a070e04bcdfa02f!8m2!3d-30.7744186!4d-64.1096061!16s%2Fg%2F121dw63m?entry=ttu" 
@@ -70,7 +83,7 @@
                 pueblo ubicado al norte de la provincia de Córdoba, Argentina.
               </p>
               <p class="text-start" style="font-family: Helvetica;">Me dedico al estudio de la Economía, el comportamiento de Mercado, e 
-                inserción de la Tecnolgía en el ámbito social. Además, me especializo en análisis de datos, desarrollo en Python, y me estoy formando en el campo de la ciencia de datos.
+                inserción de la Tecnología en el ámbito social. Además, me especializo en análisis de datos, desarrollo en Python y estoy formándome en el campo de la ciencia de datos y Machine Learning.
               </p>
                   
               <p class="text-start" style="font-family: Helvetica;">
@@ -99,7 +112,7 @@
                 <a href="https://www.credly.com/users/renzo-reyna.89cf15e3" style="font-style: helvetica; color: white;" target="_blank" 
                 rel="noopener noreferrer"> Credly.com</a>                  
               </p>
-        </div>    
+        </div> 
       </div>
 
     <hr style="color: #ffffffab;">
@@ -107,7 +120,7 @@
     <br/>
 
     <div class="row py-3">
-      <div class="col-md-8">
+      <div class="col-md-8 border-end">
         <h1 class="text-start" style="font-style: italic; color: white;">Modelo de Tabajo</h1>
         <p class="text-start" style="font-family: Helvetica;">En mi labor, me comprometo de manera inquebrantable con la excelencia y la innovación. 
           Mi enfoque no solo se centra en ofrecer soluciones tecnológicas avanzadas, sino también en construir vínculos sólidos con quienes confíen en mis servicios. 

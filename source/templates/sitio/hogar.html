@@ -18,16 +18,19 @@
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
 </head>
-<body class="color" style="background-color: rgb(0, 0, 0.514); color: rgb(209, 209, 209, 0.871);">  
+<body class="color" style="background-color:rgb(0, 0, 17); color: rgb(209, 209, 209, 0.871);">  
 
   <header class="nav">
-    <nav class="navbar navbar-expand-md shadow-lg navbar-dark fixed-top" style="background-color: rgba(0, 128, 0, 0.749); color:rgb(143, 141, 141);">
+    <nav class="navbar navbar-expand-md shadow-lg navbar-dark fixed-top" style="background-color:rgba(0, 0, 17, 0.845); color:rgb(143, 141, 141);">
+      <a class="navbar-brand text-end" href="/">
+        <img src="/static/imagenes/logonew-app.png" style="border-radius: 100%; width:27%; height:27%;" alt="logo">
+      </a> 
       <div class="container-fluid">
         <button class="navbar-toggler" style="border-color: rgb(210, 208, 208);" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button> 
         <div class="collapse navbar-collapse me-5" id="navbarNavDropdown">              
-          <ul class="navbar-nav mt-lg-0 h5" style="font-style: normal;">           
+          <ul class="navbar-nav mt-lg-0 h5" style="font-family: Helvetica;">           
             <li class="nav-item">
               <a class="nav-link" href="/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
@@ -45,15 +48,19 @@
   
             <li class="nav-item dropdown">
               <a class="nav-link active dropdown-toggle" style="font-family:Arial" data-bs-toggle="dropdown" href="/hogar" role="button" aria-expanded="false">Hogar</a>
-              <ul class="dropdown-menu" style="background-color: rgba(133, 213, 35, 0.911); border: white;">
-                <li><a class="dropdown-item" style="text-decoration:none;" href="#tecno">Tecnologías Utilizadas</a></li>
-                <li class="py-0"><a class="dropdown-item" style="text-decoration:none;" href="#document">Documentación</a></li>             
+              <ul class="dropdown-menu" style="background-color:rgba(0, 0, 17, 0.845); border: white;">
+                <li><a class="dropdown-item" style="text-decoration:none; color: white;" href="#tecno">Tecnologías Utilizadas</a></li>
+                <li class="py-0"><a class="dropdown-item" style="text-decoration:none; color: white;" href="#document">Documentación</a></li>             
               </ul>
             </li>
             
             <li class="nav-item">
               <a class="nav-link" style="font-family:Arial" href="perfil">Perfil administrador</a>
-            </li>   
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="serv">Servicios</a>
+            </li>
           </ul>                               
         </div>           
       </div>      
@@ -61,10 +68,11 @@
   </header>  
   <br/>
   <main class="cuerpo hogar">
-    <div class="container">
+    <div class="container py-5">
       <div class="row py-5">
+        <br/>
         <div class="col-md-1"></div>
-        <div class="col-sm-10 text-center">
+        <div class="col-sm-10 py-5 text-center">
           {% with messages = get_flashed_messages() %}
   
             {% if messages %}    
@@ -117,39 +125,39 @@
   </div>
   
   
-    <div class="container tools-tech py-2">
-      <section class="tech py-5" id="tecno">
+    <div class="container tools-tech">
+      <section class="tech py-3" id="tecno">
         <div class="row">
           <div class="col-md-1"></div>
+
           <div class="col-md-10">
-            <h3 class=" text-start py-3" style="font-style: italic; color: white;">Tecnologías Aplicadas en este Proyecto</h3>
-          <div class="row">
-            <div class="col-md-1"></div>
+            <div class="row d-flex justify-content-center">  
+              <h3 class="text-start py-2" style="font-style: italic; color: white;">Tecnologías Aplicadas en este Proyecto</h3>
+              <div class="col-md-2 text-center py-1"><a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">
+                <img src="/static/imagenes/python-logo.png" width="90px" height="90px" alt="logo-Python"></a>
+              </div>
+              
+              <div class="col-md-2 text-center py-1"><a href="https://flask.palletsprojects.com/en/2.2.x/" target="_blank" rel="noopener noreferrer">
+                <img src="/static/imagenes/flask-logo.png" width="90px" height="90px" alt="logo-flask"></a>
+              </div>
+              
+              <div class="col-md-2 text-center py-1"><a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">
+                <img src="/static/imagenes/B5-logo.png" width="90px" height="90px" alt="logo-bootstrap"></a>
+              </div>
   
-            <div class="col-md-2 me-1"><a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">
-              <img src="/static/imagenes/python-logo.png" width="90px" height="90px" alt="logo-Python"></a>
-            </div>
+              <div class="col-md-2 text-center py-1"><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
+                <img src="/static/imagenes/html-logo.jpeg" width="90px" height="90px" alt="logo-html"></a>
+              </div>
             
-            <div class="col-md-2 me-1"><a href="https://flask.palletsprojects.com/en/2.2.x/" target="_blank" rel="noopener noreferrer">
-              <img src="/static/imagenes/flask-logo.png" width="90px" height="90px" alt="logo-flask"></a>
+              <div class="col-md-2 text-center py-1"><a href="https://dev.mysql.com/doc/connector-python/en/" target="_blank" rel="noopener noreferrer">
+                <img src="/static/imagenes/postgresql.png" width="90px" height="90px" alt="logo.MySQL"></a>
+              </div>
+              <div class="col-md-2 text-center"></div>
             </div>
-            
-            <div class="col-md-2 me-1"><a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">
-              <img src="/static/imagenes/B5-logo.png" width="90px" height="90px" alt="logo-bootstrap"></a>
-            </div>
-      
-            <div class="col-md-2 me-1"><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
-              <img src="/static/imagenes/html-logo.jpeg" width="90px" height="90px" alt="logo-html"></a>
-            </div>
-          
-            <div class="col-md-2 me-1"><a href="https://dev.mysql.com/doc/connector-python/en/" target="_blank" rel="noopener noreferrer">
-              <img src="/static/imagenes/postgresql.png" width="90px" height="90px" alt="logo.MySQL"></a>
-            </div>
-            <div class="col-md-1"></div>
           </div>
-          </div>
+
           <div class="col-md-1"></div>
-        </div>                          
+        </div>
       </section>
     <br/>
     <hr>
@@ -159,8 +167,9 @@
       <section class="document py-3" id="document">
         <div class="row">
           <div class="col-md-1"></div>
+
           <div class="col-md-10">
-            <h3 class="py-5" style="font-style: italic; color: white;">Documentación para desarrolladores</h3>
+            <h3 class="py-3" style="font-style: italic; color: white;">Documentación para desarrolladores</h3>
           <p style="font-style: helvetica;">Este es un documento dinámico que está en constante
             cambio, adaptándose a las nuevas condiciones que propone internet y las nuevas tecnologías.
             Consciente de que el mundo digital evoluciona a un ritmo vertiginoso, por lo que 
@@ -181,19 +190,22 @@
       <br/>
       <hr>
     </div>
-  
+
+    <br/>
   
     <div class="container endpage">
       <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-          <p class="py-5" style="font-style: helvetica;">
-            Esta app está abierta a sugerencias y comentarios, y agradezco cualquier aporte que 
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <p class="py-2" style="font-style: helvetica;">
+            <small>
+            * Esta app está abierta a sugerencias y comentarios, y agradezco cualquier aporte que 
             permita mejorar y hacer crecer este proyecto. El objetivo de esta aplicación es seguir 
             trabajando para ofrecer una solución práctica y útil a las necesidades de la comunidad.
+            </small>
           </p>
         </div>
-        <div class="col-md-1"></div>
+        <div class="col-md-2"></div>
       </div>
     </div>
   
@@ -218,8 +230,8 @@
                   <textarea  class="form-control" name="Coment" placeholder="0/400" id="Coment" rows="3" minlength="20" maxlength="400" required></textarea>
                 </div>
   
-                <div class="card-footer text-end">
-                  <button class="btn btn  btn-sm mb-2" style="color: rgb(239, 239, 239); border-bottom: 2cap;" type="submit">Enviar comentarios</button>
+                <div class="card-footer mt-lg-3 text-end">
+                  <button class="btn btn" style="color: rgb(239, 239, 239); border-bottom: 2cap;" type="submit">Enviar comentarios</button>
                 </div>                                        
               </form> 
             </div>
@@ -264,6 +276,7 @@
         <ol><h4 class="text-start" style="font-style: italic; color: white;"><strong>Sobre el Proyecto</strong></h4></ol>
         <ol><a class="active m-2 text-start" style="font-family:Arial; text-decoration:none; color: white;" href="/hogar">Fundamentos</a></ol>
         <ol><a class="active m-2 text-start" style="font-family:Arial; text-decoration:none; color: white;" href="/doc" target="_blank" rel="noopener noreferrer">Documentación</a></ol>
+        <ol><a class="active m-2 text-start" style="font-family:Arial; text-decoration:none; color: white;" target="_blank" rel="noopener noreferrer" href="https://www.formaciongrafica.net/">Colaboradores</a></ol>
       </ul>
     </div>
 

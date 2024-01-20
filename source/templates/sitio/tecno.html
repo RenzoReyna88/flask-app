@@ -19,16 +19,19 @@
 
 </head>
 
-<body class="fondo" style="background-color: rgb(5, 5, 5); color: rgba(209, 209, 209, 0.871);">
+<body class="fondo" style="background-color:rgb(0, 0, 17); color: rgba(209, 209, 209, 0.871);">
 
   <header class="nav">
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: rgba(255, 52, 248, 0.613); color:rgb(143, 141, 141);">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color:rgba(0, 0, 17, 0.845); color:rgb(143, 141, 141);">
+      <a class="navbar-brand text-end" href="/">
+        <img src="/static/imagenes/logonew-app.png" style="border-radius: 100%; width:27%; height:27%;" alt="logo">
+      </a> 
       <div class="container-fluid">
         <button class="navbar-toggler" style="border-color: rgb(175, 174, 174);;" type="button" data-bs-toggle="collapse" data-bs-target="#tecno" aria-controls="tecno" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="tecno">
-          <ul class="navbar-nav me-auto mt-2 mt-lg-0 h5" style="font-style: normal;">
+          <ul class="navbar-nav me-auto mt-2 mt-lg-0 h5" style="font-family: Helvetica;">
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
@@ -51,6 +54,10 @@
             <li class="nav-item">
               <a class="nav-link" style="font-family:Arial" href="perfil">Perfil administrador</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="serv">Servicios</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -60,9 +67,10 @@
   <br/>
 
   <main class="body">
-    <div class="container py-2 powertecno">
-      <div class="row">
+    <div class="container py-5 powertecno">
+      <div class="row py-5">
         <div class="col-md-1"></div>
+        <br/>
         <div class="col-md-10 py-5">
           <h1 class="text-center" style="font-style:italic; color: white;">El Poder de la Tecnología</h1>
           <br/>
@@ -70,12 +78,12 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="d-flex justify-content-center">
-                  <img src="/static/imagenes/digital-world.png" style="width: 400px; height: 400px;" class="d-block w-100" alt="tecno-world">
+                  <img src="/static/imagenes/digital-world.png" style="width: 500px; height: 500px;" class="d-block w-100" alt="tecno-world">
                 </div>
               </div>
               <div class="carousel-item">
                 <div class="d-flex justify-content-center">
-                  <img src="/static/imagenes/tecno-mente.png" style="width: 400px; height: 400px;" class="d-block w-100" alt="tecno-mente">
+                  <img src="/static/imagenes/tecno-mente.png" style="width: 500px; height: 500px;" class="d-block w-100" alt="tecno-mente">
                 </div>
               </div>
             </div>
@@ -143,12 +151,12 @@
 
     <div class="container cambio-tecno">
       <div class="row">
-        <div class="col-md-1"></div>
+        <div class="col-md-2"></div>
 
         <div class="col-md-3">   
           <h5 class="text-start" style="font-style: italic; color: white;">"El Surgimiento del Fuego. Un Cambio tecnológico"</h5>    
-          <div class="d-flex justify-content-start">
-            <img src="/static/imagenes/mano-fuego.png" style="border-radius: 10px; width: 250px; height: 200px;" alt="Imagen de fuego">
+          <div class="d-flex justify-content-center">
+            <img src="/static/imagenes/fuego_en_mano.png" style="border-radius: 10px; width: 250px; height: 240px;" alt="Imagen de fuego">
           </div>
           <p class="text-start py-3" style="font-family: Helvetica;"><small>La evidencia más temprana conocida de la manipulación del fuego por parte de los
             humanos data de hace alrededor de 800,000 años. <a href="https://www.commonlit.org/es/texts/la-importancia-del-fuego-en-la-evolucion-humana-cambios-en-el-cerebro" style="text-decoration: none; color: green;" target="_blank" rel="noopener noreferrer">El uso del fuego ha sido un hito importante en la evolución humana.</a></small>
@@ -159,8 +167,8 @@
          
         <div class="col-md-3">
           <h5 class="text-start" style="font-style: italic; color: white;">"Una Nueva herramienta de Comunicación"</h5>    
-          <div class="d-flex justify-content-start">
-            <img src="/static/imagenes/mundo-en-mano.png" style="border-radius: 10px; width: 250px; height: 200px;" alt="smartphone">
+          <div class="d-flex justify-content-center">
+            <img src="/static/imagenes/mundo-en-mano.png" style="border-radius: 10px; width: 250px; height: 240px;" alt="smartphone">
           </div>
           <p class="text-start py-3" style="font-family: Helvetica;">
             <small>los smartphones han cambiado la forma en que las personas se relacionan con la tecnología y han ayudado a impulsar la innovación y el desarrollo de nuevas tecnologías.
@@ -168,7 +176,7 @@
           </p>        
         </div>
 
-        <div class="col-md-3"></div>
+        <div class="col-md-2"></div>
         <hr>
       </div>
     </div>
