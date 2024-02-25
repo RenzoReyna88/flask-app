@@ -1,11 +1,11 @@
-from flask import Blueprint, render_template, request, flash
+from flask import Blueprint, render_template, request, flash, make_response
 
 
 sitio= Blueprint('sitio', __name__)
 
 @sitio.route('/')
 def inicio():
-    return render_template('sitio/index.html')  
+    return render_template('sitio/index.html') 
 
 
 @sitio.route('/educ')
