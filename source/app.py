@@ -5,8 +5,8 @@ from flask_jwt_extended import JWTManager
 from routes.auth import auth
 from routes.question import question
 from routes.sitio import sitio
-from routes.articulos import articulo
 from routes.proyect import proyect
+ 
 
 
 
@@ -29,7 +29,6 @@ JWT= JWTManager(app)
 app.register_blueprint(auth)
 app.register_blueprint(question)
 app.register_blueprint(sitio)
-app.register_blueprint(articulo)
 app.register_blueprint(proyect)
 
 
@@ -38,6 +37,8 @@ def status_401(error):
 
 def pagina_no_encontrada(error): 
    return jsonify(msg='Token inválido'), 401
+
+
 
                                                               
 if __name__ == '__main__':

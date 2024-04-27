@@ -1,12 +1,13 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, send_file, flash
+
 
 proyect= Blueprint('proyect', __name__)
 
 
 @proyect.route('/propuestas_de_proyectos')
 def proyectos():
-    return render_template('proyect/propuestas_de_proyectos.html')
-
+        return render_template('proyect/propuestas_de_proyectos.html')
+            
 @proyect.route('/proyecto_educativo')
 def proyecto_educativo():
     return render_template('proyect/proyecto_educativo.html')
